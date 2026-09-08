@@ -1,24 +1,136 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chord Agent — Blues Shuffle Player</title>
-  <meta name="description" content="Play a laid-back, two-note blues shuffle in E, A or C. A quick-change 12-bar blues at 90 BPM, with audio generated in your browser.">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <header><span class="brand">♫ CHORD AGENT</span><span class="badge">BLUES / VOL. 01</span></header>
-    <section class="intro"><p class="eyebrow">A LITTLE POCKET. A LOT OF BLUES.</p><h1>Find your groove.</h1><p>Twelve bars. Three chords. Settle in and play along.</p></section>
-    <section class="player" aria-label="Blues player">
-      <div class="settings"><div><label for="key">YOUR KEY</label><select id="key"><option>E</option><option selected>A</option><option>C</option></select></div><div><span class="label">TEMPO</span><strong>90 <small>BPM</small></strong></div><div><span class="label">TIME</span><strong>4/4</strong></div><div><span class="label">SOUND</span><strong class="sound">Electric piano</strong></div></div>
-      <div class="now"><div><span class="label">CURRENT ROOT</span><h2 id="chord">A</h2><p id="tones">A · E</p></div><div class="position"><span id="position">Ready to play</span><div id="beats" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
-      <div id="bars" class="bars" aria-label="12-bar blues progression"></div>
-      <div class="transport"><button id="play" type="button">▶ Play blues</button><button id="stop" type="button" disabled>■ Stop</button><span id="status" role="status">Blues shuffle · D U D U D U D U · continuous loop</span></div>
-    </section>
-    <footer><span>I · IV · V</span><p>Root and fifth. Root and sixth. A two-note blues shuffle.</p><span>12 BARS / ∞ REPEATS</span></footer>
-  </main>
-  <script type="module" src="src/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chord Agent — Blues Shuffle Player</title>
+    <meta
+      name="description"
+      content="Play a laid-back, two-note blues shuffle in E, A or C. A quick-change 12-bar blues at 90 BPM, with audio generated in your browser."
+    />
+    <link rel="stylesheet" href="style.css?v=cleanup-1" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="brand">♫ CHORD AGENT</span
+        ><span class="badge">BLUES / VOL. 01</span>
+      </header>
+      <section class="intro">
+        <p class="eyebrow">A LITTLE POCKET. A LOT OF BLUES.</p>
+        <h1>Find your groove.</h1>
+        <p>Twelve bars. Three chords. Settle in and play along.</p>
+      </section>
+      <section class="player" aria-label="Blues player">
+        <div class="settings">
+          <div>
+            <label for="key">YOUR KEY</label
+            ><select id="key">
+              <option>E</option>
+              <option selected>A</option>
+              <option>C</option>
+            </select>
+          </div>
+          <div>
+            <span class="label">TEMPO</span
+            ><strong><span id="tempo">90</span> <small>BPM</small></strong>
+          </div>
+          <div>
+            <span class="label">TIME</span
+            ><strong id="time-signature">4/4</strong>
+          </div>
+          <div>
+            <span class="label">SOUND</span
+            ><strong class="sound">Electric piano</strong>
+          </div>
+        </div>
+        <div class="now">
+          <div>
+            <span class="label">CURRENT ROOT</span>
+            <h2 id="chord">A</h2>
+            <p id="tones">A · E</p>
+          </div>
+          <div id="guitarist" class="guitarist" aria-hidden="true">
+            <svg
+              width="128"
+              height="144"
+              viewBox="0 0 64 72"
+              xmlns="http://www.w3.org/2000/svg"
+              shape-rendering="crispEdges"
+            >
+              <path fill="#101c17" d="M8 67h48v3H8z" />
+              <g class="pixel-body">
+                <path
+                  fill="#74918a"
+                  d="M22 46h20v10h-3v10h-8V55h-3v11h-8V54h2z"
+                />
+                <path
+                  fill="#d9ddc4"
+                  d="M18 64h10v4H16v-2h2zm13 0h10v2h3v2H31z"
+                />
+                <path fill="#b2c779" d="M22 26h17v3h5v21H19V30h3z" />
+                <path fill="#7e965b" d="M19 31h5v17h-5zm17-2h5v20h-5z" />
+                <path fill="#d5a47b" d="M39 30h5v7h8v5H40v-4h-1z" />
+                <g class="pixel-head">
+                  <path fill="#d5a47b" d="M23 13h17v12h-5v4h-9v-4h-3z" />
+                  <path fill="#a77456" d="M23 16h4v8h8v3h-9v-3h-3z" />
+                  <path fill="#263c34" d="M22 5h16v3h3v7H19v-4h3z" />
+                  <path fill="#d1e6a0" d="M22 11h19v3H22z" />
+                  <path
+                    fill="#101c17"
+                    d="M16 14h30v3H16zm12 5h4v3h-4zm7 0h5v3h-5z"
+                  />
+                  <path fill="#f0c79d" d="M33 23h4v2h-4z" />
+                </g>
+                <path fill="#523b2b" d="M24 28h3l12 18h-4z" />
+                <path
+                  fill="#986439"
+                  d="M18 38h9v-3h9v3h4v13h-4v5H20v-3h-5V42h3z"
+                />
+                <path
+                  fill="#e1ac5e"
+                  d="M19 40h8v-3h7v3h4v10h-4v4H21v-3h-4v-8h2z"
+                />
+                <path fill="#bc8649" d="M32 40h11v-3h9v-3h7v5h-7v3h-9v3H32z" />
+                <path fill="#edc486" d="M53 32h7v7h-7z" />
+                <path
+                  fill="#b9c8b2"
+                  d="M53 30h2v2h-2zm5 0h2v2h-2zm-3 9h2v2h-2z"
+                />
+                <path fill="#533c2d" d="M27 42h6v6h-6zM20 45h3v6h-3z" />
+                <path
+                  fill="#f4d7a0"
+                  d="M23 45h11v1H23zm11-3h9v1h-9zm9-3h10v1H43z"
+                />
+                <g class="pixel-arm">
+                  <path fill="#d5a47b" d="M18 30h6v8h3v4h4v5h-6v-4h-4v-4h-3z" />
+                  <path fill="#f0c79d" d="M26 41h4v5h-4z" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="position">
+            <span id="position">Ready to play</span>
+            <div id="beats" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </div>
+        <div id="bars" class="bars" aria-label="12-bar blues progression"></div>
+        <div class="transport">
+          <button id="play" type="button">▶ Play blues</button
+          ><button id="stop" type="button" disabled>■ Stop</button
+          ><span id="status" role="status"
+            >Blues shuffle · D U D U D U D U · continuous loop</span
+          >
+        </div>
+      </section>
+      <footer>
+        <span>I · IV · V</span>
+        <p>Root and fifth. Root and sixth. A two-note blues shuffle.</p>
+        <span>12 BARS / ∞ REPEATS</span>
+      </footer>
+    </main>
+    <script type="module" src="src/app.js?v=cleanup-1"></script>
+  </body>
 </html>

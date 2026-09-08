@@ -1,1 +1,319 @@
-:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#ecece3;background:#111b19;font-synthesis:none;color-scheme:dark}*{box-sizing:border-box}body{margin:0}main{max-width:1050px;margin:auto;padding:38px 32px}header{display:flex;justify-content:space-between;align-items:center}.brand{font-size:15px;font-weight:800;letter-spacing:3px}.badge{font-size:10px;letter-spacing:2px;border:1px solid #47544c;border-radius:30px;padding:9px 13px;color:#afbbb0}.intro{margin:65px 0 35px}.eyebrow{font-size:10px;letter-spacing:2.5px;color:#c6dc8f}h1{font-size:clamp(36px,6vw,62px);font-weight:550;letter-spacing:-3px;margin:12px 0}.intro>p:last-child{color:#a5b3a8;font-size:16px}.player{border:1px solid #425047;background:#1b2823;border-radius:20px;padding:30px;box-shadow:0 20px 70px #0002}.settings{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-bottom:1px solid #3b4940;padding-bottom:25px}.label,label{display:block;font-size:10px;letter-spacing:2px;color:#a4b3a5;margin-bottom:12px}strong{font-size:24px;font-weight:500}small{font-size:11px;color:#a4b3a5}.sound{font-size:19px}select{font:inherit;font-size:22px;width:90px;background:#2d3d31;color:#e2f0c0;border:1px solid #687d53;border-radius:6px;padding:4px 10px}.now{display:flex;justify-content:space-between;align-items:center;padding:30px 0}h2{font-size:66px;line-height:1;margin:0 0 12px;font-weight:500;letter-spacing:-3px}#tones{color:#b3c0b2;margin:0;font-size:14px;letter-spacing:2px}.position{text-align:right;color:#a4b3a5;font-size:13px}#beats{display:flex;gap:10px;justify-content:flex-end;margin-top:17px}#beats i{height:10px;width:10px;border-radius:50%;background:#465347}#beats i.active{background:#d1e6a0;box-shadow:0 0 12px #d1e6a066}.bars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.bar{position:relative;border:1px solid #435143;background:#223129;border-radius:9px;padding:15px 16px;min-height:84px}.bar .number{font-size:10px;color:#9fac9d;display:block}.bar strong{display:inline-block;margin-top:8px;font-size:22px}.bar .degree{float:right;font-size:11px;margin-top:15px;color:#a5b59c}.bar.active{background:#d1e6a0;border-color:#d1e6a0;color:#19281b}.bar.active .number,.bar.active .degree{color:#415735}.transport{display:flex;align-items:center;gap:12px;margin-top:26px}button{border:1px solid #60714f;padding:13px 21px;border-radius:8px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;background:transparent;color:#e4eddb}#play{background:#d1e6a0;color:#1b2b19;border-color:#d1e6a0}button:disabled{opacity:.4;cursor:default}button:focus-visible,select:focus-visible{outline:3px solid #f1ce7d;outline-offset:4px}#status{margin-left:auto;font-size:11px;color:#a5b3a8}footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:27px;color:#8fa18e;font-size:9px;letter-spacing:1px}footer p{letter-spacing:0;font-size:11px}@media(max-width:600px){main{padding:24px 16px}.intro{margin:44px 0 28px}.player{padding:20px}.settings{grid-template-columns:repeat(2,1fr)}.bar{padding:12px 9px}.bar .degree{display:none}.transport{flex-wrap:wrap}#status{width:100%;margin:5px 0 0}footer{flex-wrap:wrap}footer p{order:3;width:100%;margin:0}.badge{font-size:8px}}
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  color: #ecece3;
+  background: #111b19;
+  font-synthesis: none;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 38px 32px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.badge {
+  font-size: 10px;
+  letter-spacing: 2px;
+  border: 1px solid #47544c;
+  border-radius: 30px;
+  padding: 9px 13px;
+  color: #afbbb0;
+}
+.intro {
+  margin: 65px 0 35px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #c6dc8f;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 62px);
+  font-weight: 550;
+  letter-spacing: -3px;
+  margin: 12px 0;
+}
+.intro > p:last-child {
+  color: #a5b3a8;
+  font-size: 16px;
+}
+.player {
+  border: 1px solid #425047;
+  background: #1b2823;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 70px #0002;
+}
+.settings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  border-bottom: 1px solid #3b4940;
+  padding-bottom: 25px;
+}
+.label,
+label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #a4b3a5;
+  margin-bottom: 12px;
+}
+strong {
+  font-size: 24px;
+  font-weight: 500;
+}
+small {
+  font-size: 11px;
+  color: #a4b3a5;
+}
+.sound {
+  font-size: 19px;
+}
+select {
+  font: inherit;
+  font-size: 22px;
+  width: 90px;
+  background: #2d3d31;
+  color: #e2f0c0;
+  border: 1px solid #687d53;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.now {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+h2 {
+  font-size: 66px;
+  line-height: 1;
+  margin: 0 0 12px;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+#tones {
+  color: #b3c0b2;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.position {
+  text-align: right;
+  color: #a4b3a5;
+  font-size: 13px;
+}
+#beats {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 17px;
+}
+#beats i {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #465347;
+}
+#beats i.active {
+  background: #d1e6a0;
+  box-shadow: 0 0 12px #d1e6a066;
+}
+.bars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.bar {
+  position: relative;
+  border: 1px solid #435143;
+  background: #223129;
+  border-radius: 9px;
+  padding: 15px 16px;
+  min-height: 84px;
+}
+.bar .number {
+  font-size: 10px;
+  color: #9fac9d;
+  display: block;
+}
+.bar strong {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 22px;
+}
+.bar .degree {
+  float: right;
+  font-size: 11px;
+  margin-top: 15px;
+  color: #a5b59c;
+}
+.bar.active {
+  background: #d1e6a0;
+  border-color: #d1e6a0;
+  color: #19281b;
+}
+.bar.active .number,
+.bar.active .degree {
+  color: #415735;
+}
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+button {
+  border: 1px solid #60714f;
+  padding: 13px 21px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #e4eddb;
+}
+#play {
+  background: #d1e6a0;
+  color: #1b2b19;
+  border-color: #d1e6a0;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #f1ce7d;
+  outline-offset: 4px;
+}
+#status {
+  margin-left: auto;
+  font-size: 11px;
+  color: #a5b3a8;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 27px;
+  color: #8fa18e;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+footer p {
+  letter-spacing: 0;
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 24px 16px;
+  }
+  .intro {
+    margin: 44px 0 28px;
+  }
+  .player {
+    padding: 20px;
+  }
+  .settings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bar {
+    padding: 12px 9px;
+  }
+  .bar .degree {
+    display: none;
+  }
+  .transport {
+    flex-wrap: wrap;
+  }
+  #status {
+    width: 100%;
+    margin: 5px 0 0;
+  }
+  footer {
+    flex-wrap: wrap;
+  }
+  footer p {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+  .badge {
+    font-size: 8px;
+  }
+}
+
+/* Integer-pixel poses keep the little guitarist crisp. Audio clock drives the steps. */
+.guitarist {
+  width: 128px;
+  flex: 0 0 128px;
+  align-self: center;
+}
+.guitarist svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.guitarist[data-pose='down'] .pixel-body {
+  transform: translateY(1px);
+}
+.guitarist[data-pose='down'] .pixel-head {
+  transform: translateY(1px);
+}
+.guitarist[data-pose='down'] .pixel-arm {
+  transform: translate(1px, 3px);
+}
+.guitarist[data-pose='up'] .pixel-arm {
+  transform: translate(-1px, -2px);
+}
+@media (max-width: 600px) {
+  .now {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .guitarist {
+    width: 96px;
+    flex-basis: 96px;
+  }
+  .position {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #beats {
+    margin-top: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guitarist .pixel-body,
+  .guitarist .pixel-head,
+  .guitarist .pixel-arm {
+    transform: none !important;
+  }
+}

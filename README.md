@@ -27,3 +27,17 @@ Every beat has a downstroke on its first triplet partial and an upstroke on its 
 - `package.json`: local server and test commands.
 
 Run `npm test` for automated checks. These verify musical data and scheduling, but do not judge audible instrument quality.
+
+## Development discipline
+
+Use Node.js with npm and Python 3. Run `npm ci` to install the pinned development-only formatter; the browser app has no runtime packages. Run `npm run format` after edits, then `npm run format:check`, `npm test`, and `npm run build`.
+
+Keep musical settings, supported keys, note selection and shuffle rules in `src/music.js`. Keep synthesis and scheduling in `src/audio.js`. The player's `timing()` method returns bar, beat, loop and fractional beat phase from the audio clock; interface code consumes that snapshot without accessing the audio context directly. Controls and the pixel guitarist's poses belong in `src/app.js`; presentation belongs in HTML and CSS. Add future key and tempo controls through these boundaries rather than duplicating settings.
+
+The pixel guitarist uses inline SVG with explicit dimensions. Its poses follow playback and freeze on Stop. Reduced-motion preferences disable movement. The stylesheet, entry script, and module imports have versioned URLs to help refresh browser caches; update these when shipping asset changes.
+
+## Building and publishing
+
+`npm run build` clears generated `dist/` output and copies only the browser assets into it. Never put source files in `dist/`. Build scripts, tests, and hosting metadata are excluded from the served assets.
+
+The public app is https://chord-agent-blues.avisekarr.chatgpt.site. Its project identity is saved in `.openai/hosting.json`; reuse it for future deployments. Local edits and builds do not publish automatically. Publishing requires a Git checkpoint, a successful push to the hosting repository, saving that exact commit as a site version, and deploying that version. Keep credentials out of files and Git. Verify the public URL after deployment.
