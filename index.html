@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chord Agent — Blues Shuffle Player</title>
+  <meta name="description" content="Play a laid-back, two-note blues shuffle in E, A or C. A quick-change 12-bar blues at 90 BPM, with audio generated in your browser.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header><span class="brand">♫ CHORD AGENT</span><span class="badge">BLUES / VOL. 01</span></header>
+    <section class="intro"><p class="eyebrow">A LITTLE POCKET. A LOT OF BLUES.</p><h1>Find your groove.</h1><p>Twelve bars. Three chords. Settle in and play along.</p></section>
+    <section class="player" aria-label="Blues player">
+      <div class="settings"><div><label for="key">YOUR KEY</label><select id="key"><option>E</option><option selected>A</option><option>C</option></select></div><div><span class="label">TEMPO</span><strong>90 <small>BPM</small></strong></div><div><span class="label">TIME</span><strong>4/4</strong></div><div><span class="label">SOUND</span><strong class="sound">Electric piano</strong></div></div>
+      <div class="now"><div><span class="label">CURRENT ROOT</span><h2 id="chord">A</h2><p id="tones">A · E</p></div><div class="position"><span id="position">Ready to play</span><div id="beats" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div>
+      <div id="bars" class="bars" aria-label="12-bar blues progression"></div>
+      <div class="transport"><button id="play" type="button">▶ Play blues</button><button id="stop" type="button" disabled>■ Stop</button><span id="status" role="status">Blues shuffle · D U D U D U D U · continuous loop</span></div>
+    </section>
+    <footer><span>I · IV · V</span><p>Root and fifth. Root and sixth. A two-note blues shuffle.</p><span>12 BARS / ∞ REPEATS</span></footer>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
