@@ -317,3 +317,22 @@ footer p {
     transform: none !important;
   }
 }
+
+#tempo-slider {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  margin: 12px 0 6px;
+  accent-color: #d1e6a0;
+  cursor: pointer;
+}
+#tempo-slider:focus-visible {
+  outline: 3px solid #f1ce7d;
+  outline-offset: 4px;
+}
+.tempo-help {
+  display: block;
+  font-size: 10px;
+  color: #a5b3a8;
+  max-width: 180px;
+}

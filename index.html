@@ -6,9 +6,10 @@
     <title>Chord Agent — Blues Shuffle Player</title>
     <meta
       name="description"
-      content="Play a laid-back, two-note blues shuffle in E, A or C. A quick-change 12-bar blues at 90 BPM, with audio generated in your browser."
+      content="Play a laid-back, two-note blues shuffle in E, A, C, B, G or D. A quick-change 12-bar blues at 60–140 BPM, with audio generated in your browser."
     />
-    <link rel="stylesheet" href="style.css?v=cleanup-1" />
+    <link rel="stylesheet" href="style.css?v=bedroom-1" />
+    <link rel="stylesheet" href="themes.css?v=bedroom-1" />
   </head>
   <body>
     <main>
@@ -16,11 +17,156 @@
         <span class="brand">♫ CHORD AGENT</span
         ><span class="badge">BLUES / VOL. 01</span>
       </header>
+      <div class="theme-picker" role="group" aria-label="Visual theme">
+        <span>MAKE YOURSELF AT HOME</span>
+        <button type="button" data-theme-choice="bedroom" aria-pressed="true">
+          Bedroom
+        </button>
+        <button type="button" data-theme-choice="cosy" aria-pressed="false">
+          Cosy
+        </button>
+        <button type="button" data-theme-choice="scifi" aria-pressed="false">
+          Sci-fi
+        </button>
+      </div>
       <section class="intro">
         <p class="eyebrow">A LITTLE POCKET. A LOT OF BLUES.</p>
         <h1>Find your groove.</h1>
         <p>Twelve bars. Three chords. Settle in and play along.</p>
       </section>
+      <div class="bedroom-scene" aria-hidden="true">
+        <svg
+          viewBox="0 0 320 80"
+          width="640"
+          height="160"
+          shape-rendering="crispEdges"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Sage walls and wooden floor. -->
+          <path fill="#b4bca5" d="M0 0h320v65H0z" />
+          <path fill="#9a795b" d="M0 65h320v15H0z" />
+          <path fill="#c4a181" d="M0 68h320v2H0zm0 8h320v2H0z" />
+          <!-- Window and linen curtains. -->
+          <path fill="#795e4d" d="M29 9h58v40H29z" />
+          <path fill="#b8d2d4" d="M33 13h50v32H33z" />
+          <path fill="#f4e3ad" d="M65 17h8v8h-8z" />
+          <path fill="#eceddf" d="M36 28h14v3H36zm28 5h15v3H64z" />
+          <path
+            fill="#e4d6ba"
+            d="M56 13h3v32h-3zm-23 15h50v3H33zM25 47h66v4H25z"
+          />
+          <path fill="#eee4cf" d="M23 6h9v37h-9zm62 0h9v37h-9z" />
+          <!-- Bed, cream pillows and sage quilt. -->
+          <path
+            fill="#775b46"
+            d="M20 45h6v30h-6zm6 8h98v17H26zm98-7h6v29h-6z"
+          />
+          <path fill="#f2e8d6" d="M28 48h91v9H28z" />
+          <path fill="#fffae9" d="M30 44h24v8H30z" />
+          <path fill="#7f9679" d="M60 48h61v18H60z" />
+          <path fill="#a6b697" d="M62 50h57v3H62zm0 9h57v3H62z" />
+          <!-- Bedside table and coffee mug. -->
+          <path fill="#816147" d="M143 48h32v6h-3v21h-5V61h-16v14h-5V54h-3z" />
+          <path fill="#bc9772" d="M148 54h22v7h-22z" />
+          <path fill="#e4c8a0" d="M157 56h4v2h-4z" />
+          <path fill="#f7ead0" d="M146 39h9v8h-9zm9 1h4v5h-4z" />
+          <path fill="#715441" d="M147 39h7v2h-7z" />
+          <!-- A framed picture resting on the bedside table. -->
+          <path fill="#735946" d="M162 33h12v15h-12z" />
+          <path fill="#dfd7bb" d="M164 35h8v11h-8z" />
+          <path fill="#819a84" d="M164 42h3v-3h3v3h2v4h-8z" />
+          <!-- Guitar stand, neck, body and strings. -->
+          <path
+            fill="#5c6058"
+            d="M242 38h3v32h-3zm-8 32h20v3h-20zm0 3h3v3h-3zm17 0h3v3h-3z"
+          />
+          <path fill="#977145" d="M240 18h6v33h-6z" />
+          <path fill="#bc935f" d="M239 12h8v11h-8z" />
+          <path
+            fill="#d6b077"
+            d="M238 41h10v4h5v7h-3v4h6v11h-5v4h-16v-4h-5V56h6v-4h-3v-7h5z"
+          />
+          <path fill="#a47c50" d="M236 57h3v10h12v3h-16v-3h-4V57z" />
+          <path fill="#66533e" d="M240 49h7v7h-7zm-1 13h10v3h-10z" />
+          <path fill="#f1d5a3" d="M242 23h1v40h-1z" />
+          <path fill="#d8d3b8" d="M237 14h2v2h-2zm10 3h2v2h-2z" /></svg
+        ><span>YOUR ROOM. YOUR RHYTHM.</span>
+      </div>
+      <div class="cosy-village" aria-hidden="true">
+        <svg
+          viewBox="0 0 320 64"
+          width="640"
+          height="128"
+          shape-rendering="crispEdges"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#fcf4df"
+            d="M18 12h8V8h14v4h8v6H18zm181 4h10v-5h18v5h9v6h-37z"
+          />
+          <path fill="#ebc680" d="M265 6h14v4h4v14h-4v4h-14v-4h-4V10h4z" />
+          <path
+            fill="#a7bd9c"
+            d="M0 55h25v-4h38v5h30v-8h40v8h29v-5h31v5h49v-6h40v6h38v8H0z"
+          />
+          <path fill="#ba7867" d="M120 24h7v-6h8v-6h39v6h8v6h8v7h-70z" />
+          <path fill="#805b54" d="M165 5h9v13h-9zM118 29h74v5h-74z" />
+          <path fill="#f7e2b6" d="M126 34h58v26h-58z" />
+          <path fill="#8cafb7" d="M132 38h13v12h-13zm32 0h13v12h-13z" />
+          <path
+            fill="#fcf4df"
+            d="M137 38h2v12h-2zm-5 5h13v2h-13zm37-5h2v12h-2zm-5 5h13v2h-13z"
+          />
+          <path fill="#916953" d="M150 42h10v18h-10z" />
+          <path fill="#e8b26b" d="M157 49h2v2h-2z" />
+          <path
+            fill="#719479"
+            d="M54 34h5v23h-5zm-9-6h9v6h5v8h-9v-6h-5zm14 6h10v7h-5v5h-5zm184-3h5v26h-5zm-10-3h10v11h-6v-5h-4zm15 8h10v6h-5v6h-5z"
+          />
+          <path
+            fill="#cc8b71"
+            d="M45 50h22v5h-3v8H48v-8h-3zm189 0h22v5h-3v8h-16v-8h-3z"
+          />
+          <path fill="#f2b0a0" d="M86 47h5v5h-5zm116 0h5v5h-5z" /></svg
+        ><span>A LITTLE PLACE TO PLAY.</span>
+      </div>
+      <div class="space-scene" aria-hidden="true">
+        <svg
+          viewBox="0 0 320 64"
+          width="640"
+          height="128"
+          shape-rendering="crispEdges"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#8196c8"
+            d="M15 18h3v3h-3zm42 28h2v2h-2zm30-37h3v3h-3zm99 5h2v2h-2zm37 33h3v3h-3zm70-19h3v3h-3zm-9 26h2v2h-2z"
+          />
+          <path
+            fill="#b6a6ea"
+            d="M50 9h3v4h4v3h-4v4h-3v-4h-4v-3h4zm152 17h3v4h4v3h-4v4h-3v-4h-4v-3h4z"
+          />
+          <path
+            fill="#65669f"
+            d="M126 12h28v5h10v8h5v20h-5v8h-10v5h-28v-5h-10v-8h-5V25h5v-8h10z"
+          />
+          <path
+            fill="#8c7cbb"
+            d="M126 12h28v5h8v8h-20v-5h-23v-3h7zm-15 22h31v6h23v8h-21v-4h-29v-5h-4z"
+          />
+          <path
+            fill="#9ab6cc"
+            d="M91 44h13v-5h19v-5h20v-5h22v-5h16v6h-14v5h-22v5h-20v5h-20v5H91z"
+          />
+          <path fill="#536681" d="M91 44h5v8h21v-4h18v5h-17v4H91z" />
+          <path
+            fill="#b7c7d6"
+            d="M263 5h15v5h-10v6h-4v12h4v5h10v5h-15v-5h-7v-7h-4V17h4v-7h7z"
+          />
+          <path fill="#6d779c" d="M256 18h5v5h-5zm7 11h4v4h-4z" />
+          <path fill="#33304e" d="M0 61h320v3H0z" /></svg
+        ><span>FIND YOUR FREQUENCY.</span>
+      </div>
       <section class="player" aria-label="Blues player">
         <div class="settings">
           <div>
@@ -29,11 +175,29 @@
               <option>E</option>
               <option selected>A</option>
               <option>C</option>
+              <option>B</option>
+              <option>G</option>
+              <option>D</option>
             </select>
           </div>
           <div>
-            <span class="label">TEMPO</span
-            ><strong><span id="tempo">90</span> <small>BPM</small></strong>
+            <label for="tempo-slider">TEMPO</label
+            ><strong
+              ><output id="tempo" for="tempo-slider">90</output>
+              <small>BPM</small></strong
+            >
+            <input
+              id="tempo-slider"
+              type="range"
+              min="60"
+              max="140"
+              step="1"
+              value="90"
+              aria-describedby="tempo-help"
+            />
+            <span id="tempo-help" class="tempo-help"
+              >Release to apply · restarts at bar 1</span
+            >
           </div>
           <div>
             <span class="label">TIME</span
@@ -109,6 +273,106 @@
               </g>
             </svg>
           </div>
+          <div
+            id="cosy-cat"
+            class="cosy-cat"
+            data-state="asleep"
+            aria-hidden="true"
+          >
+            <svg
+              viewBox="0 0 80 64"
+              width="160"
+              height="128"
+              shape-rendering="crispEdges"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="#e0bfa8" d="M10 55h60v5H10z" />
+              <g class="cat-sleep">
+                <path
+                  fill="#bd8060"
+                  d="M19 37h8v-5h27v5h8v6h4v10h-5v4H18v-4h-5V42h6z"
+                />
+                <path fill="#e7af7e" d="M20 39h7v-4h24v4h8v14H20z" />
+                <path fill="#f5c99c" d="M17 34h5v5h12v-5h5v19H17z" />
+                <path
+                  fill="#815c50"
+                  d="M20 45h5v2h-5zm10 0h5v2h-5zm-4 4h3v2h-3z"
+                />
+                <path fill="#bd8060" d="M43 45h15v4H47v4h-5v-5h1z" />
+              </g>
+              <g class="cat-awake">
+                <path fill="#bd8060" d="M51 42h8v-8h5v16h-5v5H48z" />
+                <path fill="#e7af7e" d="M27 30h22v7h4v18H23V37h4z" />
+                <path fill="#f7d6b0" d="M32 36h12v18H32z" />
+                <path fill="#bd8060" d="M20 9h8v5h20V9h8v25h-5v5H25v-5h-5z" />
+                <path fill="#f5c99c" d="M24 13h3v7h22v-7h3v18h-5v5H29v-5h-5z" />
+                <path fill="#d99189" d="M24 13h3v5h-3zm25 0h3v5h-3z" />
+                <path
+                  fill="#594f49"
+                  d="M28 24h4v5h-4zm16 0h4v5h-4zm-8 6h4v3h-4z"
+                />
+                <path fill="#fcf4df" d="M28 24h2v2h-2zm16 0h2v2h-2z" />
+                <path fill="#bd8060" d="M25 52h10v5H25zm16 0h10v5H41z" />
+              </g>
+              <g class="cat-zzz" fill="#867f8b">
+                <path
+                  d="M56 20h8v2h-3v2h-3v2h6v2h-8v-4h3v-2h-3zm10-12h9v2h-3v3h-3v2h6v2h-9v-4h3v-3h-3z"
+                />
+              </g>
+            </svg>
+          </div>
+          <div
+            id="astronaut"
+            class="astronaut"
+            data-state="standing"
+            aria-hidden="true"
+          >
+            <svg
+              width="180"
+              height="144"
+              viewBox="0 0 90 72"
+              shape-rendering="crispEdges"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g class="astro-standing">
+                <path fill="#252c46" d="M20 66h50v3H20z" />
+                <path fill="#626580" d="M27 31h8v23h-8z" />
+                <path
+                  fill="#afbed5"
+                  d="M34 29h23v6h5v19h-7v11h-9V52h-4v13h-9V48h-4V36h5z"
+                />
+                <path fill="#788ba9" d="M34 49h9v5h-3v10h-7zm15 0h6v16h-6z" />
+                <path fill="#d8e1ed" d="M33 10h24v5h5v17h-5v5H33v-5h-5V15h5z" />
+                <path fill="#384869" d="M35 16h21v4h3v9h-5v3H35v-3h-4v-9h4z" />
+                <path fill="#7ac2d0" d="M36 18h15v3H36zm-2 4h5v4h-5z" />
+                <path fill="#aa94d5" d="M38 38h14v9H38z" />
+                <path fill="#80c8d3" d="M40 40h4v3h-4z" />
+                <path fill="#e6c18d" d="M47 40h3v3h-3z" />
+                <path
+                  fill="#53617e"
+                  d="M31 63h12v4H29v-2h2zm15 0h11v2h3v2H46z"
+                />
+              </g>
+              <g class="astro-flying">
+                <g class="astro-exhaust">
+                  <path fill="#7764a6" d="M4 33h18v5H4zm-3 9h20v5H1z" />
+                  <path fill="#8ccbd5" d="M11 34h12v3H11zm-4 9h16v3H7z" />
+                </g>
+                <path fill="#6c7291" d="M22 29h29v8H22z" />
+                <path
+                  fill="#b9c8db"
+                  d="M28 37h27v15H28v-3H14v-6h14zm1 14h22v5H25v-3H12v-5h7v3z"
+                />
+                <path fill="#e0e7ee" d="M56 23h16v5h5v14h-5v5H56v-5h-5V28h5z" />
+                <path fill="#394966" d="M66 28h7v4h2v8h-9z" />
+                <path fill="#8ccbd5" d="M68 29h4v4h-4z" />
+                <path fill="#a395d0" d="M41 38h10v10H41z" />
+                <path fill="#d6e2ed" d="M49 45h30v-3h7v8H49z" />
+                <path fill="#7dc0ce" d="M78 45h3v5h-3z" />
+                <path fill="#687d9f" d="M12 41h6v8h-6zm-2 9h6v5h-6z" />
+              </g>
+            </svg>
+          </div>
           <div class="position">
             <span id="position">Ready to play</span>
             <div id="beats" aria-hidden="true">
@@ -131,6 +395,6 @@
         <span>12 BARS / ∞ REPEATS</span>
       </footer>
     </main>
-    <script type="module" src="src/app.js?v=cleanup-1"></script>
+    <script type="module" src="src/app.js?v=bedroom-1"></script>
   </body>
 </html>

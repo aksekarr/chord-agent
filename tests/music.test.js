@@ -1,29 +1,42 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { chordsFor, eventsFor, STRUCTURE, BEAT_SECONDS } from '../src/music.js';
+import {
+  chordsFor,
+  eventsFor,
+  STRUCTURE,
+  BEAT_SECONDS,
+  AVAILABLE_KEYS,
+} from '../src/music.js';
 import { BluesPlayer, STRUM_SPREAD_SECONDS } from '../src/audio.js';
-test('all three keys use root-fifth and root-sixth pairs throughout the progression', () => {
-  const roots = { A: [45, 50, 40], E: [40, 45, 47], C: [48, 53, 55] };
+test('selected bars in every key use the flat-seventh variation; other pairs stay unchanged', () => {
+  const roots = {
+    A: [45, 50, 40],
+    E: [40, 45, 47],
+    C: [48, 53, 55],
+    B: [47, 40, 42],
+    G: [43, 48, 50],
+    D: [50, 43, 45],
+  };
   for (const [key, basses] of Object.entries(roots)) {
     const events = eventsFor(key);
     for (let bar = 0; bar < 12; bar++) {
       const root = basses[STRUCTURE[bar]];
-      const expected = [7, 7, 9, 9, 7, 7, 9, 9].map((interval) => [
-        root,
-        root + interval,
-      ]);
+      const intervals = [3, 4, 6, 8, 9, 10].includes(bar + 1)
+        ? [7, 7, 9, 9, 10, 10, 9, 9]
+        : [7, 7, 9, 9, 7, 7, 9, 9];
+      const expected = intervals.map((interval) => [root, root + interval]);
       assert.deepEqual(
         events.slice(bar * 8, bar * 8 + 8).map((e) => e.chord.notes),
         expected,
       );
     }
   }
-  assert.throws(() => chordsFor('D'));
+  assert.throws(() => chordsFor('F'));
 });
 test('eight deterministic shuffle strums per bar with delayed offbeats and exact downbeats', () => {
   assert.deepEqual(STRUCTURE, [0, 1, 0, 0, 1, 1, 0, 0, 2, 1, 0, 2]);
   assert.equal(48 * BEAT_SECONDS, 32);
-  for (const key of ['A', 'E', 'C']) {
+  for (const key of AVAILABLE_KEYS) {
     const events = eventsFor(key);
     assert.equal(events.length, 96);
     assert.deepEqual(events, eventsFor(key));
@@ -194,4 +207,55 @@ test('public timing follows the audio clock and resets across stop and restart',
   } finally {
     player.stop();
   }
+});
+
+test('all supported tempos preserve shuffle delay and playable note envelopes', () => {
+  for (let bpm = 60; bpm <= 140; bpm++) {
+    const seconds = 60 / bpm;
+    for (const key of AVAILABLE_KEYS) {
+      const events = eventsFor(key, bpm);
+      assert.equal(events.length, 96);
+      for (let i = 0; i < events.length; i += 2) {
+        const down = events[i],
+          up = events[i + 1];
+        assert.ok(
+          Math.abs(
+            (up.beat - down.beat) * seconds - ((seconds * 2) / 3 + 0.02),
+          ) < 1e-9,
+        );
+        assert.ok(up.duration > STRUM_SPREAD_SECONDS + 0.008 + 0.025);
+        assert.ok(up.duration < down.duration);
+      }
+    }
+  }
+  for (const bpm of [59, 141, 90.5, NaN, Infinity])
+    assert.throws(() => eventsFor('A', bpm));
+});
+test('tempo restart resets bar one and uses the new clock rate', async () => {
+  const ctx = context(),
+    player = new BluesPlayer(() => ctx);
+  try {
+    for (const bpm of [60, 90, 120, 140]) {
+      await player.start('A', bpm);
+      assert.deepEqual(player.position(), { bar: 0, beat: 0, loop: 1 });
+      const origin = ctx.currentTime + 0.08;
+      ctx.currentTime = origin + 48 * (60 / bpm) + 0.001;
+      assert.deepEqual(player.position(), { bar: 0, beat: 0, loop: 2 });
+    }
+  } finally {
+    player.stop();
+  }
+});
+
+test('new keys display the correct I, IV and V roots', () => {
+  const expected = {
+    B: ['B', 'E', 'F♯'],
+    G: ['G', 'C', 'D'],
+    D: ['D', 'G', 'A'],
+  };
+  for (const [key, names] of Object.entries(expected))
+    assert.deepEqual(
+      chordsFor(key).map((chord) => chord.name),
+      names,
+    );
 });

@@ -1,24 +1,34 @@
+import { initThemes, updateThemeCharacters } from './theme.js?v=bedroom-1';
 import {
   chordsFor,
   STRUCTURE,
   DEGREES,
-  OFFBEAT,
+  offbeatFor,
+  TEMPO_MIN,
+  TEMPO_MAX,
   AVAILABLE_KEYS,
   DEFAULT_KEY,
   BPM,
   TIME_SIGNATURE,
-} from './music.js?v=cleanup-1';
-import { BluesPlayer } from './audio.js?v=cleanup-1';
+} from './music.js?v=bedroom-1';
+import { BluesPlayer } from './audio.js?v=bedroom-1';
 const $ = (id) => document.getElementById(id);
 const player = new BluesPlayer();
+initThemes();
 let frame,
   request = 0;
+let selectedTempo = BPM;
+let playingTempo = BPM;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 // Rendering consumes the public timing snapshot, never AudioContext internals.
 function animateGuitarist(timing) {
   if (!timing || reduceMotion.matches) return;
   $('guitarist').dataset.pose =
-    timing.phase < 0.25 ? 'down' : timing.phase < OFFBEAT ? 'rest' : 'up';
+    timing.phase < 0.25
+      ? 'down'
+      : timing.phase < offbeatFor(playingTempo)
+        ? 'rest'
+        : 'up';
 }
 function renderBars() {
   const chords = chordsFor($('key').value);
@@ -29,9 +39,11 @@ function renderBars() {
   display(null);
 }
 function display(position) {
-  const chord = chordsFor($('key').value, position?.beat ?? 0)[
-    STRUCTURE[position?.bar ?? 0]
-  ];
+  const chord = chordsFor(
+    $('key').value,
+    position?.beat ?? 0,
+    position?.bar ?? 0,
+  )[STRUCTURE[position?.bar ?? 0]];
   $('chord').textContent = chord.name;
   $('tones').textContent = chord.tones.join(' · ');
   $('position').textContent = position
@@ -48,6 +60,7 @@ function tick() {
   const timing = player.timing();
   display(timing);
   animateGuitarist(timing);
+  updateThemeCharacters(timing);
   frame = requestAnimationFrame(tick);
 }
 async function play() {
@@ -56,8 +69,10 @@ async function play() {
   $('play').disabled = true;
   $('stop').disabled = false;
   try {
-    await player.start($('key').value);
+    const tempo = selectedTempo;
+    await player.start($('key').value, tempo);
     if (current !== request) return;
+    playingTempo = tempo;
     $('status').textContent =
       'Playing · Blues shuffle · D U D U D U D U · continuous loop';
     tick();
@@ -73,6 +88,7 @@ function stop() {
   player.stop();
   cancelAnimationFrame(frame);
   display(null);
+  updateThemeCharacters(null);
   $('play').disabled = false;
   $('stop').disabled = true;
   $('status').textContent = 'Stopped · press Play to start at bar 1';
@@ -90,6 +106,18 @@ $('key').replaceChildren(
     (key) => new Option(key, key, false, key === DEFAULT_KEY),
   ),
 );
+$('tempo-slider').min = TEMPO_MIN;
+$('tempo-slider').max = TEMPO_MAX;
+$('tempo-slider').value = BPM;
 $('tempo').textContent = BPM;
+$('tempo-slider').addEventListener('input', () => {
+  $('tempo').textContent = $('tempo-slider').value;
+});
+$('tempo-slider').addEventListener('change', () => {
+  const tempo = Number($('tempo-slider').value);
+  if (tempo === selectedTempo) return;
+  selectedTempo = tempo;
+  if (!$('stop').disabled) play();
+});
 $('time-signature').textContent = TIME_SIGNATURE;
 renderBars();

@@ -1,10 +1,11 @@
 import {
-  BEAT_SECONDS,
+  BPM,
+  beatSecondsFor,
   BEATS_PER_BAR,
   LOOP_BEATS,
   STRUCTURE,
   eventsFor,
-} from './music.js?v=cleanup-1';
+} from './music.js?v=bedroom-1';
 export const STRUM_SPREAD_SECONDS = 0.025; // Full roll, independent of chord size.
 export class BluesPlayer {
   constructor(createContext = () => new AudioContext()) {
@@ -12,7 +13,9 @@ export class BluesPlayer {
     this.playing = false;
     this.version = 0;
   }
-  async start(key) {
+  async start(key, bpm = BPM) {
+    const beatSeconds = beatSecondsFor(bpm);
+    const events = eventsFor(key, bpm);
     this.stop();
     const version = this.version;
     this.context ||= this.createContext();
@@ -21,7 +24,9 @@ export class BluesPlayer {
     this.master = this.context.createGain();
     this.master.gain.value = 0.55;
     this.master.connect(this.context.destination);
-    this.events = eventsFor(key);
+    this.events = events;
+    this.bpm = bpm;
+    this.beatSeconds = beatSeconds;
     this.index = 0;
     this.cycle = 0;
     this.startedAt = this.context.currentTime + 0.08;
@@ -33,7 +38,8 @@ export class BluesPlayer {
     while (this.playing) {
       const event = this.events[this.index];
       const time =
-        this.startedAt + (this.cycle * LOOP_BEATS + event.beat) * BEAT_SECONDS;
+        this.startedAt +
+        (this.cycle * LOOP_BEATS + event.beat) * this.beatSeconds;
       if (time > this.context.currentTime + 0.15) break;
       if (time >= this.context.currentTime) this.chord(event, time);
       if (++this.index === this.events.length) {
@@ -89,7 +95,7 @@ export class BluesPlayer {
     if (!this.playing) return null;
     const elapsedBeats = Math.max(
       0,
-      (this.context.currentTime - this.startedAt) / BEAT_SECONDS,
+      (this.context.currentTime - this.startedAt) / this.beatSeconds,
     );
     const wholeBeat = Math.floor(elapsedBeats);
     return {

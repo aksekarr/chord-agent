@@ -1,0 +1,613 @@
+/* Theme-only presentation. Playback and music settings remain shared. */
+.theme-picker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.theme-picker > span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-right: auto;
+  opacity: 0.7;
+}
+.theme-picker button {
+  padding: 8px 14px;
+  font-size: 12px;
+}
+.theme-picker button[aria-pressed='true'] {
+  background: #d1e6a0;
+  color: #1b2b19;
+}
+.cosy-village,
+.cosy-cat {
+  display: none;
+}
+:root[data-theme='cosy'] {
+  color-scheme: light;
+  color: #59483f;
+  background: #c5dfe5;
+  font-family: 'Courier New', monospace;
+}
+[data-theme='cosy'] body {
+  background: linear-gradient(transparent 96%, #b8d3d933 96%);
+  background-size: 8px 8px;
+}
+[data-theme='cosy'] main {
+  max-width: 1050px;
+}
+[data-theme='cosy'] .brand {
+  color: #604b42;
+}
+[data-theme='cosy'] .badge {
+  border: 2px solid #8d7970;
+  border-radius: 0;
+  color: #604b42;
+  background: #fff3db;
+  box-shadow: 3px 3px #9ab6bb;
+}
+[data-theme='cosy'] .theme-picker button {
+  border-radius: 0;
+  border: 2px solid #8d7970;
+  color: #604b42;
+  background: #f9eddb;
+  box-shadow: 3px 3px #9ab6bb;
+}
+[data-theme='cosy'] .theme-picker button[aria-pressed='true'] {
+  background: #efba95;
+  box-shadow: inset 2px 2px #cd9b7c;
+}
+[data-theme='cosy'] .intro {
+  margin: 36px 0 12px;
+  text-align: center;
+}
+[data-theme='cosy'] h1 {
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 52px);
+  letter-spacing: -2px;
+  text-shadow: 3px 3px #fff3db;
+  line-height: 1.2;
+}
+[data-theme='cosy'] .eyebrow {
+  color: #655448;
+  font-weight: bold;
+}
+[data-theme='cosy'] .intro > p:last-child {
+  color: #67574d;
+  font-size: 14px;
+}
+[data-theme='cosy'] .cosy-village {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto 18px;
+  max-width: 640px;
+}
+.cosy-village svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+.cosy-village span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  color: #655448;
+}
+[data-theme='cosy'] .player {
+  background: #fff3df;
+  border: 3px solid #947767;
+  border-radius: 0;
+  box-shadow:
+    6px 6px #a6b7ac,
+    10px 10px #e1eee3;
+  padding: 26px;
+}
+[data-theme='cosy'] .settings {
+  border-bottom: 2px dashed #d9bda2;
+}
+[data-theme='cosy']
+  :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
+  color: #6d584a;
+}
+[data-theme='cosy'] select {
+  border: 2px solid #947767;
+  border-radius: 0;
+  background: #fae0c2;
+  color: #59483f;
+  box-shadow: 3px 3px #dfc4a6;
+}
+[data-theme='cosy'] strong {
+  font-weight: bold;
+}
+[data-theme='cosy'] .sound {
+  font-size: 17px;
+}
+[data-theme='cosy'] #tempo-slider {
+  accent-color: #a86547;
+}
+[data-theme='cosy'] .bar {
+  border: 2px solid #c4a58c;
+  border-radius: 0;
+  background: #f6e5cc;
+  box-shadow: 3px 3px #ead4b8;
+}
+[data-theme='cosy'] .bar :is(.number, .degree) {
+  color: #735f50;
+}
+[data-theme='cosy'] .bar.active {
+  background: #b9d8d8;
+  border-color: #6e9395;
+  color: #344f51;
+  box-shadow: 3px 3px #91b6b8;
+}
+[data-theme='cosy'] .bar.active :is(.number, .degree) {
+  color: #3c6062;
+}
+[data-theme='cosy'] button,
+[data-theme='cosy'] #play {
+  border-radius: 0;
+  border: 2px solid #947767;
+  box-shadow: 3px 3px #dfc4a6;
+  background: #efba95;
+  color: #593e32;
+}
+[data-theme='cosy'] #stop {
+  background: #f6e5cc;
+}
+[data-theme='cosy'] :is(button, select, #tempo-slider):focus-visible {
+  outline-color: #375f70;
+}
+[data-theme='cosy'] #beats i {
+  border-radius: 0;
+  background: #ddc7ab;
+}
+[data-theme='cosy'] #beats i.active {
+  background: #739c9b;
+  box-shadow: 2px 2px #acc4bf;
+}
+[data-theme='cosy'] .guitarist {
+  display: none;
+}
+[data-theme='cosy'] .cosy-cat {
+  display: block;
+  width: 160px;
+  flex: 0 0 160px;
+}
+.cosy-cat svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.cat-awake {
+  display: none;
+}
+.cosy-cat[data-state='awake'] .cat-awake {
+  display: block;
+}
+.cosy-cat[data-state='awake'] :is(.cat-sleep, .cat-zzz) {
+  display: none;
+}
+.cosy-cat[data-pose='up'] .cat-awake {
+  transform: translateY(-2px);
+}
+[data-theme='cosy'] .cat-sleep {
+  animation: cat-breathe 2.4s steps(2, end) infinite;
+  transform-origin: 40px 56px;
+}
+[data-theme='cosy'] .cat-zzz {
+  animation: cat-dream 2.4s steps(2, end) infinite;
+}
+@keyframes cat-breathe {
+  50% {
+    transform: translateY(-1px);
+  }
+}
+@keyframes cat-dream {
+  50% {
+    transform: translateY(-2px);
+    opacity: 0.45;
+  }
+}
+@media (max-width: 600px) {
+  .theme-picker > span {
+    width: 100%;
+    text-align: right;
+  }
+  [data-theme='cosy'] .player {
+    padding: 18px;
+  }
+  [data-theme='cosy'] .cosy-cat {
+    width: 120px;
+    flex-basis: 120px;
+  }
+  [data-theme='cosy'] h2 {
+    font-size: 56px;
+  }
+  [data-theme='cosy'] .intro {
+    margin-top: 28px;
+  }
+  [data-theme='cosy'] .bar {
+    padding: 12px 8px;
+  }
+  [data-theme='cosy'] .brand {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cat-sleep,
+  .cat-zzz {
+    animation: none !important;
+  }
+  .cat-awake {
+    transform: none !important;
+  }
+}
+
+/* Sci-fi: restrained neon, square panels, and a pixel orbit scene. */
+.space-scene,
+.astronaut {
+  display: none;
+}
+:root[data-theme='scifi'] {
+  color-scheme: dark;
+  background: #10111d;
+  color: #d7ddec;
+  font-family: 'Courier New', monospace;
+}
+[data-theme='scifi'] body {
+  background: radial-gradient(ellipse at 50% 24%, #28203966, transparent 65%);
+}
+[data-theme='scifi'] .brand {
+  color: #c2b4e7;
+}
+[data-theme='scifi'] .badge {
+  border: 2px solid #66618b;
+  border-radius: 0;
+  color: #bac6dd;
+  background: #1c2033;
+}
+[data-theme='scifi'] .theme-picker button {
+  border-radius: 0;
+  border: 2px solid #555373;
+  background: #1c2033;
+  color: #c3cbe0;
+  box-shadow: 3px 3px #080c16;
+}
+[data-theme='scifi'] .theme-picker button[aria-pressed='true'] {
+  border-color: #9b88c9;
+  background: #3b3155;
+  color: #e5def7;
+}
+[data-theme='scifi'] .intro {
+  margin: 36px 0 12px;
+  text-align: center;
+}
+[data-theme='scifi'] h1 {
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  letter-spacing: -2px;
+  font-size: clamp(28px, 5vw, 52px);
+  text-shadow: 3px 3px #434060;
+  line-height: 1.2;
+}
+[data-theme='scifi'] .eyebrow {
+  color: #a7bfdf;
+}
+[data-theme='scifi'] .intro > p:last-child {
+  color: #abb3cb;
+  font-size: 14px;
+}
+[data-theme='scifi'] .space-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto 18px;
+}
+.space-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.space-scene span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  color: #a6a1ca;
+}
+[data-theme='scifi'] .player {
+  border: 2px solid #6a608b;
+  border-radius: 0;
+  background: #181c2c;
+  box-shadow:
+    5px 5px #0a0c16,
+    0 0 28px #7365a21a;
+}
+[data-theme='scifi'] .settings {
+  border-bottom: 2px dashed #424462;
+}
+[data-theme='scifi']
+  :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
+  color: #afb8d2;
+}
+[data-theme='scifi'] select {
+  border: 2px solid #68648b;
+  border-radius: 0;
+  background: #26283e;
+  color: #d8d0ef;
+  box-shadow: 3px 3px #10121f;
+}
+[data-theme='scifi'] strong {
+  font-weight: bold;
+}
+[data-theme='scifi'] .sound {
+  font-size: 17px;
+}
+[data-theme='scifi'] #tempo-slider {
+  accent-color: #9b8ccd;
+}
+[data-theme='scifi'] .bar {
+  border: 2px solid #454b6d;
+  border-radius: 0;
+  background: #22273c;
+  box-shadow: 3px 3px #10131f;
+}
+[data-theme='scifi'] .bar :is(.number, .degree) {
+  color: #b1bad4;
+}
+[data-theme='scifi'] .bar.active {
+  border-color: #9e8bd0;
+  background: #493d67;
+  color: #eee6ff;
+  box-shadow: 3px 3px #29243e;
+}
+[data-theme='scifi'] .bar.active :is(.number, .degree) {
+  color: #d0c3ef;
+}
+[data-theme='scifi'] button,
+[data-theme='scifi'] #play {
+  border-radius: 0;
+  border: 2px solid #8e80b5;
+  background: #3d3458;
+  color: #eee8f8;
+  box-shadow: 3px 3px #0e1120;
+}
+[data-theme='scifi'] #stop {
+  background: #242a40;
+  border-color: #596887;
+}
+[data-theme='scifi'] :is(button, select, #tempo-slider):focus-visible {
+  outline-color: #8dc9d6;
+}
+[data-theme='scifi'] #beats i {
+  border-radius: 0;
+  background: #46506a;
+}
+[data-theme='scifi'] #beats i.active {
+  background: #90c6d3;
+  box-shadow: 0 0 8px #90c6d333;
+}
+[data-theme='scifi'] .guitarist {
+  display: none;
+}
+[data-theme='scifi'] .astronaut {
+  display: block;
+  width: 180px;
+  flex: 0 0 180px;
+}
+.astronaut svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.astro-flying {
+  display: none;
+}
+.astronaut[data-state='flying'] .astro-standing {
+  display: none;
+}
+.astronaut[data-state='flying'] .astro-flying {
+  display: block;
+}
+.astronaut[data-pose='up'] .astro-flying {
+  transform: translateY(-2px);
+}
+.astronaut[data-pose='up'] .astro-exhaust {
+  transform: translateX(-2px);
+  opacity: 0.65;
+}
+@media (max-width: 600px) {
+  [data-theme='scifi'] .player {
+    padding: 18px;
+  }
+  [data-theme='scifi'] .astronaut {
+    width: 140px;
+    flex-basis: 140px;
+  }
+  [data-theme='scifi'] h2 {
+    font-size: 56px;
+  }
+  [data-theme='scifi'] .intro {
+    margin-top: 28px;
+  }
+  [data-theme='scifi'] .brand {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  [data-theme='scifi'] .bar {
+    padding: 12px 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .astro-flying,
+  .astro-exhaust {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Bedroom replaces Standard; the original guitarist remains its character. */
+.bedroom-scene {
+  display: none;
+}
+:root[data-theme='bedroom'] {
+  color-scheme: light;
+  background: #c5ccba;
+  color: #4d5145;
+  font-family: 'Courier New', monospace;
+}
+[data-theme='bedroom'] .brand {
+  color: #4d5748;
+}
+[data-theme='bedroom'] .badge {
+  border: 2px solid #84917a;
+  border-radius: 0;
+  color: #4f5949;
+  background: #efe9d8;
+  box-shadow: 3px 3px #a1ab96;
+}
+[data-theme='bedroom'] .theme-picker button {
+  border-radius: 0;
+  border: 2px solid #84917a;
+  background: #f0e9d7;
+  color: #4f5949;
+  box-shadow: 3px 3px #a1ab96;
+}
+[data-theme='bedroom'] .theme-picker button[aria-pressed='true'] {
+  background: #a8b69a;
+  box-shadow: inset 2px 2px #8f9f80;
+}
+[data-theme='bedroom'] .intro {
+  margin: 36px 0 12px;
+  text-align: center;
+}
+[data-theme='bedroom'] h1 {
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 52px);
+  letter-spacing: -2px;
+  text-shadow: 3px 3px #f3eedf;
+  line-height: 1.2;
+}
+[data-theme='bedroom'] .eyebrow {
+  color: #56634d;
+  font-weight: bold;
+}
+[data-theme='bedroom'] .intro > p:last-child {
+  color: #5b6354;
+  font-size: 14px;
+}
+[data-theme='bedroom'] .bedroom-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto 18px;
+}
+.bedroom-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #84917a;
+  box-shadow: 4px 4px #a1ab96;
+}
+.bedroom-scene span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 12px;
+  color: #56634d;
+}
+[data-theme='bedroom'] .player {
+  border: 3px solid #89937b;
+  border-radius: 0;
+  background: #f3eddd;
+  box-shadow: 6px 6px #a4ad96;
+  padding: 26px;
+}
+[data-theme='bedroom'] .settings {
+  border-bottom: 2px dashed #c5c4ac;
+}
+[data-theme='bedroom']
+  :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
+  color: #5b6350;
+}
+[data-theme='bedroom'] select {
+  border: 2px solid #90997f;
+  border-radius: 0;
+  background: #e1e5d1;
+  color: #44513b;
+  box-shadow: 3px 3px #c6cbb3;
+}
+[data-theme='bedroom'] strong {
+  font-weight: bold;
+}
+[data-theme='bedroom'] .sound {
+  font-size: 17px;
+}
+[data-theme='bedroom'] #tempo-slider {
+  accent-color: #768c66;
+}
+[data-theme='bedroom'] .bar {
+  border: 2px solid #b2b89e;
+  border-radius: 0;
+  background: #e9e7d3;
+  box-shadow: 3px 3px #d5d5bb;
+}
+[data-theme='bedroom'] .bar :is(.number, .degree) {
+  color: #59634f;
+}
+[data-theme='bedroom'] .bar.active {
+  border-color: #778c68;
+  background: #b8c6a6;
+  color: #344b2d;
+  box-shadow: 3px 3px #98ac85;
+}
+[data-theme='bedroom'] .bar.active :is(.number, .degree) {
+  color: #3f5735;
+}
+[data-theme='bedroom'] button,
+[data-theme='bedroom'] #play {
+  border-radius: 0;
+  border: 2px solid #859472;
+  background: #b8c6a6;
+  color: #3b4b30;
+  box-shadow: 3px 3px #c5c9af;
+}
+[data-theme='bedroom'] #stop {
+  background: #e9e7d3;
+}
+[data-theme='bedroom'] :is(button, select, #tempo-slider):focus-visible {
+  outline-color: #576e89;
+}
+[data-theme='bedroom'] #beats i {
+  border-radius: 0;
+  background: #c5cbb3;
+}
+[data-theme='bedroom'] #beats i.active {
+  background: #82996d;
+  box-shadow: 2px 2px #adba9e;
+}
+@media (max-width: 600px) {
+  [data-theme='bedroom'] .player {
+    padding: 18px;
+  }
+  [data-theme='bedroom'] h2 {
+    font-size: 56px;
+  }
+  [data-theme='bedroom'] .intro {
+    margin-top: 28px;
+  }
+  [data-theme='bedroom'] .brand {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  [data-theme='bedroom'] .bar {
+    padding: 12px 8px;
+  }
+}
