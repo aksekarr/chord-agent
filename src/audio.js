@@ -5,29 +5,34 @@ import {
   LOOP_BEATS,
   STRUCTURE,
   eventsFor,
-} from './music.js?v=bedroom-1';
+} from './music.js?v=volume-1';
 export const STRUM_SPREAD_SECONDS = 0.025; // Full roll, independent of chord size.
+export const DEFAULT_OUTPUT_LEVEL = 0.35;
 export class BluesPlayer {
   constructor(createContext = () => new AudioContext()) {
     this.createContext = createContext;
     this.playing = false;
     this.version = 0;
+    this.volume = DEFAULT_OUTPUT_LEVEL;
   }
-  async start(key, bpm = BPM) {
+  async start(key, bpm = BPM, { mode = 'blues', metronome = false } = {}) {
     const beatSeconds = beatSecondsFor(bpm);
-    const events = eventsFor(key, bpm);
+    const events = mode === 'blues' ? eventsFor(key, bpm) : [];
     this.stop();
     const version = this.version;
     this.context ||= this.createContext();
     await this.context.resume();
     if (version !== this.version) return;
     this.master = this.context.createGain();
-    this.master.gain.value = 0.55;
+    this.master.gain.value = this.volume;
     this.master.connect(this.context.destination);
     this.events = events;
+    this.mode = mode;
+    this.metronome = mode === 'metronome' || metronome;
     this.bpm = bpm;
     this.beatSeconds = beatSeconds;
     this.index = 0;
+    this.clickIndex = 0;
     this.cycle = 0;
     this.startedAt = this.context.currentTime + 0.08;
     this.playing = true;
@@ -35,7 +40,7 @@ export class BluesPlayer {
     this.timer = setInterval(() => this.schedule(), 25);
   }
   schedule() {
-    while (this.playing) {
+    while (this.playing && this.events.length) {
       const event = this.events[this.index];
       const time =
         this.startedAt +
@@ -47,6 +52,41 @@ export class BluesPlayer {
         this.cycle++;
       }
     }
+    while (this.playing && this.metronome) {
+      const time = this.startedAt + this.clickIndex * this.beatSeconds;
+      if (time > this.context.currentTime + 0.15) break;
+      if (time >= this.context.currentTime)
+        this.click(this.clickIndex % BEATS_PER_BAR, time);
+      this.clickIndex++;
+    }
+  }
+  setMetronome(enabled) {
+    this.metronome = this.mode === 'metronome' || enabled;
+    if (this.playing) this.schedule();
+  }
+  setVolume(volume) {
+    if (!Number.isFinite(volume) || volume < 0 || volume > 1)
+      throw new Error('Volume must be between 0 and 1.');
+    this.volume = volume;
+    if (this.master) this.master.gain.value = volume;
+  }
+  click(beat, time) {
+    const oscillator = this.context.createOscillator();
+    const envelope = this.context.createGain();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = beat === 0 ? 1760 : 880;
+    envelope.gain.setValueAtTime(0, time);
+    const level = this.mode === 'metronome' ? 0.08 : 0.035;
+    envelope.gain.linearRampToValueAtTime(level, time + 0.002);
+    envelope.gain.exponentialRampToValueAtTime(0.0001, time + 0.035);
+    oscillator.connect(envelope);
+    envelope.connect(this.master);
+    oscillator.start(time);
+    oscillator.stop(time + 0.04);
+    oscillator.onended = () => {
+      oscillator.disconnect();
+      envelope.disconnect();
+    };
   }
   chord(event, time) {
     const notes = [...event.chord.notes].sort((a, b) => a - b);

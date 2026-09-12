@@ -49,9 +49,9 @@ header {
 .settings {
   display: grid;
   grid-template-columns:
-    minmax(90px, 0.75fr) minmax(180px, 1.5fr) minmax(60px, 0.55fr)
-    minmax(130px, 1.15fr) auto;
-  gap: 16px;
+    minmax(80px, 0.7fr) minmax(100px, 0.8fr) minmax(160px, 1.4fr)
+    minmax(55px, 0.5fr) minmax(120px, 1fr) minmax(80px, 0.7fr) auto;
+  gap: 12px;
   border-bottom: 1px solid #3b4940;
   padding-bottom: 25px;
 }
@@ -97,6 +97,27 @@ select {
   border: 1px solid #687d53;
   border-radius: 6px;
   padding: 4px 10px;
+}
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+#mode {
+  width: 118px;
+  font-size: 15px;
+}
+#metronome-toggle {
+  min-width: 62px;
+  padding: 11px 13px;
+}
+#metronome-toggle[aria-pressed='true'] {
+  background: #d1e6a0;
+  color: #1b2b19;
+}
+.bars.inactive {
+  filter: grayscale(1);
+  opacity: 0.38;
+  pointer-events: none;
 }
 .now {
   display: flex;
@@ -177,7 +198,24 @@ h2 {
   color: #415735;
 }
 .transport {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
   margin-top: 16px;
+}
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.volume-control label {
+  margin: 0;
+  white-space: nowrap;
+}
+#volume-slider {
+  width: 120px;
+  accent-color: #d1e6a0;
 }
 button {
   border: 1px solid #60714f;
@@ -244,6 +282,10 @@ footer p {
   }
   #status {
     margin-top: 5px;
+  }
+  .transport {
+    align-items: flex-end;
+    flex-direction: column;
   }
   footer {
     flex-wrap: wrap;

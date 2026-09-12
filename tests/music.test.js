@@ -7,7 +7,11 @@ import {
   BEAT_SECONDS,
   AVAILABLE_KEYS,
 } from '../src/music.js';
-import { BluesPlayer, STRUM_SPREAD_SECONDS } from '../src/audio.js';
+import {
+  BluesPlayer,
+  DEFAULT_OUTPUT_LEVEL,
+  STRUM_SPREAD_SECONDS,
+} from '../src/audio.js';
 test('selected bars in every key use the flat-seventh variation; other pairs stay unchanged', () => {
   const roots = {
     A: [45, 50, 40],
@@ -158,6 +162,38 @@ test('stop during audio initialization prevents delayed playback', async () => {
   await starting;
   assert.equal(player.playing, false);
   assert.equal(ctx.starts.length, 0);
+});
+
+test('metronome schedules one quiet sine click per beat with a higher downbeat', async () => {
+  const ctx = context(),
+    player = new BluesPlayer(() => ctx);
+  try {
+    await player.start('A', 120, { mode: 'metronome' });
+    assert.equal(player.events.length, 0);
+    assert.deepEqual(ctx.frequencies, [1760]);
+    for (const time of [0.5, 1, 1.5]) {
+      ctx.currentTime = time;
+      player.schedule();
+    }
+    assert.deepEqual(ctx.frequencies, [1760, 880, 880, 880]);
+  } finally {
+    player.stop();
+  }
+});
+
+test('master volume persists across starts and controls the shared output gain', async () => {
+  const ctx = context(),
+    player = new BluesPlayer(() => ctx);
+  try {
+    assert.equal(player.volume, DEFAULT_OUTPUT_LEVEL);
+    player.setVolume(0.3);
+    await player.start('A');
+    assert.equal(player.master.gain.value, 0.3);
+    player.setVolume(0.7);
+    assert.equal(player.master.gain.value, 0.7);
+  } finally {
+    player.stop();
+  }
 });
 
 test('strums follow pitch direction, stagger strings, and release at the next stroke', () => {

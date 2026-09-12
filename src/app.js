@@ -1,4 +1,4 @@
-import { initThemes, updateThemeCharacters } from './theme.js?v=bedroom-1';
+import { initThemes, updateThemeCharacters } from './theme.js?v=volume-1';
 import {
   chordsFor,
   STRUCTURE,
@@ -10,8 +10,9 @@ import {
   DEFAULT_KEY,
   BPM,
   TIME_SIGNATURE,
-} from './music.js?v=bedroom-1';
-import { BluesPlayer } from './audio.js?v=bedroom-1';
+  BEATS_PER_BAR,
+} from './music.js?v=volume-1';
+import { BluesPlayer, DEFAULT_OUTPUT_LEVEL } from './audio.js?v=volume-1';
 const $ = (id) => document.getElementById(id);
 const player = new BluesPlayer();
 initThemes();
@@ -19,7 +20,9 @@ let frame,
   request = 0;
 let selectedTempo = BPM;
 let playingTempo = BPM;
+let metronomeEnabled = false;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const metronomeMode = () => $('mode').value === 'metronome';
 // Rendering consumes the public timing snapshot, never AudioContext internals.
 function animateGuitarist(timing) {
   if (!timing || reduceMotion.matches) return;
@@ -38,7 +41,31 @@ function renderBars() {
   ).join('');
   display(null);
 }
+function syncModeControls() {
+  const metronomeOnly = metronomeMode();
+  $('key').disabled = metronomeOnly;
+  $('metronome-toggle').disabled = metronomeOnly;
+  $('metronome-toggle').setAttribute(
+    'aria-pressed',
+    String(metronomeOnly || metronomeEnabled),
+  );
+  $('metronome-toggle').textContent =
+    metronomeOnly || metronomeEnabled ? 'On' : 'Off';
+  $('bars').classList.toggle('inactive', metronomeOnly);
+}
 function display(position) {
+  if (metronomeMode()) {
+    $('chord').textContent = 'CLICK';
+    $('tones').textContent = 'Downbeat high · beats 2–4 low';
+    $('position').textContent = position
+      ? `Beat ${position.beat + 1} of ${BEATS_PER_BAR}`
+      : 'Ready to play';
+    [...$('bars').children].forEach((bar) => bar.classList.remove('active'));
+    [...$('beats').children].forEach((beat, index) =>
+      beat.classList.toggle('active', index === position?.beat),
+    );
+    return;
+  }
   const chord = chordsFor(
     $('key').value,
     position?.beat ?? 0,
@@ -70,11 +97,17 @@ async function play() {
   $('stop').disabled = false;
   try {
     const tempo = selectedTempo;
-    await player.start($('key').value, tempo);
+    await player.start($('key').value, tempo, {
+      mode: $('mode').value,
+      metronome: metronomeEnabled,
+    });
     if (current !== request) return;
     playingTempo = tempo;
-    $('status').textContent =
-      'Playing · Blues shuffle · D U D U D U D U · continuous loop';
+    $('status').textContent = metronomeMode()
+      ? 'Playing · metronome · four beats per bar'
+      : metronomeEnabled
+        ? 'Playing · Blues shuffle + metronome · continuous loop'
+        : 'Playing · Blues shuffle · D U D U D U D U · continuous loop';
     tick();
   } catch (error) {
     if (current !== request) return;
@@ -100,6 +133,21 @@ $('key').addEventListener('change', () => {
   renderBars();
   if (active) play();
 });
+$('mode').addEventListener('change', () => {
+  syncModeControls();
+  display(player.timing());
+  if (!$('stop').disabled) play();
+});
+$('metronome-toggle').addEventListener('click', () => {
+  if (metronomeMode()) return;
+  metronomeEnabled = !metronomeEnabled;
+  syncModeControls();
+  player.setMetronome(metronomeEnabled);
+  if (!$('stop').disabled)
+    $('status').textContent = metronomeEnabled
+      ? 'Playing · Blues shuffle + metronome · continuous loop'
+      : 'Playing · Blues shuffle · D U D U D U D U · continuous loop';
+});
 window.addEventListener('pagehide', stop);
 $('key').replaceChildren(
   ...AVAILABLE_KEYS.map(
@@ -119,5 +167,13 @@ $('tempo-slider').addEventListener('change', () => {
   selectedTempo = tempo;
   if (!$('stop').disabled) play();
 });
+$('volume-slider').value = Math.round(DEFAULT_OUTPUT_LEVEL * 100);
+$('volume').textContent = `${$('volume-slider').value}%`;
+$('volume-slider').addEventListener('input', () => {
+  const volume = Number($('volume-slider').value) / 100;
+  player.setVolume(volume);
+  $('volume').textContent = `${$('volume-slider').value}%`;
+});
 $('time-signature').textContent = TIME_SIGNATURE;
 renderBars();
+syncModeControls();

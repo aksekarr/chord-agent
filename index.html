@@ -8,8 +8,8 @@
       name="description"
       content="Play a laid-back, two-note blues shuffle in E, A, C, B, G or D. A quick-change 12-bar blues at 60–140 BPM, with audio generated in your browser."
     />
-    <link rel="stylesheet" href="style.css?v=campfire-sky-1" />
-    <link rel="stylesheet" href="themes.css?v=campfire-sky-1" />
+    <link rel="stylesheet" href="style.css?v=volume-1" />
+    <link rel="stylesheet" href="themes.css?v=volume-1" />
   </head>
   <body>
     <main>
@@ -210,7 +210,7 @@
       </div>
       <section class="player" aria-label="Blues player">
         <div class="settings">
-          <div>
+          <div id="key-setting">
             <label for="key">YOUR KEY</label
             ><select id="key">
               <option>E</option>
@@ -219,6 +219,13 @@
               <option>B</option>
               <option>G</option>
               <option>D</option>
+            </select>
+          </div>
+          <div>
+            <label for="mode">MODE</label
+            ><select id="mode">
+              <option value="blues" selected>Blues</option>
+              <option value="metronome">Metronome</option>
             </select>
           </div>
           <div>
@@ -247,6 +254,12 @@
           <div>
             <span class="label">SOUND</span
             ><strong class="sound">Electric piano</strong>
+          </div>
+          <div id="metronome-setting">
+            <span class="label">METRONOME</span
+            ><button id="metronome-toggle" type="button" aria-pressed="false">
+              Off
+            </button>
           </div>
           <div
             class="transport-controls"
@@ -440,6 +453,19 @@
           <span id="status" role="status"
             >Blues shuffle · D U D U D U D U · continuous loop</span
           >
+          <div class="volume-control">
+            <label for="volume-slider"
+              >VOLUME
+              <output id="volume" for="volume-slider">55%</output></label
+            ><input
+              id="volume-slider"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="35"
+            />
+          </div>
         </div>
       </section>
       <footer>
@@ -448,6 +474,6 @@
         <span>12 BARS / ∞ REPEATS</span>
       </footer>
     </main>
-    <script type="module" src="src/app.js?v=arcade-1"></script>
+    <script type="module" src="src/app.js?v=volume-1"></script>
   </body>
 </html>
