@@ -8,8 +8,8 @@
       name="description"
       content="Play a laid-back, two-note blues shuffle in E, A, C, B, G or D. A quick-change 12-bar blues at 60–140 BPM, with audio generated in your browser."
     />
-    <link rel="stylesheet" href="style.css?v=busker-idle-1" />
-    <link rel="stylesheet" href="themes.css?v=busker-idle-1" />
+    <link rel="stylesheet" href="style.css?v=ringer-hint-1" />
+    <link rel="stylesheet" href="themes.css?v=ringer-hint-1" />
   </head>
   <body>
     <main>
@@ -283,6 +283,17 @@
               ■
             </button>
           </div>
+          <div id="ringer-hint" class="ringer-hint" hidden>
+            <span>No sound? Check your phone's ringer switch.</span>
+            <button
+              id="dismiss-ringer-hint"
+              type="button"
+              aria-label="Dismiss sound hint"
+              title="Dismiss sound hint"
+            >
+              ×
+            </button>
+          </div>
         </div>
         <div class="now">
           <div>
@@ -480,6 +491,6 @@
         <span>12 BARS / ∞ REPEATS</span>
       </footer>
     </main>
-    <script type="module" src="src/app.js?v=busker-idle-1"></script>
+    <script type="module" src="src/app.js?v=ringer-hint-1"></script>
   </body>
 </html>

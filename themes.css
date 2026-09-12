@@ -162,6 +162,9 @@
   :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
   color: #6d584a;
 }
+[data-theme='cosy'] .ringer-hint {
+  color: #6d584a;
+}
 [data-theme='cosy'] select {
   border: 2px solid #947767;
   border-radius: 0;
@@ -385,6 +388,9 @@
 }
 [data-theme='scifi']
   :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
+  color: #a9f5ff;
+}
+[data-theme='scifi'] .ringer-hint {
   color: #a9f5ff;
 }
 [data-theme='scifi'] select {
@@ -662,6 +668,9 @@
 }
 [data-theme='campfire']
   :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
+  color: #ffd08a;
+}
+[data-theme='campfire'] .ringer-hint {
   color: #ffd08a;
 }
 [data-theme='campfire'] select {

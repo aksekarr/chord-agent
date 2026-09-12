@@ -21,8 +21,14 @@ let frame,
 let selectedTempo = BPM;
 let playingTempo = BPM;
 let metronomeEnabled = false;
+let ringerHintDismissed = false;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)');
 const metronomeMode = () => $('mode').value === 'metronome';
+function showRingerHint() {
+  if (!touchDevice.matches || ringerHintDismissed) return;
+  $('ringer-hint').hidden = false;
+}
 // Rendering consumes the public timing snapshot, never AudioContext internals.
 function animateGuitarist(timing) {
   if (!timing || reduceMotion.matches) return;
@@ -96,6 +102,7 @@ async function play() {
   cancelAnimationFrame(frame);
   $('play').disabled = true;
   $('stop').disabled = false;
+  showRingerHint();
   try {
     const tempo = selectedTempo;
     await player.start($('key').value, tempo, {
@@ -132,6 +139,10 @@ function stop() {
 }
 $('play').addEventListener('click', play);
 $('stop').addEventListener('click', stop);
+$('dismiss-ringer-hint').addEventListener('click', () => {
+  ringerHintDismissed = true;
+  $('ringer-hint').hidden = true;
+});
 $('key').addEventListener('change', () => {
   const active = !$('stop').disabled;
   renderBars();
