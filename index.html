@@ -8,8 +8,8 @@
       name="description"
       content="Play a laid-back, two-note blues shuffle in E, A, C, B, G or D. A quick-change 12-bar blues at 60–140 BPM, with audio generated in your browser."
     />
-    <link rel="stylesheet" href="style.css?v=bedroom-1" />
-    <link rel="stylesheet" href="themes.css?v=bedroom-1" />
+    <link rel="stylesheet" href="style.css?v=cosy-motion-1" />
+    <link rel="stylesheet" href="themes.css?v=cosy-motion-1" />
   </head>
   <body>
     <main>
@@ -19,8 +19,8 @@
       </header>
       <div class="theme-picker" role="group" aria-label="Visual theme">
         <span>MAKE YOURSELF AT HOME</span>
-        <button type="button" data-theme-choice="bedroom" aria-pressed="true">
-          Bedroom
+        <button type="button" data-theme-choice="campfire" aria-pressed="true">
+          Campfire
         </button>
         <button type="button" data-theme-choice="cosy" aria-pressed="false">
           Cosy
@@ -29,68 +29,60 @@
           Sci-fi
         </button>
       </div>
-      <section class="intro">
-        <p class="eyebrow">A LITTLE POCKET. A LOT OF BLUES.</p>
-        <h1>Find your groove.</h1>
-        <p>Twelve bars. Three chords. Settle in and play along.</p>
-      </section>
-      <div class="bedroom-scene" aria-hidden="true">
+      <div class="campfire-scene" aria-hidden="true">
         <svg
-          viewBox="0 0 320 80"
+          viewBox="0 0 320 64"
           width="640"
-          height="160"
+          height="128"
           shape-rendering="crispEdges"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <!-- Sage walls and wooden floor. -->
-          <path fill="#b4bca5" d="M0 0h320v65H0z" />
-          <path fill="#9a795b" d="M0 65h320v15H0z" />
-          <path fill="#c4a181" d="M0 68h320v2H0zm0 8h320v2H0z" />
-          <!-- Window and linen curtains. -->
-          <path fill="#795e4d" d="M29 9h58v40H29z" />
-          <path fill="#b8d2d4" d="M33 13h50v32H33z" />
-          <path fill="#f4e3ad" d="M65 17h8v8h-8z" />
-          <path fill="#eceddf" d="M36 28h14v3H36zm28 5h15v3H64z" />
+          <!-- Trees and ground sit over the page's own night-sky background. -->
           <path
-            fill="#e4d6ba"
-            d="M56 13h3v32h-3zm-23 15h50v3H33zM25 47h66v4H25z"
+            fill="#101b2a"
+            d="M17 8h5v13h8v5h-7v7h11v5H23v22h-6V38H6v-5h11v-7h-7v-5h7zm38 13h4v10h7v5h-6v7h10v5h-11v12h-5V48H43v-5h10v-7h-6v-5h8zm207-13h5v14h8v5h-7v7h11v5h-11v22h-6V38h-11v-5h11v-7h-7v-5h7zm37 12h4v11h7v5h-6v7h10v5h-11v12h-5V48h-11v-5h10v-7h-6v-5h8z"
           />
-          <path fill="#eee4cf" d="M23 6h9v37h-9zm62 0h9v37h-9z" />
-          <!-- Bed, cream pillows and sage quilt. -->
           <path
-            fill="#775b46"
-            d="M20 45h6v30h-6zm6 8h98v17H26zm98-7h6v29h-6z"
+            fill="#1b3045"
+            d="M89 28h4v8h6v4h-5v7h8v4h-9v9h-5v-9h-9v-4h8v-7h-5v-4h7zm142-6h4v12h7v4h-6v8h9v4h-10v10h-5V50h-10v-4h9v-8h-6v-4h8z"
           />
-          <path fill="#f2e8d6" d="M28 48h91v9H28z" />
-          <path fill="#fffae9" d="M30 44h24v8H30z" />
-          <path fill="#7f9679" d="M60 48h61v18H60z" />
-          <path fill="#a6b697" d="M62 50h57v3H62zm0 9h57v3H62z" />
-          <!-- Bedside table and coffee mug. -->
-          <path fill="#816147" d="M143 48h32v6h-3v21h-5V61h-16v14h-5V54h-3z" />
-          <path fill="#bc9772" d="M148 54h22v7h-22z" />
-          <path fill="#e4c8a0" d="M157 56h4v2h-4z" />
-          <path fill="#f7ead0" d="M146 39h9v8h-9zm9 1h4v5h-4z" />
-          <path fill="#715441" d="M147 39h7v2h-7z" />
-          <!-- A framed picture resting on the bedside table. -->
-          <path fill="#735946" d="M162 33h12v15h-12z" />
-          <path fill="#dfd7bb" d="M164 35h8v11h-8z" />
-          <path fill="#819a84" d="M164 42h3v-3h3v3h2v4h-8z" />
-          <!-- Guitar stand, neck, body and strings. -->
-          <path
-            fill="#5c6058"
-            d="M242 38h3v32h-3zm-8 32h20v3h-20zm0 3h3v3h-3zm17 0h3v3h-3z"
-          />
-          <path fill="#977145" d="M240 18h6v33h-6z" />
-          <path fill="#bc935f" d="M239 12h8v11h-8z" />
-          <path
-            fill="#d6b077"
-            d="M238 41h10v4h5v7h-3v4h6v11h-5v4h-16v-4h-5V56h6v-4h-3v-7h5z"
-          />
-          <path fill="#a47c50" d="M236 57h3v10h12v3h-16v-3h-4V57z" />
-          <path fill="#66533e" d="M240 49h7v7h-7zm-1 13h10v3h-10z" />
-          <path fill="#f1d5a3" d="M242 23h1v40h-1z" />
-          <path fill="#d8d3b8" d="M237 14h2v2h-2zm10 3h2v2h-2z" /></svg
-        ><span>YOUR ROOM. YOUR RHYTHM.</span>
+          <!-- Tent to the left, with a softly lit opening. -->
+          <path fill="#13253a" d="M42 56h68L77 24z" />
+          <path fill="#29465b" d="M48 54h55L77 29z" />
+          <path fill="#1a3248" d="M77 29v25H52z" />
+          <path fill="#e28a3d" d="M77 35v19H63z" />
+          <path fill="#ffc36b" d="M77 40v14H68z" />
+          <path fill="#15283b" d="M39 56h75v4H39z" />
+          <!-- Fallen log on the right. -->
+          <path fill="#39251f" d="M218 50h56v9h-56z" />
+          <path fill="#6a3a25" d="M224 48h42v8h-42z" />
+          <path fill="#a35a2b" d="M266 48h9v8h-9z" />
+          <path fill="#e2ac70" d="M269 50h4v4h-4z" />
+          <path fill="#241a1b" d="M232 51h18v2h-18zm8 3h17v2h-17z" />
+          <!-- Campfire glow, crossed logs, and three flickering flame layers. -->
+          <path fill="#4a281d" d="M129 54h62v5h-62z" />
+          <path fill="#62351f" d="M142 51h35v5h-35z" />
+          <path fill="#9c4b23" d="M139 54h41v3h-41z" />
+          <path fill="#6b351f" d="M146 49h29v4h-29z" />
+          <g class="campfire-flames">
+            <path
+              class="flame flame-one"
+              fill="#e86f2d"
+              d="M151 51h-5v-8h4v-8h5v5h4v-10h5v8h4v-5h4v11h-4v7z"
+            />
+            <path
+              class="flame flame-two"
+              fill="#ffb84d"
+              d="M153 50h-3v-6h4v-6h4v8h3v-11h4v8h3v7z"
+            />
+            <path
+              class="flame flame-three"
+              fill="#fff0b5"
+              d="M157 49h-2v-5h3v-5h3v7h3v3z"
+            />
+          </g>
+          <path fill="#14243a" d="M0 60h320v4H0z" /></svg
+        ><span>WHERE THE NIGHT FINDS ITS RHYTHM.</span>
       </div>
       <div class="cosy-village" aria-hidden="true">
         <svg
@@ -100,17 +92,35 @@
           shape-rendering="crispEdges"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            fill="#fcf4df"
-            d="M18 12h8V8h14v4h8v6H18zm181 4h10v-5h18v5h9v6h-37z"
-          />
+          <g class="village-cloud village-cloud-one">
+            <path fill="#fcf4df" d="M18 12h8V8h14v4h8v6H18z" />
+          </g>
+          <g class="village-cloud village-cloud-two">
+            <path fill="#fcf4df" d="M199 16h10v-5h18v5h9v6h-37z" />
+          </g>
           <path fill="#ebc680" d="M265 6h14v4h4v14h-4v4h-14v-4h-4V10h4z" />
-          <path
-            fill="#a7bd9c"
-            d="M0 55h25v-4h38v5h30v-8h40v8h29v-5h31v5h49v-6h40v6h38v8H0z"
-          />
+          <g class="village-bushes">
+            <path
+              fill="#a7bd9c"
+              d="M0 55h25v-4h38v5h30v-8h40v8h29v-5h31v5h49v-6h40v6h38v8H0z"
+            />
+          </g>
           <path fill="#ba7867" d="M120 24h7v-6h8v-6h39v6h8v6h8v7h-70z" />
           <path fill="#805b54" d="M165 5h9v13h-9zM118 29h74v5h-74z" />
+          <g class="chimney-smoke" fill="#fcf4df">
+            <path
+              class="smoke-puff smoke-puff-one"
+              d="M167 6h5V2h4v4h4v4h-4v3h-9v-3h-4V6h4z"
+            />
+            <path
+              class="smoke-puff smoke-puff-two"
+              d="M169 4h4V0h4v4h3v3h-3v3h-8V7h-3V4h3z"
+            />
+            <path
+              class="smoke-puff smoke-puff-three"
+              d="M166 8h4V4h5v4h4v4h-4v3h-9v-3h-3V8h3z"
+            />
+          </g>
           <path fill="#f7e2b6" d="M126 34h58v26h-58z" />
           <path fill="#8cafb7" d="M132 38h13v12h-13zm32 0h13v12h-13z" />
           <path
@@ -119,10 +129,19 @@
           />
           <path fill="#916953" d="M150 42h10v18h-10z" />
           <path fill="#e8b26b" d="M157 49h2v2h-2z" />
-          <path
-            fill="#719479"
-            d="M54 34h5v23h-5zm-9-6h9v6h5v8h-9v-6h-5zm14 6h10v7h-5v5h-5zm184-3h5v26h-5zm-10-3h10v11h-6v-5h-4zm15 8h10v6h-5v6h-5z"
-          />
+          <path fill="#719479" d="M54 34h5v23h-5zm189-3h5v26h-5z" />
+          <g class="village-foliage village-foliage-left">
+            <path
+              fill="#719479"
+              d="M45 28h9v6h5v8h-9v-6h-5zm14 6h10v7h-5v5h-5z"
+            />
+          </g>
+          <g class="village-foliage village-foliage-right">
+            <path
+              fill="#719479"
+              d="M233 28h10v11h-6v-5h-4zm15 8h10v6h-5v6h-5z"
+            />
+          </g>
           <path
             fill="#cc8b71"
             d="M45 50h22v5h-3v8H48v-8h-3zm189 0h22v5h-3v8h-16v-8h-3z"
@@ -130,7 +149,7 @@
           <path fill="#f2b0a0" d="M86 47h5v5h-5zm116 0h5v5h-5z" /></svg
         ><span>A LITTLE PLACE TO PLAY.</span>
       </div>
-      <div class="space-scene" aria-hidden="true">
+      <div class="arcade-scene" aria-hidden="true">
         <svg
           viewBox="0 0 320 64"
           width="640"
@@ -139,33 +158,36 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill="#8196c8"
-            d="M15 18h3v3h-3zm42 28h2v2h-2zm30-37h3v3h-3zm99 5h2v2h-2zm37 33h3v3h-3zm70-19h3v3h-3zm-9 26h2v2h-2z"
+            fill="#7df9ff"
+            d="M16 12h2v2h-2zm35 21h3v3h-3zm29-24h2v2h-2zm133 4h3v3h-3zm37 18h2v2h-2zm46-21h3v3h-3zm-10 36h2v2h-2z"
           />
           <path
-            fill="#b6a6ea"
-            d="M50 9h3v4h4v3h-4v4h-3v-4h-4v-3h4zm152 17h3v4h4v3h-4v4h-3v-4h-4v-3h4z"
+            fill="#9b5cff"
+            d="M31 25h2v2h-2zm81-11h3v3h-3zm77 30h2v2h-2zm74-26h2v2h-2z"
           />
-          <path
-            fill="#65669f"
-            d="M126 12h28v5h10v8h5v20h-5v8h-10v5h-28v-5h-10v-8h-5V25h5v-8h10z"
-          />
-          <path
-            fill="#8c7cbb"
-            d="M126 12h28v5h8v8h-20v-5h-23v-3h7zm-15 22h31v6h23v8h-21v-4h-29v-5h-4z"
-          />
-          <path
-            fill="#9ab6cc"
-            d="M91 44h13v-5h19v-5h20v-5h22v-5h16v6h-14v5h-22v5h-20v5h-20v5H91z"
-          />
-          <path fill="#536681" d="M91 44h5v8h21v-4h18v5h-17v4H91z" />
-          <path
-            fill="#b7c7d6"
-            d="M263 5h15v5h-10v6h-4v12h4v5h10v5h-15v-5h-7v-7h-4V17h4v-7h7z"
-          />
-          <path fill="#6d779c" d="M256 18h5v5h-5zm7 11h4v4h-4z" />
-          <path fill="#33304e" d="M0 61h320v3H0z" /></svg
-        ><span>FIND YOUR FREQUENCY.</span>
+          <g class="invader-squad">
+            <path
+              fill="#ff3cac"
+              d="M43 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            />
+            <path
+              fill="#7df9ff"
+              d="M111 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            />
+            <path
+              fill="#9b5cff"
+              d="M179 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            />
+            <path
+              fill="#ff3cac"
+              d="M247 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            />
+          </g>
+          <path fill="#7df9ff" d="M151 54h18v3h5v3h-28v-3h5z" />
+          <path fill="#9b5cff" d="M155 50h10v4h-10z" />
+          <path fill="#ff3cac" d="M159 45h2v5h-2z" />
+          <path fill="#2a1546" d="M0 61h320v3H0z" /></svg
+        ><span>INSERT COIN. FIND YOUR GROOVE.</span>
       </div>
       <section class="player" aria-label="Blues player">
         <div class="settings">
@@ -206,6 +228,28 @@
           <div>
             <span class="label">SOUND</span
             ><strong class="sound">Electric piano</strong>
+          </div>
+          <div
+            class="transport-controls"
+            role="group"
+            aria-label="Playback controls"
+          >
+            <button
+              id="play"
+              type="button"
+              aria-label="Play blues"
+              title="Play blues"
+            >
+              ▶</button
+            ><button
+              id="stop"
+              type="button"
+              aria-label="Stop playback"
+              title="Stop playback"
+              disabled
+            >
+              ■
+            </button>
           </div>
         </div>
         <div class="now">
@@ -322,54 +366,46 @@
             </svg>
           </div>
           <div
-            id="astronaut"
-            class="astronaut"
-            data-state="standing"
+            id="arcade-alien"
+            class="arcade-alien"
+            data-state="resting"
             aria-hidden="true"
           >
             <svg
-              width="180"
-              height="144"
-              viewBox="0 0 90 72"
+              width="160"
+              height="128"
+              viewBox="0 0 80 64"
               shape-rendering="crispEdges"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g class="astro-standing">
-                <path fill="#252c46" d="M20 66h50v3H20z" />
-                <path fill="#626580" d="M27 31h8v23h-8z" />
+              <g class="alien-rest">
+                <path fill="#211132" d="M14 56h52v4H14z" />
+                <path fill="#9b5cff" d="M22 37h36v6h5v10h-6v4H23v-4h-6V43h5z" />
                 <path
-                  fill="#afbed5"
-                  d="M34 29h23v6h5v19h-7v11h-9V52h-4v13h-9V48h-4V36h5z"
+                  fill="#ff3cac"
+                  d="M18 23h7v-6h6v5h18v-5h6v6h7v19h-5v5H23v-5h-5z"
                 />
-                <path fill="#788ba9" d="M34 49h9v5h-3v10h-7zm15 0h6v16h-6z" />
-                <path fill="#d8e1ed" d="M33 10h24v5h5v17h-5v5H33v-5h-5V15h5z" />
-                <path fill="#384869" d="M35 16h21v4h3v9h-5v3H35v-3h-4v-9h4z" />
-                <path fill="#7ac2d0" d="M36 18h15v3H36zm-2 4h5v4h-5z" />
-                <path fill="#aa94d5" d="M38 38h14v9H38z" />
-                <path fill="#80c8d3" d="M40 40h4v3h-4z" />
-                <path fill="#e6c18d" d="M47 40h3v3h-3z" />
-                <path
-                  fill="#53617e"
-                  d="M31 63h12v4H29v-2h2zm15 0h11v2h3v2H46z"
-                />
-              </g>
-              <g class="astro-flying">
-                <g class="astro-exhaust">
-                  <path fill="#7764a6" d="M4 33h18v5H4zm-3 9h20v5H1z" />
-                  <path fill="#8ccbd5" d="M11 34h12v3H11zm-4 9h16v3H7z" />
+                <path fill="#7df9ff" d="M24 29h12v4H24zm20 0h12v4H44z" />
+                <path fill="#211132" d="M27 30h7v2h-7zm19 0h7v2h-7z" />
+                <path fill="#ffb1df" d="M35 37h10v3H35z" />
+                <path fill="#7df9ff" d="M26 48h6v4h-6zm22 0h6v4h-6z" />
+                <path fill="#ff3cac" d="M21 54h12v4H21zm26 0h12v4H47z" />
+                <g class="alien-zzz" fill="#9b5cff">
+                  <path d="M58 13h9v2h-4v3h-3v2h7v2h-9v-4h4v-3h-4z" />
                 </g>
-                <path fill="#6c7291" d="M22 29h29v8H22z" />
+              </g>
+              <g class="alien-play">
+                <path fill="#211132" d="M14 56h52v4H14z" />
+                <path fill="#9b5cff" d="M22 37h36v6h5v10h-6v4H23v-4h-6V43h5z" />
                 <path
-                  fill="#b9c8db"
-                  d="M28 37h27v15H28v-3H14v-6h14zm1 14h22v5H25v-3H12v-5h7v3z"
+                  fill="#ff3cac"
+                  d="M18 18h7v-6h6v5h18v-5h6v6h7v22h-5v5H23v-5h-5z"
                 />
-                <path fill="#e0e7ee" d="M56 23h16v5h5v14h-5v5H56v-5h-5V28h5z" />
-                <path fill="#394966" d="M66 28h7v4h2v8h-9z" />
-                <path fill="#8ccbd5" d="M68 29h4v4h-4z" />
-                <path fill="#a395d0" d="M41 38h10v10H41z" />
-                <path fill="#d6e2ed" d="M49 45h30v-3h7v8H49z" />
-                <path fill="#7dc0ce" d="M78 45h3v5h-3z" />
-                <path fill="#687d9f" d="M12 41h6v8h-6zm-2 9h6v5h-6z" />
+                <path fill="#7df9ff" d="M24 25h12v5H24zm20 0h12v5H44z" />
+                <path fill="#211132" d="M27 26h7v2h-7zm19 0h7v2h-7z" />
+                <path fill="#ffb1df" d="M35 34h10v3H35z" />
+                <path fill="#7df9ff" d="M16 40h7v5h-7zm41 0h7v5h-7z" />
+                <path fill="#ff3cac" d="M21 54h12v4H21zm26 0h12v4H47z" />
               </g>
             </svg>
           </div>
@@ -382,9 +418,7 @@
         </div>
         <div id="bars" class="bars" aria-label="12-bar blues progression"></div>
         <div class="transport">
-          <button id="play" type="button">▶ Play blues</button
-          ><button id="stop" type="button" disabled>■ Stop</button
-          ><span id="status" role="status"
+          <span id="status" role="status"
             >Blues shuffle · D U D U D U D U · continuous loop</span
           >
         </div>
@@ -395,6 +429,6 @@
         <span>12 BARS / ∞ REPEATS</span>
       </footer>
     </main>
-    <script type="module" src="src/app.js?v=bedroom-1"></script>
+    <script type="module" src="src/app.js?v=arcade-1"></script>
   </body>
 </html>

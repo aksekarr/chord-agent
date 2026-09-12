@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 14px;
   flex-wrap: wrap;
 }
 .theme-picker > span {
@@ -59,32 +59,12 @@
   background: #efba95;
   box-shadow: inset 2px 2px #cd9b7c;
 }
-[data-theme='cosy'] .intro {
-  margin: 36px 0 12px;
-  text-align: center;
-}
-[data-theme='cosy'] h1 {
-  font-family: 'Courier New', monospace;
-  font-weight: 900;
-  font-size: clamp(28px, 5vw, 52px);
-  letter-spacing: -2px;
-  text-shadow: 3px 3px #fff3db;
-  line-height: 1.2;
-}
-[data-theme='cosy'] .eyebrow {
-  color: #655448;
-  font-weight: bold;
-}
-[data-theme='cosy'] .intro > p:last-child {
-  color: #67574d;
-  font-size: 14px;
-}
 [data-theme='cosy'] .cosy-village {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0 auto 18px;
-  max-width: 640px;
+  margin: 0 auto 8px;
+  max-width: 520px;
 }
 .cosy-village svg {
   display: block;
@@ -95,8 +75,76 @@
 .cosy-village span {
   font-size: 9px;
   letter-spacing: 2px;
-  margin-top: 8px;
+  margin-top: 4px;
   color: #655448;
+}
+[data-theme='cosy'] .village-cloud {
+  animation: village-cloud-drift 20s linear infinite;
+  transform-box: fill-box;
+}
+[data-theme='cosy'] .village-cloud-one {
+  animation-delay: -10s;
+}
+[data-theme='cosy'] .village-cloud-two {
+  animation-delay: -2s;
+}
+@keyframes village-cloud-drift {
+  from {
+    transform: translateX(-65px);
+  }
+  to {
+    transform: translateX(330px);
+  }
+}
+[data-theme='cosy'] .smoke-puff {
+  animation: chimney-smoke 3s steps(6, end) infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+[data-theme='cosy'] .smoke-puff-one {
+  animation-delay: -2s;
+}
+[data-theme='cosy'] .smoke-puff-two {
+  animation-delay: -1s;
+}
+[data-theme='cosy'] .smoke-puff-three {
+  animation-delay: 0s;
+}
+@keyframes chimney-smoke {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.75);
+  }
+  25% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scale(1.15);
+  }
+}
+[data-theme='cosy'] .village-bushes,
+[data-theme='cosy'] .village-foliage {
+  animation: village-breeze 4s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+[data-theme='cosy'] .village-bushes {
+  animation-delay: -0.5s;
+}
+[data-theme='cosy'] .village-foliage-left {
+  animation-delay: -1.5s;
+}
+[data-theme='cosy'] .village-foliage-right {
+  animation-delay: -2.7s;
+}
+@keyframes village-breeze {
+  from {
+    transform: rotate(-0.7deg);
+  }
+  to {
+    transform: rotate(0.7deg);
+  }
 }
 [data-theme='cosy'] .player {
   background: #fff3df;
@@ -228,9 +276,6 @@
   [data-theme='cosy'] h2 {
     font-size: 56px;
   }
-  [data-theme='cosy'] .intro {
-    margin-top: 28px;
-  }
   [data-theme='cosy'] .bar {
     padding: 12px 8px;
   }
@@ -241,7 +286,11 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .cat-sleep,
-  .cat-zzz {
+  .cat-zzz,
+  .village-cloud,
+  .smoke-puff,
+  .village-bushes,
+  .village-foliage {
     animation: none !important;
   }
   .cat-awake {
@@ -249,99 +298,95 @@
   }
 }
 
-/* Sci-fi: restrained neon, square panels, and a pixel orbit scene. */
-.space-scene,
-.astronaut {
+/* Sci-fi: a neon arcade cabinet with pixel invaders. */
+.arcade-scene,
+.arcade-alien {
   display: none;
 }
 :root[data-theme='scifi'] {
   color-scheme: dark;
-  background: #10111d;
-  color: #d7ddec;
+  background: #05050d;
+  color: #fff1ff;
   font-family: 'Courier New', monospace;
 }
 [data-theme='scifi'] body {
-  background: radial-gradient(ellipse at 50% 24%, #28203966, transparent 65%);
+  background: #05050d;
 }
 [data-theme='scifi'] .brand {
-  color: #c2b4e7;
+  color: #ff3cac;
 }
 [data-theme='scifi'] .badge {
-  border: 2px solid #66618b;
+  border: 2px solid #ff3cac;
   border-radius: 0;
-  color: #bac6dd;
-  background: #1c2033;
+  color: #7df9ff;
+  background: #0d0a1d;
+  box-shadow: 3px 3px #2a1546;
 }
 [data-theme='scifi'] .theme-picker button {
   border-radius: 0;
-  border: 2px solid #555373;
-  background: #1c2033;
-  color: #c3cbe0;
-  box-shadow: 3px 3px #080c16;
+  border: 2px solid #9b5cff;
+  background: #0d0a1d;
+  color: #7df9ff;
+  box-shadow: 3px 3px #2a1546;
 }
 [data-theme='scifi'] .theme-picker button[aria-pressed='true'] {
-  border-color: #9b88c9;
-  background: #3b3155;
-  color: #e5def7;
+  border-color: #7df9ff;
+  background: #ff3cac;
+  color: #05050d;
 }
-[data-theme='scifi'] .intro {
-  margin: 36px 0 12px;
-  text-align: center;
-}
-[data-theme='scifi'] h1 {
-  font-family: 'Courier New', monospace;
-  font-weight: 900;
-  letter-spacing: -2px;
-  font-size: clamp(28px, 5vw, 52px);
-  text-shadow: 3px 3px #434060;
-  line-height: 1.2;
-}
-[data-theme='scifi'] .eyebrow {
-  color: #a7bfdf;
-}
-[data-theme='scifi'] .intro > p:last-child {
-  color: #abb3cb;
-  font-size: 14px;
-}
-[data-theme='scifi'] .space-scene {
+[data-theme='scifi'] .arcade-scene {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 640px;
-  margin: 0 auto 18px;
+  max-width: 520px;
+  margin: 0 auto 8px;
 }
-.space-scene svg {
+.arcade-scene svg {
   display: block;
   width: 100%;
   height: auto;
 }
-.space-scene span {
+.arcade-scene span {
   font-size: 9px;
   letter-spacing: 2px;
-  margin-top: 8px;
-  color: #a6a1ca;
+  margin-top: 4px;
+  color: #7df9ff;
+}
+.invader-squad {
+  animation: invader-shuffle 2s steps(2, end) infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes invader-shuffle {
+  0%,
+  100% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
 }
 [data-theme='scifi'] .player {
-  border: 2px solid #6a608b;
+  border: 2px solid #ff3cac;
   border-radius: 0;
-  background: #181c2c;
+  background: #0d0a1d;
   box-shadow:
-    5px 5px #0a0c16,
-    0 0 28px #7365a21a;
+    5px 5px #2a1546,
+    0 0 28px #ff3cac33;
 }
 [data-theme='scifi'] .settings {
-  border-bottom: 2px dashed #424462;
+  border-bottom: 2px dashed #9b5cff;
 }
 [data-theme='scifi']
   :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
-  color: #afb8d2;
+  color: #a9f5ff;
 }
 [data-theme='scifi'] select {
-  border: 2px solid #68648b;
+  border: 2px solid #7df9ff;
   border-radius: 0;
-  background: #26283e;
-  color: #d8d0ef;
-  box-shadow: 3px 3px #10121f;
+  background: #17102c;
+  color: #fff1ff;
+  box-shadow: 3px 3px #2a1546;
 }
 [data-theme='scifi'] strong {
   font-weight: bold;
@@ -350,91 +395,103 @@
   font-size: 17px;
 }
 [data-theme='scifi'] #tempo-slider {
-  accent-color: #9b8ccd;
+  accent-color: #ff3cac;
 }
 [data-theme='scifi'] .bar {
-  border: 2px solid #454b6d;
+  border: 2px solid #9b5cff;
   border-radius: 0;
-  background: #22273c;
-  box-shadow: 3px 3px #10131f;
+  background: #17102c;
+  box-shadow: 3px 3px #2a1546;
 }
 [data-theme='scifi'] .bar :is(.number, .degree) {
-  color: #b1bad4;
+  color: #7df9ff;
 }
 [data-theme='scifi'] .bar.active {
-  border-color: #9e8bd0;
-  background: #493d67;
-  color: #eee6ff;
-  box-shadow: 3px 3px #29243e;
+  border-color: #7df9ff;
+  background: #ff3cac;
+  color: #05050d;
+  box-shadow: 3px 3px #9b5cff;
 }
 [data-theme='scifi'] .bar.active :is(.number, .degree) {
-  color: #d0c3ef;
+  color: #32101f;
 }
 [data-theme='scifi'] button,
 [data-theme='scifi'] #play {
   border-radius: 0;
-  border: 2px solid #8e80b5;
-  background: #3d3458;
-  color: #eee8f8;
-  box-shadow: 3px 3px #0e1120;
+  border: 2px solid #7df9ff;
+  background: #ff3cac;
+  color: #05050d;
+  box-shadow: 3px 3px #9b5cff;
 }
 [data-theme='scifi'] #stop {
-  background: #242a40;
-  border-color: #596887;
+  background: #17102c;
+  border-color: #9b5cff;
+  color: #7df9ff;
 }
 [data-theme='scifi'] :is(button, select, #tempo-slider):focus-visible {
-  outline-color: #8dc9d6;
+  outline-color: #7df9ff;
 }
 [data-theme='scifi'] #beats i {
   border-radius: 0;
-  background: #46506a;
+  background: #4c2a76;
 }
 [data-theme='scifi'] #beats i.active {
-  background: #90c6d3;
-  box-shadow: 0 0 8px #90c6d333;
+  background: #7df9ff;
+  box-shadow: 0 0 8px #7df9ff66;
 }
 [data-theme='scifi'] .guitarist {
   display: none;
 }
-[data-theme='scifi'] .astronaut {
+[data-theme='scifi'] .arcade-alien {
   display: block;
-  width: 180px;
-  flex: 0 0 180px;
+  width: 160px;
+  flex: 0 0 160px;
 }
-.astronaut svg {
+.arcade-alien svg {
   display: block;
   width: 100%;
   height: auto;
 }
-.astro-flying {
+.alien-play {
   display: none;
 }
-.astronaut[data-state='flying'] .astro-standing {
+[data-theme='scifi'] .arcade-alien[data-state='playing'] .alien-rest {
   display: none;
 }
-.astronaut[data-state='flying'] .astro-flying {
+[data-theme='scifi'] .arcade-alien[data-state='playing'] .alien-play {
   display: block;
 }
-.astronaut[data-pose='up'] .astro-flying {
+[data-theme='scifi'] .arcade-alien[data-pose='up'] .alien-play {
   transform: translateY(-2px);
 }
-.astronaut[data-pose='up'] .astro-exhaust {
-  transform: translateX(-2px);
-  opacity: 0.65;
+[data-theme='scifi'] .alien-rest {
+  animation: alien-rest 2.4s steps(2, end) infinite;
+  transform-origin: 40px 56px;
+}
+[data-theme='scifi'] .alien-zzz {
+  animation: alien-dream 2.4s steps(2, end) infinite;
+}
+@keyframes alien-rest {
+  50% {
+    transform: translateY(-1px);
+  }
+}
+@keyframes alien-dream {
+  50% {
+    transform: translateY(-2px);
+    opacity: 0.45;
+  }
 }
 @media (max-width: 600px) {
   [data-theme='scifi'] .player {
     padding: 18px;
   }
-  [data-theme='scifi'] .astronaut {
+  [data-theme='scifi'] .arcade-alien {
     width: 140px;
     flex-basis: 140px;
   }
   [data-theme='scifi'] h2 {
     font-size: 56px;
-  }
-  [data-theme='scifi'] .intro {
-    margin-top: 28px;
   }
   [data-theme='scifi'] .brand {
     font-size: 12px;
@@ -445,169 +502,181 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .astro-flying,
-  .astro-exhaust {
+  .invader-squad,
+  .alien-rest,
+  .alien-zzz {
+    animation: none !important;
+  }
+  .alien-play {
     transform: none !important;
-    opacity: 1 !important;
   }
 }
 
-/* Bedroom replaces Standard; the original guitarist remains its character. */
-.bedroom-scene {
+/* Campfire replaces Standard; the original guitarist remains its character. */
+.campfire-scene {
   display: none;
 }
-:root[data-theme='bedroom'] {
-  color-scheme: light;
-  background: #c5ccba;
-  color: #4d5145;
+:root[data-theme='campfire'] {
+  color-scheme: dark;
+  background: #08111f;
+  color: #fff4dd;
   font-family: 'Courier New', monospace;
 }
-[data-theme='bedroom'] .brand {
-  color: #4d5748;
+[data-theme='campfire'] body {
+  background: #08111f;
 }
-[data-theme='bedroom'] .badge {
-  border: 2px solid #84917a;
+[data-theme='campfire'] .brand {
+  color: #ffe7b3;
+}
+[data-theme='campfire'] .badge {
+  border: 2px solid #b95d2a;
   border-radius: 0;
-  color: #4f5949;
-  background: #efe9d8;
-  box-shadow: 3px 3px #a1ab96;
+  color: #ffe7b3;
+  background: #12213a;
+  box-shadow: 3px 3px #02060c;
 }
-[data-theme='bedroom'] .theme-picker button {
+[data-theme='campfire'] .theme-picker button {
   border-radius: 0;
-  border: 2px solid #84917a;
-  background: #f0e9d7;
-  color: #4f5949;
-  box-shadow: 3px 3px #a1ab96;
+  border: 2px solid #b95d2a;
+  background: #12213a;
+  color: #fff4dd;
+  box-shadow: 3px 3px #02060c;
 }
-[data-theme='bedroom'] .theme-picker button[aria-pressed='true'] {
-  background: #a8b69a;
-  box-shadow: inset 2px 2px #8f9f80;
+[data-theme='campfire'] .theme-picker button[aria-pressed='true'] {
+  background: #e86f2d;
+  color: #2b1208;
+  box-shadow: inset 2px 2px #b84719;
 }
-[data-theme='bedroom'] .intro {
-  margin: 36px 0 12px;
-  text-align: center;
-}
-[data-theme='bedroom'] h1 {
-  font-family: 'Courier New', monospace;
-  font-weight: 900;
-  font-size: clamp(28px, 5vw, 52px);
-  letter-spacing: -2px;
-  text-shadow: 3px 3px #f3eedf;
-  line-height: 1.2;
-}
-[data-theme='bedroom'] .eyebrow {
-  color: #56634d;
-  font-weight: bold;
-}
-[data-theme='bedroom'] .intro > p:last-child {
-  color: #5b6354;
-  font-size: 14px;
-}
-[data-theme='bedroom'] .bedroom-scene {
+[data-theme='campfire'] .campfire-scene {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 640px;
-  margin: 0 auto 18px;
+  max-width: 520px;
+  margin: 0 auto 8px;
 }
-.bedroom-scene svg {
+.campfire-scene svg {
   display: block;
   width: 100%;
   height: auto;
-  border: 3px solid #84917a;
-  box-shadow: 4px 4px #a1ab96;
 }
-.bedroom-scene span {
+.campfire-scene span {
   font-size: 9px;
   letter-spacing: 2px;
-  margin-top: 12px;
-  color: #56634d;
+  margin-top: 4px;
+  color: #ffd49a;
 }
-[data-theme='bedroom'] .player {
-  border: 3px solid #89937b;
+.campfire-scene .flame {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+.campfire-scene .flame-one {
+  animation: campfire-flicker 1s steps(2, end) infinite;
+}
+.campfire-scene .flame-two {
+  animation: campfire-flicker 0.9s steps(2, end) infinite reverse;
+}
+.campfire-scene .flame-three {
+  animation: campfire-flicker 1.1s steps(2, end) infinite;
+}
+@keyframes campfire-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(0.82, 1.14);
+  }
+}
+[data-theme='campfire'] .player {
+  border: 3px solid #e28a3d;
   border-radius: 0;
-  background: #f3eddd;
-  box-shadow: 6px 6px #a4ad96;
+  background: #fff3dd;
+  color: #30180d;
+  box-shadow: 6px 6px #3b1609;
   padding: 26px;
 }
-[data-theme='bedroom'] .settings {
-  border-bottom: 2px dashed #c5c4ac;
+[data-theme='campfire'] .settings {
+  border-bottom: 2px dashed #d6965d;
 }
-[data-theme='bedroom']
+[data-theme='campfire']
   :is(.label, label, small, .tempo-help, .position, #tones, #status, footer) {
-  color: #5b6350;
+  color: #6b3218;
 }
-[data-theme='bedroom'] select {
-  border: 2px solid #90997f;
+[data-theme='campfire'] select {
+  border: 2px solid #c96a2d;
   border-radius: 0;
-  background: #e1e5d1;
-  color: #44513b;
-  box-shadow: 3px 3px #c6cbb3;
+  background: #ffe8c2;
+  color: #30180d;
+  box-shadow: 3px 3px #e4b47e;
 }
-[data-theme='bedroom'] strong {
+[data-theme='campfire'] strong {
   font-weight: bold;
 }
-[data-theme='bedroom'] .sound {
+[data-theme='campfire'] .sound {
   font-size: 17px;
 }
-[data-theme='bedroom'] #tempo-slider {
-  accent-color: #768c66;
+[data-theme='campfire'] #tempo-slider {
+  accent-color: #e86f2d;
 }
-[data-theme='bedroom'] .bar {
-  border: 2px solid #b2b89e;
+[data-theme='campfire'] .bar {
+  border: 2px solid #e2ac70;
   border-radius: 0;
-  background: #e9e7d3;
-  box-shadow: 3px 3px #d5d5bb;
+  background: #ffe9c6;
+  box-shadow: 3px 3px #e6bd8a;
 }
-[data-theme='bedroom'] .bar :is(.number, .degree) {
-  color: #59634f;
+[data-theme='campfire'] .bar :is(.number, .degree) {
+  color: #79381c;
 }
-[data-theme='bedroom'] .bar.active {
-  border-color: #778c68;
-  background: #b8c6a6;
-  color: #344b2d;
-  box-shadow: 3px 3px #98ac85;
+[data-theme='campfire'] .bar.active {
+  border-color: #b84719;
+  background: #e86f2d;
+  color: #2b1208;
+  box-shadow: 3px 3px #bd4f1d;
 }
-[data-theme='bedroom'] .bar.active :is(.number, .degree) {
-  color: #3f5735;
+[data-theme='campfire'] .bar.active :is(.number, .degree) {
+  color: #4a1d0b;
 }
-[data-theme='bedroom'] button,
-[data-theme='bedroom'] #play {
+[data-theme='campfire'] button,
+[data-theme='campfire'] #play {
   border-radius: 0;
-  border: 2px solid #859472;
-  background: #b8c6a6;
-  color: #3b4b30;
-  box-shadow: 3px 3px #c5c9af;
+  border: 2px solid #b84719;
+  background: #e86f2d;
+  color: #2b1208;
+  box-shadow: 3px 3px #c85b22;
 }
-[data-theme='bedroom'] #stop {
-  background: #e9e7d3;
+[data-theme='campfire'] #stop {
+  background: #ffe9c6;
 }
-[data-theme='bedroom'] :is(button, select, #tempo-slider):focus-visible {
-  outline-color: #576e89;
+[data-theme='campfire'] :is(button, select, #tempo-slider):focus-visible {
+  outline-color: #ffc36b;
 }
-[data-theme='bedroom'] #beats i {
+[data-theme='campfire'] #beats i {
   border-radius: 0;
-  background: #c5cbb3;
+  background: #d9b487;
 }
-[data-theme='bedroom'] #beats i.active {
-  background: #82996d;
-  box-shadow: 2px 2px #adba9e;
+[data-theme='campfire'] #beats i.active {
+  background: #e86f2d;
+  box-shadow: 2px 2px #bd4f1d;
 }
 @media (max-width: 600px) {
-  [data-theme='bedroom'] .player {
+  [data-theme='campfire'] .player {
     padding: 18px;
   }
-  [data-theme='bedroom'] h2 {
+  [data-theme='campfire'] h2 {
     font-size: 56px;
   }
-  [data-theme='bedroom'] .intro {
-    margin-top: 28px;
-  }
-  [data-theme='bedroom'] .brand {
+  [data-theme='campfire'] .brand {
     font-size: 12px;
     letter-spacing: 2px;
   }
-  [data-theme='bedroom'] .bar {
+  [data-theme='campfire'] .bar {
     padding: 12px 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .campfire-scene .flame {
+    animation: none;
   }
 }

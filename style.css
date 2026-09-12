@@ -19,7 +19,7 @@ body {
 main {
   max-width: 1050px;
   margin: auto;
-  padding: 38px 32px;
+  padding: 26px 32px;
 }
 header {
   display: flex;
@@ -39,24 +39,6 @@ header {
   padding: 9px 13px;
   color: #afbbb0;
 }
-.intro {
-  margin: 65px 0 35px;
-}
-.eyebrow {
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  color: #c6dc8f;
-}
-h1 {
-  font-size: clamp(36px, 6vw, 62px);
-  font-weight: 550;
-  letter-spacing: -3px;
-  margin: 12px 0;
-}
-.intro > p:last-child {
-  color: #a5b3a8;
-  font-size: 16px;
-}
 .player {
   border: 1px solid #425047;
   background: #1b2823;
@@ -66,8 +48,10 @@ h1 {
 }
 .settings {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns:
+    minmax(90px, 0.75fr) minmax(180px, 1.5fr) minmax(60px, 0.55fr)
+    minmax(130px, 1.15fr) auto;
+  gap: 16px;
   border-bottom: 1px solid #3b4940;
   padding-bottom: 25px;
 }
@@ -89,6 +73,20 @@ small {
 }
 .sound {
   font-size: 19px;
+}
+.transport-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.transport-controls button {
+  display: grid;
+  width: 48px;
+  height: 46px;
+  place-items: center;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
 }
 select {
   font: inherit;
@@ -150,8 +148,8 @@ h2 {
   border: 1px solid #435143;
   background: #223129;
   border-radius: 9px;
-  padding: 15px 16px;
-  min-height: 84px;
+  padding: 9px 12px;
+  min-height: 64px;
 }
 .bar .number {
   font-size: 10px;
@@ -160,13 +158,13 @@ h2 {
 }
 .bar strong {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 22px;
 }
 .bar .degree {
   float: right;
   font-size: 11px;
-  margin-top: 15px;
+  margin-top: 9px;
   color: #a5b59c;
 }
 .bar.active {
@@ -179,10 +177,7 @@ h2 {
   color: #415735;
 }
 .transport {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 26px;
+  margin-top: 16px;
 }
 button {
   border: 1px solid #60714f;
@@ -210,7 +205,7 @@ select:focus-visible {
   outline-offset: 4px;
 }
 #status {
-  margin-left: auto;
+  display: block;
   font-size: 11px;
   color: #a5b3a8;
 }
@@ -232,14 +227,14 @@ footer p {
   main {
     padding: 24px 16px;
   }
-  .intro {
-    margin: 44px 0 28px;
-  }
   .player {
     padding: 20px;
   }
   .settings {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .transport-controls {
+    grid-column: span 2;
   }
   .bar {
     padding: 12px 9px;
@@ -247,12 +242,8 @@ footer p {
   .bar .degree {
     display: none;
   }
-  .transport {
-    flex-wrap: wrap;
-  }
   #status {
-    width: 100%;
-    margin: 5px 0 0;
+    margin-top: 5px;
   }
   footer {
     flex-wrap: wrap;

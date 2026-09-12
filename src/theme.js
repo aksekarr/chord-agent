@@ -19,12 +19,12 @@ export function initThemes() {
   try {
     saved = localStorage.getItem('chord-agent-theme');
   } catch {
-    /* Use Bedroom. */
+    /* Use Campfire. */
   }
   select(
     buttons.some((button) => button.dataset.themeChoice === saved)
       ? saved
-      : 'bedroom',
+      : 'campfire',
   );
   buttons.forEach((button) =>
     button.addEventListener('click', () => select(button.dataset.themeChoice)),
@@ -35,7 +35,7 @@ export function updateThemeCharacters(timing) {
   const cat = document.getElementById('cosy-cat');
   cat.dataset.state = timing ? 'awake' : 'asleep';
   cat.dataset.pose = timing && timing.phase < 0.5 ? 'up' : 'down';
-  const astronaut = document.getElementById('astronaut');
-  astronaut.dataset.state = timing ? 'flying' : 'standing';
-  astronaut.dataset.pose = timing && timing.phase < 0.5 ? 'up' : 'down';
+  const alien = document.getElementById('arcade-alien');
+  alien.dataset.state = timing ? 'playing' : 'resting';
+  alien.dataset.pose = timing && timing.phase < 0.5 ? 'up' : 'down';
 }
