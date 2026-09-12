@@ -26,6 +26,7 @@ const metronomeMode = () => $('mode').value === 'metronome';
 // Rendering consumes the public timing snapshot, never AudioContext internals.
 function animateGuitarist(timing) {
   if (!timing || reduceMotion.matches) return;
+  $('guitarist').dataset.state = 'playing';
   $('guitarist').dataset.pose =
     timing.phase < 0.25
       ? 'down'
@@ -102,6 +103,7 @@ async function play() {
       metronome: metronomeEnabled,
     });
     if (current !== request) return;
+    $('guitarist').dataset.state = 'playing';
     playingTempo = tempo;
     $('status').textContent = metronomeMode()
       ? 'Playing · metronome · four beats per bar'
@@ -120,6 +122,8 @@ function stop() {
   request++;
   player.stop();
   cancelAnimationFrame(frame);
+  $('guitarist').dataset.state = 'resting';
+  delete $('guitarist').dataset.pose;
   display(null);
   updateThemeCharacters(null);
   $('play').disabled = false;

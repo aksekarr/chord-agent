@@ -8,8 +8,8 @@
       name="description"
       content="Play a laid-back, two-note blues shuffle in E, A, C, B, G or D. A quick-change 12-bar blues at 60–140 BPM, with audio generated in your browser."
     />
-    <link rel="stylesheet" href="style.css?v=volume-1" />
-    <link rel="stylesheet" href="themes.css?v=volume-1" />
+    <link rel="stylesheet" href="style.css?v=busker-idle-1" />
+    <link rel="stylesheet" href="themes.css?v=busker-idle-1" />
   </head>
   <body>
     <main>
@@ -290,7 +290,12 @@
             <h2 id="chord">A</h2>
             <p id="tones">A · E</p>
           </div>
-          <div id="guitarist" class="guitarist" aria-hidden="true">
+          <div
+            id="guitarist"
+            class="guitarist"
+            data-state="resting"
+            aria-hidden="true"
+          >
             <svg
               width="128"
               height="144"
@@ -305,6 +310,7 @@
                   d="M22 46h20v10h-3v10h-8V55h-3v11h-8V54h2z"
                 />
                 <path
+                  class="pixel-feet"
                   fill="#d9ddc4"
                   d="M18 64h10v4H16v-2h2zm13 0h10v2h3v2H31z"
                 />
@@ -474,6 +480,6 @@
         <span>12 BARS / ∞ REPEATS</span>
       </footer>
     </main>
-    <script type="module" src="src/app.js?v=volume-1"></script>
+    <script type="module" src="src/app.js?v=busker-idle-1"></script>
   </body>
 </html>

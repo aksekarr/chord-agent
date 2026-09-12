@@ -611,6 +611,33 @@
 .campfire-scene .flame-three {
   animation: campfire-flicker 1.1s steps(2, end) infinite;
 }
+[data-theme='campfire'] .guitarist[data-state='resting'] .pixel-body {
+  animation: busker-rest-body 2.2s steps(2, end) infinite;
+  transform-origin: center bottom;
+}
+[data-theme='campfire'] .guitarist[data-state='resting'] .pixel-head {
+  animation: busker-rest-head 2.2s steps(2, end) infinite;
+  transform-origin: center bottom;
+}
+[data-theme='campfire'] .guitarist[data-state='resting'] .pixel-feet {
+  animation: busker-foot-tap 2.2s steps(2, end) infinite;
+  transform-origin: center bottom;
+}
+@keyframes busker-rest-body {
+  50% {
+    transform: translateY(1px);
+  }
+}
+@keyframes busker-rest-head {
+  50% {
+    transform: translateY(1px);
+  }
+}
+@keyframes busker-foot-tap {
+  50% {
+    transform: translateY(-1px);
+  }
+}
 @keyframes campfire-flicker {
   0%,
   100% {
@@ -719,6 +746,11 @@
 @media (prefers-reduced-motion: reduce) {
   .campfire-scene .flame,
   .campfire-star {
+    animation: none;
+  }
+  [data-theme='campfire']
+    .guitarist
+    :is(.pixel-body, .pixel-head, .pixel-feet) {
     animation: none;
   }
 }
