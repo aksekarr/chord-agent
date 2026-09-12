@@ -565,6 +565,27 @@
   margin-top: 4px;
   color: #ffd49a;
 }
+[data-theme='campfire'] .campfire-star {
+  animation: campfire-twinkle 4s steps(2, end) infinite;
+}
+[data-theme='campfire'] .campfire-star-one {
+  animation-delay: -1s;
+}
+[data-theme='campfire'] .campfire-star-two {
+  animation-delay: -2.4s;
+}
+[data-theme='campfire'] .campfire-star-three {
+  animation-delay: -3.2s;
+}
+@keyframes campfire-twinkle {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 .campfire-scene .flame {
   transform-box: fill-box;
   transform-origin: center bottom;
@@ -676,7 +697,8 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .campfire-scene .flame {
+  .campfire-scene .flame,
+  .campfire-star {
     animation: none;
   }
 }
