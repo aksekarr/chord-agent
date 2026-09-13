@@ -22,9 +22,42 @@ let selectedTempo = BPM;
 let playingTempo = BPM;
 let metronomeEnabled = false;
 let ringerHintDismissed = false;
+let wakeLock = null;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)');
 const metronomeMode = () => $('mode').value === 'metronome';
+const playbackActive = () => !$('stop').disabled;
+async function requestWakeLock() {
+  if (
+    !navigator.wakeLock?.request ||
+    wakeLock ||
+    document.visibilityState !== 'visible'
+  )
+    return;
+  try {
+    const sentinel = await navigator.wakeLock.request('screen');
+    if (!playbackActive() || document.visibilityState !== 'visible') {
+      await sentinel.release();
+      return;
+    }
+    wakeLock = sentinel;
+    sentinel.addEventListener('release', () => {
+      if (wakeLock === sentinel) wakeLock = null;
+    });
+  } catch {
+    // Wake Lock is optional; playback continues when it is unavailable.
+  }
+}
+async function releaseWakeLock() {
+  if (!wakeLock) return;
+  const sentinel = wakeLock;
+  wakeLock = null;
+  try {
+    await sentinel.release();
+  } catch {
+    // The browser may already have released the lock.
+  }
+}
 function showRingerHint() {
   if (!touchDevice.matches || ringerHintDismissed) return;
   $('ringer-hint').hidden = false;
@@ -117,6 +150,7 @@ async function play() {
       : metronomeEnabled
         ? 'Playing · Blues shuffle + metronome · continuous loop'
         : 'Playing · Blues shuffle · D U D U D U D U · continuous loop';
+    requestWakeLock();
     tick();
   } catch (error) {
     if (current !== request) return;
@@ -128,6 +162,7 @@ async function play() {
 function stop() {
   request++;
   player.stop();
+  releaseWakeLock();
   cancelAnimationFrame(frame);
   $('guitarist').dataset.state = 'resting';
   delete $('guitarist').dataset.pose;
@@ -139,6 +174,13 @@ function stop() {
 }
 $('play').addEventListener('click', play);
 $('stop').addEventListener('click', stop);
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    wakeLock = null;
+  } else if (playbackActive()) {
+    requestWakeLock();
+  }
+});
 $('dismiss-ringer-hint').addEventListener('click', () => {
   ringerHintDismissed = true;
   $('ringer-hint').hidden = true;
