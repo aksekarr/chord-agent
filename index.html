@@ -6,27 +6,50 @@
     <title>Chord Agent — Twelve-Bar Blues Practice Tool</title>
     <meta
       name="description"
-      content="A twelve-bar blues practice tool with a metronome and three pixel-art themes."
+      content="A twelve-bar blues practice tool with a metronome and pixel-art themes."
     />
-    <meta property="og:title" content="Chord Agent — Twelve-Bar Blues Practice Tool" />
+    <meta
+      property="og:title"
+      content="Chord Agent — Twelve-Bar Blues Practice Tool"
+    />
     <meta
       property="og:description"
-      content="A twelve-bar blues practice tool with a metronome and three pixel-art themes."
+      content="A twelve-bar blues practice tool with a metronome and pixel-art themes."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aksekarr.github.io/chord-agent/" />
-    <meta property="og:image" content="https://aksekarr.github.io/chord-agent/preview.png" />
+    <meta
+      property="og:image"
+      content="https://aksekarr.github.io/chord-agent/preview.png"
+    />
     <meta property="og:image:width" content="1994" />
     <meta property="og:image:height" content="910" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Chord Agent — Twelve-Bar Blues Practice Tool" />
+    <meta
+      name="twitter:title"
+      content="Chord Agent — Twelve-Bar Blues Practice Tool"
+    />
     <meta
       name="twitter:description"
-      content="A twelve-bar blues practice tool with a metronome and three pixel-art themes."
+      content="A twelve-bar blues practice tool with a metronome and pixel-art themes."
     />
-    <meta name="twitter:image" content="https://aksekarr.github.io/chord-agent/preview.png" />
-    <link rel="stylesheet" href="style.css?v=ringer-hint-1" />
-    <link rel="stylesheet" href="themes.css?v=ringer-hint-1" />
+    <meta
+      name="twitter:image"
+      content="https://aksekarr.github.io/chord-agent/preview.png"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%2308111f'/%3E%3Cpath fill='%23e86f2d' d='M6 3h7v2H8v6H6zM11 5h2v5h-2zM3 10h5v3H3zM8 9h5v3H8z'/%3E%3C/svg%3E"
+    />
+    <link
+      rel="preload"
+      href="fonts/silkscreen.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css?v=stage-1" />
+    <link rel="stylesheet" href="themes.css?v=stage-1" />
   </head>
   <body>
     <main>
@@ -42,188 +65,2503 @@
         <button type="button" data-theme-choice="cosy" aria-pressed="false">
           Cosy
         </button>
-        <button type="button" data-theme-choice="scifi" aria-pressed="false">
-          Sci-fi
+        <button type="button" data-theme-choice="orbit" aria-pressed="false">
+          Orbit
+        </button>
+        <!-- Seasonal slot: swap this button, its scene and its palette per holiday. -->
+        <button
+          type="button"
+          data-theme-choice="christmas"
+          aria-pressed="false"
+        >
+          Christmas
         </button>
       </div>
-      <div class="campfire-scene" aria-hidden="true">
+      <div class="scene scene-campfire" aria-hidden="true">
         <svg
-          viewBox="0 0 320 64"
-          width="640"
-          height="128"
+          viewBox="0 0 360 84"
+          width="720"
+          height="168"
+          preserveAspectRatio="xMidYMid slice"
           shape-rendering="crispEdges"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <!-- Trees and ground sit over the page's own night-sky background. -->
-          <path
-            fill="#fff0b5"
-            d="M29 5h9v3h4v5h-3v4h-4v3h-6v-3h-4v-5h3v3h3v-3h3V8h-3v3h-4V8h4z"
-          />
-          <path
+          <rect x="0" y="0" width="360" height="84" fill="#08111f" />
+          <rect x="0" y="40" width="360" height="34" fill="#0a1526" />
+          <rect
             class="campfire-star campfire-star-one"
+            x="12"
+            y="8"
+            width="2"
+            height="2"
             fill="#ffd49a"
-            d="M69 9h3v3h-3zm46 8h2v2h-2zm90-10h3v3h-3zm75 16h2v2h-2z"
           />
-          <path
+          <rect
             class="campfire-star campfire-star-two"
+            x="34"
+            y="20"
+            width="1"
+            height="1"
             fill="#fff0b5"
-            d="M92 4h2v2h-2zm71 16h3v3h-3zm70-11h2v2h-2z"
           />
-          <path
+          <rect
             class="campfire-star campfire-star-three"
+            x="58"
+            y="6"
+            width="1"
+            height="1"
             fill="#e2ac70"
-            d="M52 23h2v2h-2zm83-14h2v2h-2zm119 14h3v3h-3z"
+          />
+          <rect
+            class="campfire-star campfire-star-one"
+            x="81"
+            y="15"
+            width="1"
+            height="1"
+            fill="#ffd49a"
+          />
+          <rect
+            class="campfire-star campfire-star-two"
+            x="97"
+            y="30"
+            width="1"
+            height="1"
+            fill="#fff0b5"
+          />
+          <rect
+            class="campfire-star campfire-star-three"
+            x="120"
+            y="9"
+            width="1"
+            height="1"
+            fill="#e2ac70"
+          />
+          <rect
+            class="campfire-star campfire-star-one"
+            x="139"
+            y="22"
+            width="1"
+            height="1"
+            fill="#ffd49a"
+          />
+          <rect
+            class="campfire-star campfire-star-two"
+            x="163"
+            y="5"
+            width="2"
+            height="2"
+            fill="#fff0b5"
+          />
+          <rect
+            class="campfire-star campfire-star-three"
+            x="178"
+            y="17"
+            width="1"
+            height="1"
+            fill="#e2ac70"
+          />
+          <rect
+            class="campfire-star campfire-star-one"
+            x="204"
+            y="10"
+            width="1"
+            height="1"
+            fill="#ffd49a"
+          />
+          <rect
+            class="campfire-star campfire-star-two"
+            x="226"
+            y="26"
+            width="1"
+            height="1"
+            fill="#fff0b5"
+          />
+          <rect
+            class="campfire-star campfire-star-three"
+            x="247"
+            y="7"
+            width="1"
+            height="1"
+            fill="#e2ac70"
+          />
+          <rect
+            class="campfire-star campfire-star-one"
+            x="262"
+            y="18"
+            width="1"
+            height="1"
+            fill="#ffd49a"
+          />
+          <rect
+            class="campfire-star campfire-star-two"
+            x="281"
+            y="30"
+            width="1"
+            height="1"
+            fill="#fff0b5"
+          />
+          <rect
+            class="campfire-star campfire-star-three"
+            x="331"
+            y="8"
+            width="2"
+            height="2"
+            fill="#e2ac70"
+          />
+          <rect
+            class="campfire-star campfire-star-one"
+            x="346"
+            y="22"
+            width="1"
+            height="1"
+            fill="#ffd49a"
+          />
+          <rect
+            class="campfire-star campfire-star-two"
+            x="150"
+            y="34"
+            width="1"
+            height="1"
+            fill="#fff0b5"
+          />
+          <rect
+            class="campfire-star campfire-star-three"
+            x="108"
+            y="3"
+            width="1"
+            height="1"
+            fill="#e2ac70"
+          />
+          <rect
+            class="campfire-star campfire-star-one"
+            x="238"
+            y="36"
+            width="1"
+            height="1"
+            fill="#ffd49a"
+          />
+          <rect
+            class="campfire-star campfire-star-two"
+            x="322"
+            y="34"
+            width="1"
+            height="1"
+            fill="#fff0b5"
           />
           <path
-            fill="#101b2a"
-            d="M17 8h5v13h8v5h-7v7h11v5H23v22h-6V38H6v-5h11v-7h-7v-5h7zm38 13h4v10h7v5h-6v7h10v5h-11v12h-5V48H43v-5h10v-7h-6v-5h8zm207-13h5v14h8v5h-7v7h11v5h-11v22h-6V38h-11v-5h11v-7h-7v-5h7zm37 12h4v11h7v5h-6v7h10v5h-11v12h-5V48h-11v-5h10v-7h-6v-5h8z"
+            fill="#fff0b5"
+            d="M300 10h8v1h-8zM299 11h10v1h-10zM298 12h12v1h-12zM297 13h14v2h-14zM296 15h16v5h-16zM297 20h14v2h-14zM298 22h12v1h-12zM299 23h10v1h-10zM300 24h8v1h-8z"
           />
           <path
-            fill="#1b3045"
-            d="M89 28h4v8h6v4h-5v7h8v4h-9v9h-5v-9h-9v-4h8v-7h-5v-4h7zm142-6h4v12h7v4h-6v8h9v4h-10v10h-5V50h-10v-4h9v-8h-6v-4h8z"
+            fill="#08111f"
+            d="M305 8h6v1h-6zM303 9h10v1h-10zM302 10h12v2h-12zM301 12h14v5h-14zM302 17h12v2h-12zM303 19h10v1h-10zM305 20h6v1h-6z"
           />
-          <!-- Tent to the left, with a softly lit opening. -->
-          <path fill="#13253a" d="M42 56h68L77 24z" />
-          <path fill="#29465b" d="M48 54h55L77 29z" />
-          <path fill="#1a3248" d="M77 29v25H52z" />
-          <path fill="#e28a3d" d="M77 35v19H63z" />
-          <path fill="#ffc36b" d="M77 40v14H68z" />
-          <path fill="#15283b" d="M39 56h75v4H39z" />
-          <!-- Fallen log on the right. -->
-          <path fill="#39251f" d="M218 50h56v9h-56z" />
-          <path fill="#6a3a25" d="M224 48h42v8h-42z" />
-          <path fill="#a35a2b" d="M266 48h9v8h-9z" />
-          <path fill="#e2ac70" d="M269 50h4v4h-4z" />
-          <path fill="#241a1b" d="M232 51h18v2h-18zm8 3h17v2h-17z" />
-          <!-- Campfire glow, crossed logs, and three flickering flame layers. -->
-          <path fill="#4a281d" d="M129 54h62v5h-62z" />
-          <path fill="#62351f" d="M142 51h35v5h-35z" />
-          <path fill="#9c4b23" d="M139 54h41v3h-41z" />
-          <path fill="#6b351f" d="M146 49h29v4h-29z" />
-          <g class="campfire-flames">
-            <path
-              class="flame flame-one"
-              fill="#e86f2d"
-              d="M151 51h-5v-8h4v-8h5v5h4v-10h5v8h4v-5h4v11h-4v7z"
-            />
-            <path
-              class="flame flame-two"
-              fill="#ffb84d"
-              d="M153 50h-3v-6h4v-6h4v8h3v-11h4v8h3v7z"
-            />
-            <path
-              class="flame flame-three"
-              fill="#fff0b5"
-              d="M157 49h-2v-5h3v-5h3v7h3v3z"
-            />
+          <g class="turnaround campfire-shooting-star">
+            <rect x="150" y="20" width="3" height="1" fill="#ffffff" />
+            <rect x="147" y="18" width="3" height="1" fill="#fff0b5" />
+            <rect x="144" y="16" width="3" height="1" fill="#ffd49a" />
+            <rect x="141" y="14" width="3" height="1" fill="#e2ac70" />
+            <rect x="138" y="12" width="3" height="1" fill="#8f6c4a" />
+            <rect x="135" y="10" width="3" height="1" fill="#4a3a30" />
+            <rect x="132" y="8" width="3" height="1" fill="#1b2433" />
           </g>
-          <path fill="#14243a" d="M0 60h320v4H0z" /></svg
-        ><span>WHERE THE NIGHT FINDS ITS RHYTHM.</span>
+          <path
+            fill="#0c1828"
+            d="M50 57h20v1h-20zM46 58h28v1h-28zM43 59h34v1h-34zM40 60h40v1h-40zM38 61h44v1h-44zM36 62h48v1h-48zM34 63h52v1h-52zM32 64h56v1h-56zM31 65h58v1h-58zM29 66h62v1h-62zM28 67h64v1h-64zM27 68h66v1h-66zM26 69h68v1h-68zM25 70h70v1h-70zM24 71h72v1h-72zM23 72h74v1h-74zM22 73h76v1h-76zM21 74h78v1h-78zM20 75h80v1h-80zM19 76h82v1h-82zM18 77h84v2h-84zM17 79h86v1h-86zM16 80h88v2h-88zM15 82h90v2h-90z"
+          />
+          <path
+            fill="#0b1626"
+            d="M199 57h22v1h-22zM195 58h30v1h-30zM191 59h38v1h-38zM188 60h44v1h-44zM186 61h48v1h-48zM184 62h52v1h-52zM182 63h56v1h-56zM180 64h60v1h-60zM178 65h64v1h-64zM176 66h68v1h-68zM175 67h70v1h-70zM173 68h74v1h-74zM172 69h76v1h-76zM171 70h78v1h-78zM170 71h80v1h-80zM169 72h82v1h-82zM168 73h84v1h-84zM166 74h88v1h-88zM165 75h90v2h-90zM164 77h92v1h-92zM163 78h94v1h-94zM162 79h96v1h-96zM161 80h98v1h-98zM160 81h100v2h-100zM159 83h102v1h-102z"
+          />
+          <path
+            fill="#0c1828"
+            d="M321 61h18v1h-18zM317 62h26v1h-26zM314 63h32v1h-32zM312 64h36v1h-36zM310 65h40v1h-40zM308 66h44v1h-44zM306 67h48v1h-48zM305 68h50v1h-50zM303 69h54v1h-54zM302 70h56v1h-56zM301 71h58v1h-58zM300 72h60v1h-60zM299 73h62v1h-62zM298 74h64v1h-64zM297 75h66v1h-66zM296 76h68v1h-68zM295 77h70v2h-70zM294 79h72v1h-72zM293 80h74v2h-74zM292 82h76v1h-76zM291 83h78v1h-78z"
+          />
+          <path
+            fill="#0e1a2b"
+            d="M7 69h3v5h-3zM7 34h2v4h-2zM6 38h4v3h-4zM5 41h6v3h-6zM4 44h8v3h-8zM3 47h10v2h-10zM7 44h2v3h-2zM6 47h4v2h-4zM5 49h6v2h-6zM4 51h8v2h-8zM3 53h10v2h-10zM2 55h12v2h-12zM1 57h14v2h-14zM7 54h2v2h-2zM6 56h4v2h-4zM5 58h6v1h-6zM4 59h8v2h-8zM3 61h10v2h-10zM2 63h12v1h-12zM1 64h14v2h-14zM0 66h16v2h-16zM-1 68h18v1h-18zM29 69h3v5h-3zM29 20h2v4h-2zM28 24h4v4h-4zM27 28h6v3h-6zM26 31h8v3h-8zM25 34h10v2h-10zM29 31h2v2h-2zM28 33h4v3h-4zM27 36h6v1h-6zM26 37h8v3h-8zM25 40h10v1h-10zM24 41h12v3h-12zM23 44h14v1h-14zM22 45h16v2h-16zM29 42h2v2h-2zM28 44h4v1h-4zM27 45h6v2h-6zM26 47h8v1h-8zM25 48h10v1h-10zM24 49h12v2h-12zM23 51h14v1h-14zM22 52h16v2h-16zM21 54h18v1h-18zM20 55h20v2h-20zM19 57h22v1h-22zM29 53h2v1h-2zM28 54h4v1h-4zM27 55h6v1h-6zM26 56h8v2h-8zM25 58h10v1h-10zM24 59h12v1h-12zM23 60h14v1h-14zM22 61h16v1h-16zM21 62h18v1h-18zM20 63h20v2h-20zM19 65h22v1h-22zM18 66h24v1h-24zM17 67h26v1h-26zM16 68h28v1h-28zM127 69h3v5h-3zM127 38h2v4h-2zM126 42h4v3h-4zM125 45h6v2h-6zM124 47h8v3h-8zM123 50h10v2h-10zM127 46h2v2h-2zM126 48h4v3h-4zM125 51h6v1h-6zM124 52h8v3h-8zM123 55h10v1h-10zM122 56h12v3h-12zM121 59h14v1h-14zM127 54h2v2h-2zM126 56h4v1h-4zM125 57h6v2h-6zM124 59h8v2h-8zM123 61h10v1h-10zM122 62h12v2h-12zM121 64h14v1h-14zM120 65h16v2h-16zM119 67h18v1h-18zM145 69h3v5h-3zM145 26h2v4h-2zM144 30h4v3h-4zM143 33h6v2h-6zM142 35h8v3h-8zM141 38h10v2h-10zM145 35h2v2h-2zM144 37h4v2h-4zM143 39h6v2h-6zM142 41h8v1h-8zM141 42h10v2h-10zM140 44h12v2h-12zM139 46h14v2h-14zM138 48h16v1h-16zM145 44h2v1h-2zM144 45h4v2h-4zM143 47h6v1h-6zM142 48h8v1h-8zM141 49h10v1h-10zM140 50h12v2h-12zM139 52h14v1h-14zM138 53h16v1h-16zM137 54h18v2h-18zM136 56h20v1h-20zM135 57h22v1h-22zM145 53h2v1h-2zM144 54h4v1h-4zM143 55h6v1h-6zM142 56h8v1h-8zM141 57h10v1h-10zM140 58h12v1h-12zM139 59h14v1h-14zM138 60h16v1h-16zM137 61h18v1h-18zM136 62h20v1h-20zM135 63h22v1h-22zM134 64h24v1h-24zM133 65h26v1h-26zM132 66h28v1h-28zM231 69h3v5h-3zM231 30h2v3h-2zM230 33h4v3h-4zM229 36h6v3h-6zM228 39h8v2h-8zM227 41h10v2h-10zM231 38h2v2h-2zM230 40h4v2h-4zM229 42h6v1h-6zM228 43h8v2h-8zM227 45h10v1h-10zM226 46h12v2h-12zM225 48h14v2h-14zM224 50h16v1h-16zM231 46h2v1h-2zM230 47h4v1h-4zM229 48h6v2h-6zM228 50h8v1h-8zM227 51h10v1h-10zM226 52h12v1h-12zM225 53h14v1h-14zM224 54h16v2h-16zM223 56h18v1h-18zM222 57h20v1h-20zM221 58h22v1h-22zM231 54h2v1h-2zM230 55h4v1h-4zM229 56h6v1h-6zM228 57h8v1h-8zM227 58h10v1h-10zM226 59h12v1h-12zM224 60h16v1h-16zM223 61h18v1h-18zM222 62h20v1h-20zM221 63h22v1h-22zM220 64h24v1h-24zM219 65h26v1h-26zM218 66h28v1h-28zM251 69h3v5h-3zM251 40h2v3h-2zM250 43h4v3h-4zM249 46h6v3h-6zM248 49h8v2h-8zM247 51h10v2h-10zM251 48h2v2h-2zM250 50h4v2h-4zM249 52h6v2h-6zM248 54h8v2h-8zM247 56h10v2h-10zM246 58h12v2h-12zM245 60h14v1h-14zM251 56h2v2h-2zM250 58h4v1h-4zM249 59h6v2h-6zM248 61h8v1h-8zM247 62h10v1h-10zM246 63h12v2h-12zM245 65h14v1h-14zM244 66h16v2h-16zM243 68h18v1h-18zM275 69h3v5h-3zM275 24h2v4h-2zM274 28h4v3h-4zM273 31h6v3h-6zM272 34h8v3h-8zM271 37h10v2h-10zM275 34h2v2h-2zM274 36h4v2h-4zM273 38h6v2h-6zM272 40h8v2h-8zM271 42h10v2h-10zM270 44h12v2h-12zM269 46h14v2h-14zM268 48h16v1h-16zM275 44h2v2h-2zM274 46h4v1h-4zM273 47h6v1h-6zM272 48h8v2h-8zM271 50h10v1h-10zM270 51h12v1h-12zM269 52h14v2h-14zM268 54h16v1h-16zM267 55h18v1h-18zM266 56h20v2h-20zM265 58h22v1h-22zM275 54h2v1h-2zM274 55h4v1h-4zM273 56h6v1h-6zM272 57h8v1h-8zM271 58h10v1h-10zM270 59h12v1h-12zM269 60h14v2h-14zM268 62h16v1h-16zM267 63h18v1h-18zM266 64h20v1h-20zM265 65h22v1h-22zM264 66h24v1h-24zM263 67h26v1h-26zM262 68h28v1h-28zM299 69h3v5h-3zM299 36h2v4h-2zM298 40h4v3h-4zM297 43h6v3h-6zM296 46h8v3h-8zM295 49h10v2h-10zM299 45h2v3h-2zM298 48h4v2h-4zM297 50h6v2h-6zM296 52h8v2h-8zM295 54h10v2h-10zM294 56h12v2h-12zM293 58h14v2h-14zM299 54h2v2h-2zM298 56h4v2h-4zM297 58h6v1h-6zM296 59h8v2h-8zM295 61h10v2h-10zM294 63h12v1h-12zM293 64h14v2h-14zM292 66h16v2h-16zM291 68h18v1h-18zM351 69h3v5h-3zM351 28h2v4h-2zM350 32h4v3h-4zM349 35h6v2h-6zM348 37h8v3h-8zM347 40h10v2h-10zM351 37h2v2h-2zM350 39h4v2h-4zM349 41h6v2h-6zM348 43h8v1h-8zM347 44h10v2h-10zM346 46h12v2h-12zM345 48h14v2h-14zM344 50h16v1h-16zM351 46h2v1h-2zM350 47h4v2h-4zM349 49h6v1h-6zM348 50h8v1h-8zM347 51h10v1h-10zM346 52h12v2h-12zM345 54h14v1h-14zM344 55h16v1h-16zM343 56h18v2h-18zM342 58h20v1h-20zM341 59h22v1h-22zM351 55h2v1h-2zM350 56h4v1h-4zM349 57h6v1h-6zM348 58h8v1h-8zM347 59h10v1h-10zM346 60h12v1h-12zM345 61h14v1h-14zM344 62h16v1h-16zM343 63h18v1h-18zM342 64h20v1h-20zM341 65h22v1h-22zM340 66h24v1h-24zM339 67h26v1h-26zM338 68h28v1h-28z"
+          />
+          <path
+            fill="#13233a"
+            d="M17 71h3v5h-3zM17 14h2v5h-2zM16 19h4v4h-4zM15 23h6v3h-6zM14 26h8v4h-8zM13 30h10v2h-10zM17 27h2v3h-2zM16 30h4v2h-4zM15 32h6v2h-6zM14 34h8v3h-8zM13 37h10v2h-10zM12 39h12v2h-12zM11 41h14v2h-14zM10 43h16v2h-16zM17 40h2v2h-2zM16 42h4v2h-4zM15 44h6v1h-6zM14 45h8v2h-8zM13 47h10v1h-10zM12 48h12v2h-12zM11 50h14v2h-14zM10 52h16v1h-16zM9 53h18v2h-18zM8 55h20v2h-20zM7 57h22v1h-22zM17 53h2v1h-2zM16 54h4v2h-4zM15 56h6v1h-6zM14 57h8v1h-8zM13 58h10v2h-10zM12 60h12v1h-12zM11 61h14v1h-14zM10 62h16v1h-16zM9 63h18v2h-18zM8 65h20v1h-20zM7 66h22v1h-22zM6 67h24v2h-24zM5 69h26v1h-26zM4 70h28v1h-28zM335 71h3v5h-3zM335 10h2v5h-2zM334 15h4v4h-4zM333 19h6v4h-6zM332 23h8v4h-8zM331 27h10v2h-10zM335 24h2v3h-2zM334 27h4v2h-4zM333 29h6v3h-6zM332 32h8v2h-8zM331 34h10v3h-10zM330 37h12v2h-12zM329 39h14v2h-14zM328 41h16v2h-16zM335 38h2v2h-2zM334 40h4v2h-4zM333 42h6v2h-6zM332 44h8v1h-8zM331 45h10v2h-10zM330 47h12v2h-12zM329 49h14v1h-14zM328 50h16v2h-16zM327 52h18v2h-18zM326 54h20v2h-20zM325 56h22v1h-22zM335 52h2v2h-2zM334 54h4v1h-4zM333 55h6v1h-6zM332 56h8v2h-8zM331 58h10v1h-10zM330 59h12v1h-12zM329 60h14v2h-14zM328 62h16v1h-16zM327 63h18v1h-18zM326 64h20v2h-20zM325 66h22v1h-22zM324 67h24v1h-24zM323 68h26v2h-26zM322 70h28v1h-28zM317 71h3v5h-3zM317 32h2v3h-2zM316 35h4v3h-4zM315 38h6v3h-6zM314 41h8v2h-8zM313 43h10v2h-10zM317 40h2v2h-2zM316 42h4v2h-4zM315 44h6v1h-6zM314 45h8v2h-8zM313 47h10v1h-10zM312 48h12v2h-12zM311 50h14v2h-14zM310 52h16v1h-16zM317 48h2v1h-2zM316 49h4v1h-4zM315 50h6v2h-6zM314 52h8v1h-8zM313 53h10v1h-10zM312 54h12v1h-12zM311 55h14v1h-14zM310 56h16v2h-16zM309 58h18v1h-18zM308 59h20v1h-20zM307 60h22v1h-22zM317 56h2v1h-2zM316 57h4v1h-4zM315 58h6v1h-6zM314 59h8v1h-8zM313 60h10v1h-10zM312 61h12v1h-12zM310 62h16v1h-16zM309 63h18v1h-18zM308 64h20v1h-20zM307 65h22v1h-22zM306 66h24v1h-24zM305 67h26v1h-26zM304 68h28v1h-28z"
+          />
+          <rect x="0" y="74" width="360" height="10" fill="#14243a" />
+          <rect x="0" y="74" width="360" height="1" fill="#1d3350" />
+          <path
+            fill="#192c47"
+            d="M-4 79h8v1h-8zM18 79h8v1h-8zM40 79h8v1h-8zM62 79h8v1h-8zM84 79h8v1h-8zM106 79h8v1h-8zM128 79h8v1h-8zM150 79h8v1h-8zM172 79h8v1h-8zM194 79h8v1h-8zM216 79h8v1h-8zM238 79h8v1h-8zM260 79h8v1h-8zM282 79h8v1h-8zM304 79h8v1h-8zM326 79h8v1h-8zM348 79h8v1h-8z"
+          />
+          <path
+            fill="#13253a"
+            d="M77 28h2v1h-2zM76 29h4v1h-4zM75 30h6v1h-6zM74 31h8v1h-8zM73 32h10v1h-10zM71 33h14v1h-14zM70 34h16v1h-16zM69 35h18v1h-18zM68 36h20v1h-20zM67 37h22v1h-22zM66 38h24v1h-24zM65 39h26v1h-26zM64 40h28v1h-28zM63 41h30v1h-30zM62 42h32v1h-32zM61 43h34v1h-34zM60 44h36v1h-36zM58 45h40v1h-40zM57 46h42v1h-42zM56 47h44v1h-44zM55 48h46v1h-46zM54 49h48v1h-48zM53 50h50v1h-50zM52 51h52v1h-52zM51 52h54v1h-54zM50 53h56v1h-56zM49 54h58v1h-58zM48 55h60v1h-60zM46 56h64v1h-64zM45 57h66v1h-66zM44 58h68v1h-68zM43 59h70v1h-70zM42 60h72v1h-72zM41 61h74v1h-74zM40 62h76v1h-76zM39 63h78v1h-78zM38 64h80v1h-80zM37 65h82v1h-82zM36 66h84v1h-84zM35 67h86v1h-86zM33 68h90v1h-90zM32 69h92v1h-92zM31 70h94v1h-94zM30 71h96v1h-96zM29 72h98v1h-98zM28 73h100v1h-100z"
+          />
+          <path
+            fill="#29465b"
+            d="M77 32h2v1h-2zM76 33h4v1h-4zM75 34h6v1h-6zM74 35h8v1h-8zM73 36h10v1h-10zM72 37h12v1h-12zM71 38h14v1h-14zM70 39h16v1h-16zM69 40h18v1h-18zM68 41h20v1h-20zM66 42h24v1h-24zM65 43h26v1h-26zM64 44h28v1h-28zM63 45h30v1h-30zM62 46h32v1h-32zM61 47h34v1h-34zM60 48h36v1h-36zM59 49h38v1h-38zM58 50h40v1h-40zM57 51h42v1h-42zM56 52h44v1h-44zM55 53h46v1h-46zM54 54h48v1h-48zM53 55h50v1h-50zM52 56h52v1h-52zM51 57h54v1h-54zM50 58h56v1h-56zM49 59h58v1h-58zM48 60h60v1h-60zM47 61h62v1h-62zM46 62h64v1h-64zM44 63h68v1h-68zM43 64h70v1h-70zM42 65h72v1h-72zM41 66h74v1h-74zM40 67h76v1h-76zM39 68h78v1h-78zM38 69h80v1h-80zM37 70h82v1h-82zM36 71h84v1h-84zM35 72h86v1h-86zM34 73h88v1h-88z"
+          />
+          <path
+            fill="#1d364c"
+            d="M77 32h1v1h-1zM76 33h2v1h-2zM75 34h3v1h-3zM74 35h4v1h-4zM73 36h5v1h-5zM72 37h6v1h-6zM71 38h7v1h-7zM70 39h8v1h-8zM69 40h9v1h-9zM68 41h10v1h-10zM66 42h12v1h-12zM65 43h13v1h-13zM64 44h14v1h-14zM63 45h15v1h-15zM62 46h16v1h-16zM61 47h17v1h-17zM60 48h18v1h-18zM59 49h19v1h-19zM58 50h20v1h-20zM57 51h21v1h-21zM56 52h22v1h-22zM55 53h23v1h-23zM54 54h24v1h-24zM53 55h25v1h-25zM52 56h26v1h-26zM51 57h27v1h-27zM50 58h28v1h-28zM49 59h29v1h-29zM48 60h30v1h-30zM47 61h31v1h-31zM46 62h32v1h-32zM44 63h34v1h-34zM43 64h35v1h-35zM42 65h36v1h-36zM41 66h37v1h-37zM40 67h38v1h-38zM39 68h39v1h-39zM38 69h40v1h-40zM37 70h41v1h-41zM36 71h42v1h-42zM35 72h43v1h-43zM34 73h44v1h-44z"
+          />
+          <path
+            fill="#e28a3d"
+            d="M77 46h2v2h-2zM76 48h4v2h-4zM75 50h6v2h-6zM74 52h8v2h-8zM73 54h10v2h-10zM72 56h12v2h-12zM71 58h14v1h-14zM70 59h16v2h-16zM69 61h18v2h-18zM68 63h20v2h-20zM67 65h22v2h-22zM66 67h24v2h-24zM65 69h26v2h-26zM64 71h28v2h-28zM63 73h30v1h-30z"
+          />
+          <path
+            class="campfire-tent-light"
+            fill="#ffc36b"
+            d="M77 54h2v3h-2zM76 57h4v2h-4zM75 59h6v2h-6zM74 61h8v3h-8zM73 64h10v2h-10zM72 66h12v2h-12zM71 68h14v2h-14zM70 70h16v2h-16zM69 72h18v2h-18z"
+          />
+          <rect x="77" y="28" width="2" height="46" fill="#13253a" />
+          <rect x="26" y="73" width="104" height="2" fill="#15283b" />
+          <path fill="#6a3a25" d="M28 70h2v4h-2zM126 70h2v4h-2z" />
+          <rect
+            class="campfire-glow"
+            x="118"
+            y="74"
+            width="76"
+            height="2"
+            fill="#5a2f1c"
+          />
+          <rect
+            class="campfire-glow"
+            x="104"
+            y="76"
+            width="104"
+            height="2"
+            fill="#2c2126"
+          />
+          <g transform="translate(-6 16)">
+            <path fill="#4a281d" d="M129 54h62v5h-62z" />
+            <path fill="#62351f" d="M142 51h35v5h-35z" />
+            <path fill="#9c4b23" d="M139 54h41v3h-41z" />
+            <path fill="#6b351f" d="M146 49h29v4h-29z" />
+            <g class="campfire-flames">
+              <path
+                class="flame flame-one"
+                fill="#e86f2d"
+                d="M151 51h-5v-8h4v-8h5v5h4v-10h5v8h4v-5h4v11h-4v7z"
+              />
+              <path
+                class="flame flame-two"
+                fill="#ffb84d"
+                d="M153 50h-3v-6h4v-6h4v8h3v-11h4v8h3v7z"
+              />
+              <path
+                class="flame flame-three"
+                fill="#fff0b5"
+                d="M157 49h-2v-5h3v-5h3v7h3v3z"
+              />
+            </g>
+          </g>
+          <rect
+            class="campfire-spark"
+            style="animation-delay: -0s"
+            x="148"
+            y="44"
+            width="1"
+            height="1"
+            fill="#ffb84d"
+          />
+          <rect
+            class="campfire-spark"
+            style="animation-delay: -0.7s"
+            x="156"
+            y="44"
+            width="1"
+            height="1"
+            fill="#fff0b5"
+          />
+          <rect
+            class="campfire-spark"
+            style="animation-delay: -1.4s"
+            x="163"
+            y="44"
+            width="1"
+            height="1"
+            fill="#e86f2d"
+          />
+          <rect
+            class="campfire-spark"
+            style="animation-delay: -2.1s"
+            x="152"
+            y="44"
+            width="1"
+            height="1"
+            fill="#ffb84d"
+          />
+          <g transform="translate(52 16)">
+            <path fill="#39251f" d="M218 50h56v9h-56z" />
+            <path fill="#6a3a25" d="M224 48h42v8h-42z" />
+            <path fill="#a35a2b" d="M266 48h9v8h-9z" />
+            <path fill="#e2ac70" d="M269 50h4v4h-4z" />
+            <path fill="#241a1b" d="M232 51h18v2h-18zm8 3h17v2h-17z" />
+          </g>
+          <path fill="#d9ddc4" d="M284 59h5v5h-5zM289 60h2v3h-2z" />
+          <rect
+            class="campfire-steam"
+            x="285"
+            y="57"
+            width="1"
+            height="2"
+            fill="#9fb0c4"
+          />
+          <rect x="242" y="66" width="6" height="8" fill="#2b3a4a" />
+          <rect
+            class="campfire-lantern"
+            x="243"
+            y="67"
+            width="4"
+            height="5"
+            fill="#ffc36b"
+          />
+          <path fill="#2b3a4a" d="M243 64h4v2h-4zM244 62h2v2h-2z" />
+          <rect
+            class="campfire-firefly"
+            style="animation-delay: -0s"
+            x="226"
+            y="48"
+            width="1"
+            height="1"
+            fill="#d7f58a"
+          />
+          <rect
+            class="campfire-firefly"
+            style="animation-delay: -1.3s"
+            x="258"
+            y="40"
+            width="1"
+            height="1"
+            fill="#d7f58a"
+          />
+          <rect
+            class="campfire-firefly"
+            style="animation-delay: -2.6s"
+            x="310"
+            y="52"
+            width="1"
+            height="1"
+            fill="#d7f58a"
+          />
+          <rect
+            class="campfire-firefly"
+            style="animation-delay: -3.9s"
+            x="296"
+            y="44"
+            width="1"
+            height="1"
+            fill="#d7f58a"
+          />
+          <rect
+            class="campfire-firefly"
+            style="animation-delay: -5.2s"
+            x="112"
+            y="50"
+            width="1"
+            height="1"
+            fill="#d7f58a"
+          />
+          <g
+            id="guitarist"
+            class="guitarist"
+            data-state="resting"
+            transform="translate(186 6)"
+          >
+            <path fill="#101c17" d="M8 67h48v3H8z" />
+            <g class="pixel-body">
+              <path
+                fill="#74918a"
+                d="M22 46h20v10h-3v10h-8V55h-3v11h-8V54h2z"
+              />
+              <path
+                class="pixel-feet"
+                fill="#d9ddc4"
+                d="M18 64h10v4H16v-2h2zm13 0h10v2h3v2H31z"
+              />
+              <path fill="#b2c779" d="M22 26h17v3h5v21H19V30h3z" />
+              <path fill="#7e965b" d="M19 31h5v17h-5zm17-2h5v20h-5z" />
+              <path fill="#d5a47b" d="M39 30h5v7h8v5H40v-4h-1z" />
+              <g class="pixel-head">
+                <path fill="#d5a47b" d="M23 13h17v12h-5v4h-9v-4h-3z" />
+                <path fill="#a77456" d="M23 16h4v8h8v3h-9v-3h-3z" />
+                <path fill="#263c34" d="M22 5h16v3h3v7H19v-4h3z" />
+                <path fill="#d1e6a0" d="M22 11h19v3H22z" />
+                <path
+                  fill="#101c17"
+                  d="M16 14h30v3H16zm12 5h4v3h-4zm7 0h5v3h-5z"
+                />
+                <path fill="#f0c79d" d="M33 23h4v2h-4z" />
+              </g>
+              <path fill="#523b2b" d="M24 28h3l12 18h-4z" />
+              <path
+                fill="#986439"
+                d="M18 38h9v-3h9v3h4v13h-4v5H20v-3h-5V42h3z"
+              />
+              <path
+                fill="#e1ac5e"
+                d="M19 40h8v-3h7v3h4v10h-4v4H21v-3h-4v-8h2z"
+              />
+              <path fill="#bc8649" d="M32 40h11v-3h9v-3h7v5h-7v3h-9v3H32z" />
+              <path fill="#edc486" d="M53 32h7v7h-7z" />
+              <path
+                fill="#b9c8b2"
+                d="M53 30h2v2h-2zm5 0h2v2h-2zm-3 9h2v2h-2z"
+              />
+              <path fill="#533c2d" d="M27 42h6v6h-6zM20 45h3v6h-3z" />
+              <path
+                fill="#f4d7a0"
+                d="M23 45h11v1H23zm11-3h9v1h-9zm9-3h10v1H43z"
+              />
+              <g class="pixel-arm">
+                <path fill="#d5a47b" d="M18 30h6v8h3v4h4v5h-6v-4h-4v-4h-3z" />
+                <path fill="#f0c79d" d="M26 41h4v5h-4z" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>WHERE THE NIGHT FINDS ITS RHYTHM.</span>
       </div>
-      <div class="cosy-village" aria-hidden="true">
+      <div class="scene scene-cosy" aria-hidden="true">
         <svg
-          viewBox="0 0 320 64"
-          width="640"
-          height="128"
+          viewBox="0 0 360 84"
+          width="720"
+          height="168"
+          preserveAspectRatio="xMidYMid slice"
           shape-rendering="crispEdges"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <rect x="0" y="0" width="360" height="84" fill="#f8e2b8" />
+          <rect x="0" y="0" width="360" height="14" fill="#f3c98c" />
+          <rect x="0" y="14" width="360" height="12" fill="#f6d6a0" />
+          <path
+            fill="#fff6d8"
+            d="M295 19h10v1h-10zM294 20h12v1h-12zM292 21h16v1h-16zM291 22h18v1h-18zM290 23h20v2h-20zM289 25h22v3h-22zM288 28h24v5h-24zM289 33h22v3h-22zM290 36h20v2h-20zM291 38h18v1h-18zM292 39h16v1h-16zM294 40h12v1h-12zM295 41h10v1h-10z"
+          />
+          <path
+            fill="#fffdf0"
+            d="M296 22h8v1h-8zM294 23h12v1h-12zM293 24h14v2h-14zM292 26h16v2h-16zM291 28h18v5h-18zM292 33h16v2h-16zM293 35h14v2h-14zM294 37h12v1h-12zM296 38h8v1h-8z"
+          />
           <g class="village-cloud village-cloud-one">
-            <path fill="#fcf4df" d="M18 12h8V8h14v4h8v6H18z" />
+            <path fill="#fff6e0" d="M22 12h30v5h-30zM28 8h16v4h-16z" />
           </g>
           <g class="village-cloud village-cloud-two">
-            <path fill="#fcf4df" d="M199 16h10v-5h18v5h9v6h-37z" />
+            <path fill="#fff6e0" d="M206 16h36v5h-36zM214 11h18v5h-18z" />
           </g>
-          <path fill="#ebc680" d="M265 6h14v4h4v14h-4v4h-14v-4h-4V10h4z" />
-          <g class="village-bushes">
+          <g class="turnaround autumn-birds">
             <path
-              fill="#a7bd9c"
-              d="M0 55h25v-4h38v5h30v-8h40v8h29v-5h31v5h49v-6h40v6h38v8H0z"
-            />
-          </g>
-          <path fill="#ba7867" d="M120 24h7v-6h8v-6h39v6h8v6h8v7h-70z" />
-          <path fill="#805b54" d="M165 5h9v13h-9zM118 29h74v5h-74z" />
-          <g class="chimney-smoke" fill="#fcf4df">
-            <path
-              class="smoke-puff smoke-puff-one"
-              d="M167 6h5V2h4v4h4v4h-4v3h-9v-3h-4V6h4z"
-            />
-            <path
-              class="smoke-puff smoke-puff-two"
-              d="M169 4h4V0h4v4h3v3h-3v3h-8V7h-3V4h3z"
-            />
-            <path
-              class="smoke-puff smoke-puff-three"
-              d="M166 8h4V4h5v4h4v4h-4v3h-9v-3h-3V8h3z"
+              fill="#6b4226"
+              d="M0 6h1v1h-1zM1 7h1v1h-1zM2 6h1v1h-1zM7 3h1v1h-1zM8 4h1v1h-1zM9 3h1v1h-1zM14 0h1v1h-1zM15 1h1v1h-1zM16 0h1v1h-1zM21 3h1v1h-1zM22 4h1v1h-1zM23 3h1v1h-1zM28 6h1v1h-1zM29 7h1v1h-1zM30 6h1v1h-1z"
             />
           </g>
-          <path fill="#f7e2b6" d="M126 34h58v26h-58z" />
-          <path fill="#8cafb7" d="M132 38h13v12h-13zm32 0h13v12h-13z" />
           <path
-            fill="#fcf4df"
-            d="M137 38h2v12h-2zm-5 5h13v2h-13zm37-5h2v12h-2zm-5 5h13v2h-13z"
+            fill="#e0a85c"
+            d="M40 57h20v1h-20zM35 58h30v1h-30zM32 59h36v1h-36zM29 60h42v1h-42zM27 61h46v1h-46zM25 62h50v1h-50zM23 63h54v1h-54zM21 64h58v1h-58zM20 65h60v1h-60zM18 66h64v1h-64zM17 67h66v1h-66zM16 68h68v1h-68zM14 69h72v1h-72zM13 70h74v1h-74zM12 71h76v1h-76zM11 72h78v1h-78zM10 73h80v1h-80zM9 74h82v1h-82zM8 75h84v1h-84zM7 76h86v1h-86zM6 77h88v2h-88zM5 79h90v1h-90zM4 80h92v2h-92zM3 82h94v1h-94zM2 83h96v1h-96z"
           />
-          <path fill="#916953" d="M150 42h10v18h-10z" />
-          <path fill="#e8b26b" d="M157 49h2v2h-2z" />
-          <path fill="#719479" d="M54 34h5v23h-5zm189-3h5v26h-5z" />
+          <path
+            fill="#d99a4e"
+            d="M184 57h24v1h-24zM180 58h32v1h-32zM176 59h40v1h-40zM173 60h46v1h-46zM170 61h52v1h-52zM168 62h56v1h-56zM166 63h60v1h-60zM164 64h64v1h-64zM162 65h68v1h-68zM160 66h72v1h-72zM158 67h76v1h-76zM157 68h78v1h-78zM156 69h80v1h-80zM154 70h84v1h-84zM153 71h86v1h-86zM152 72h88v1h-88zM150 73h92v1h-92zM149 74h94v1h-94zM148 75h96v1h-96zM147 76h98v1h-98zM146 77h100v1h-100zM145 78h102v1h-102zM144 79h104v1h-104zM143 80h106v2h-106zM142 82h108v1h-108zM141 83h110v1h-110z"
+          />
+          <path
+            fill="#e0a85c"
+            d="M320 59h20v1h-20zM316 60h28v1h-28zM313 61h34v1h-34zM310 62h40v1h-40zM308 63h44v1h-44zM306 64h48v1h-48zM304 65h52v1h-52zM302 66h56v1h-56zM301 67h58v1h-58zM299 68h62v1h-62zM298 69h64v1h-64zM297 70h66v1h-66zM296 71h68v1h-68zM295 72h70v1h-70zM294 73h72v1h-72zM293 74h74v1h-74zM292 75h76v1h-76zM291 76h78v1h-78zM290 77h80v1h-80zM289 78h82v1h-82zM288 79h84v2h-84zM287 81h86v1h-86zM286 82h88v2h-88z"
+          />
+          <rect x="206" y="62" width="2" height="8" fill="#8a5a36" />
+          <path
+            fill="#c2491f"
+            d="M204 55h6v1h-6zM203 56h8v2h-8zM202 58h10v3h-10zM203 61h8v2h-8zM204 63h6v1h-6z"
+          />
+          <rect x="222" y="62" width="2" height="8" fill="#8a5a36" />
+          <path
+            fill="#e89a3c"
+            d="M220 55h6v1h-6zM219 56h8v2h-8zM218 58h10v3h-10zM219 61h8v2h-8zM220 63h6v1h-6z"
+          />
+          <rect x="236" y="62" width="2" height="8" fill="#8a5a36" />
+          <path
+            fill="#b83b2e"
+            d="M234 55h6v1h-6zM233 56h8v2h-8zM232 58h10v3h-10zM233 61h8v2h-8zM234 63h6v1h-6z"
+          />
+          <rect x="340" y="62" width="2" height="8" fill="#8a5a36" />
+          <path
+            fill="#e89a3c"
+            d="M338 55h6v1h-6zM337 56h8v2h-8zM336 58h10v3h-10zM337 61h8v2h-8zM338 63h6v1h-6z"
+          />
+          <rect x="352" y="62" width="2" height="8" fill="#8a5a36" />
+          <path
+            fill="#c2491f"
+            d="M350 55h6v1h-6zM349 56h8v2h-8zM348 58h10v3h-10zM349 61h8v2h-8zM350 63h6v1h-6z"
+          />
+          <rect x="0" y="74" width="360" height="10" fill="#b98f4a" />
+          <rect x="0" y="74" width="360" height="1" fill="#d6b565" />
+          <path
+            fill="#a57c3c"
+            d="M-2 79h6v1h-6zM14 78h6v1h-6zM30 79h6v1h-6zM46 78h6v1h-6zM62 79h6v1h-6zM78 78h6v1h-6zM94 79h6v1h-6zM110 78h6v1h-6zM126 79h6v1h-6zM142 78h6v1h-6zM158 79h6v1h-6zM174 78h6v1h-6zM190 79h6v1h-6zM206 78h6v1h-6zM222 79h6v1h-6zM238 78h6v1h-6zM254 79h6v1h-6zM270 78h6v1h-6zM286 79h6v1h-6zM302 78h6v1h-6zM318 79h6v1h-6zM334 78h6v1h-6zM350 79h6v1h-6z"
+          />
+          <rect x="13" y="50" width="4" height="24" fill="#6b4226" />
           <g class="village-foliage village-foliage-left">
             <path
-              fill="#719479"
-              d="M45 28h9v6h5v8h-9v-6h-5zm14 6h10v7h-5v5h-5z"
+              fill="#e0a030"
+              d="M11 32h8v1h-8zM9 33h12v1h-12zM8 34h14v1h-14zM7 35h16v1h-16zM6 36h18v1h-18zM5 37h20v3h-20zM4 40h22v5h-22zM5 45h20v3h-20zM6 48h18v1h-18zM7 49h16v1h-16zM8 50h14v1h-14zM9 51h12v1h-12zM11 52h8v1h-8z"
+            />
+            <path
+              fill="#c9801f"
+              d="M5 43h6v1h-6zM3 44h10v1h-10zM2 45h12v2h-12zM1 47h14v5h-14zM2 52h12v2h-12zM3 54h10v1h-10zM5 55h6v1h-6z"
+            />
+            <path
+              fill="#eab84a"
+              d="M19 42h6v1h-6zM18 43h8v1h-8zM17 44h10v1h-10zM16 45h12v5h-12zM17 50h10v1h-10zM18 51h8v1h-8zM19 52h6v1h-6z"
             />
           </g>
+          <rect x="140" y="46" width="4" height="28" fill="#6b4226" />
           <g class="village-foliage village-foliage-right">
             <path
-              fill="#719479"
-              d="M233 28h10v11h-6v-5h-4zm15 8h10v6h-5v6h-5z"
+              fill="#b83b2e"
+              d="M137 24h10v1h-10zM135 25h14v1h-14zM134 26h16v1h-16zM133 27h18v1h-18zM132 28h20v1h-20zM131 29h22v2h-22zM130 31h24v3h-24zM129 34h26v5h-26zM130 39h24v3h-24zM131 42h22v2h-22zM132 44h20v1h-20zM133 45h18v1h-18zM134 46h16v1h-16zM135 47h14v1h-14zM137 48h10v1h-10z"
+            />
+            <path
+              fill="#d9692b"
+              d="M147 36h8v1h-8zM146 37h10v1h-10zM145 38h12v1h-12zM144 39h14v2h-14zM143 41h16v5h-16zM144 46h14v2h-14zM145 48h12v1h-12zM146 49h10v1h-10zM147 50h8v1h-8z"
+            />
+            <path
+              fill="#9c2f25"
+              d="M130 38h6v1h-6zM128 39h10v1h-10zM127 40h12v2h-12zM126 42h14v5h-14zM127 47h12v2h-12zM128 49h10v1h-10zM130 50h6v1h-6z"
+            />
+          </g>
+          <rect x="106" y="16" width="8" height="16" fill="#8a5a4a" />
+          <rect x="104" y="14" width="12" height="2" fill="#5a342a" />
+          <g class="chimney-smoke">
+            <rect
+              class="smoke-puff smoke-puff-one"
+              x="107"
+              y="8"
+              width="7"
+              height="4"
+              fill="#fff6e0"
+            />
+            <rect
+              class="smoke-puff smoke-puff-two"
+              x="109"
+              y="5"
+              width="7"
+              height="4"
+              fill="#fff6e0"
+            />
+            <rect
+              class="smoke-puff smoke-puff-three"
+              x="106"
+              y="9"
+              width="7"
+              height="4"
+              fill="#fff6e0"
             />
           </g>
           <path
-            fill="#cc8b71"
-            d="M45 50h22v5h-3v8H48v-8h-3zm189 0h22v5h-3v8h-16v-8h-3z"
+            fill="#a8503a"
+            d="M56 22h56v1h-56zM55 23h58v1h-58zM54 24h60v1h-60zM53 25h62v1h-62z"
           />
-          <path fill="#f2b0a0" d="M86 47h5v5h-5zm116 0h5v5h-5z" /></svg
-        ><span>A LITTLE PLACE TO PLAY.</span>
+          <rect x="52" y="26" width="64" height="1" fill="#8f3f2c" />
+          <path
+            fill="#a8503a"
+            d="M51 27h66v1h-66zM50 28h68v1h-68zM49 29h70v1h-70zM48 30h72v1h-72z"
+          />
+          <rect x="47" y="31" width="74" height="1" fill="#8f3f2c" />
+          <path
+            fill="#a8503a"
+            d="M47 32h74v1h-74zM46 33h76v1h-76zM45 34h78v1h-78zM44 35h80v1h-80z"
+          />
+          <rect x="43" y="36" width="82" height="1" fill="#8f3f2c" />
+          <path
+            fill="#a8503a"
+            d="M42 37h84v1h-84zM41 38h86v1h-86zM40 39h88v1h-88zM39 40h90v1h-90z"
+          />
+          <rect x="38" y="41" width="92" height="1" fill="#8f3f2c" />
+          <rect x="36" y="42" width="96" height="3" fill="#5a342a" />
+          <rect x="44" y="45" width="80" height="29" fill="#f7e2b6" />
+          <rect x="44" y="45" width="80" height="2" fill="#e3c592" />
+          <rect x="44" y="72" width="80" height="2" fill="#d9b98a" />
+          <rect x="51" y="51" width="18" height="14" fill="#7a4a2e" />
+          <rect
+            class="village-window"
+            x="52"
+            y="52"
+            width="16"
+            height="12"
+            fill="#8fb3b0"
+          />
+          <path fill="#7a4a2e" d="M59 52h2v12h-2zM52 57h16v2h-16z" />
+          <path fill="#b83b2e" d="M48 51h3v14h-3zM69 51h3v14h-3z" />
+          <rect x="50" y="65" width="20" height="2" fill="#fff6e0" />
+          <rect x="99" y="51" width="18" height="14" fill="#7a4a2e" />
+          <rect
+            class="village-window"
+            x="100"
+            y="52"
+            width="16"
+            height="12"
+            fill="#8fb3b0"
+          />
+          <path fill="#7a4a2e" d="M107 52h2v12h-2zM100 57h16v2h-16z" />
+          <path fill="#b83b2e" d="M96 51h3v14h-3zM117 51h3v14h-3z" />
+          <rect x="98" y="65" width="20" height="2" fill="#fff6e0" />
+          <rect x="77" y="53" width="14" height="21" fill="#5a342a" />
+          <rect x="78" y="54" width="12" height="20" fill="#8a4a2e" />
+          <rect x="87" y="64" width="2" height="2" fill="#f0c98a" />
+          <rect
+            class="village-window"
+            x="80"
+            y="56"
+            width="8"
+            height="5"
+            fill="#f7d08a"
+          />
+          <rect x="72" y="72" width="24" height="2" fill="#c9a877" />
+          <path
+            fill="#c2491f"
+            d="M82 46h4v1h-4zM81 47h6v1h-6zM80 48h8v3h-8zM81 51h6v1h-6zM82 52h4v1h-4z"
+          />
+          <rect x="83" y="48" width="2" height="2" fill="#f7e2b6" />
+          <path fill="#e0a030" d="M82 46h2v1h-2zM86 51h1v1h-1z" />
+          <path
+            fill="#e07a28"
+            d="M130 66h8v1h-8zM129 67h10v1h-10zM128 68h12v5h-12z"
+          />
+          <path fill="#b9581a" d="M129 73h10v1h-10zM130 74h8v1h-8z" />
+          <path fill="#c2631f" d="M133 66h1v8h-1zM136 67h1v6h-1z" />
+          <rect x="134" y="64" width="2" height="2" fill="#5f7a3a" />
+          <path fill="#e07a28" d="M143 70h6v2h-6zM142 72h8v1h-8z" />
+          <rect x="143" y="73" width="6" height="2" fill="#b9581a" />
+          <path fill="#c2631f" d="M145 70h1v4h-1zM147 71h1v2h-1z" />
+          <rect x="146" y="68" width="2" height="2" fill="#5f7a3a" />
+          <path
+            fill="#e07a28"
+            d="M27 68h6v1h-6zM26 69h8v1h-8zM25 70h10v3h-10z"
+          />
+          <path fill="#b9581a" d="M26 73h8v1h-8zM27 74h6v1h-6z" />
+          <path fill="#c2631f" d="M29 68h1v6h-1zM32 69h1v4h-1z" />
+          <rect x="30" y="66" width="2" height="2" fill="#5f7a3a" />
+          <path
+            fill="#6b4226"
+            d="M294 40h6v34h-6zM288 46h7v2h-7zM300 50h8v2h-8z"
+          />
+          <g class="village-foliage village-foliage-right">
+            <path
+              fill="#d9692b"
+              d="M291 12h12v1h-12zM289 13h16v1h-16zM288 14h18v1h-18zM286 15h22v1h-22zM285 16h24v1h-24zM284 17h26v1h-26zM283 18h28v2h-28zM282 20h30v2h-30zM281 22h32v3h-32zM280 25h34v7h-34zM281 32h32v3h-32zM282 35h30v2h-30zM283 37h28v2h-28zM284 39h26v1h-26zM285 40h24v1h-24zM286 41h22v1h-22zM288 42h18v1h-18zM289 43h16v1h-16zM291 44h12v1h-12z"
+            />
+            <path
+              fill="#c2491f"
+              d="M278 29h8v1h-8zM276 30h12v1h-12zM275 31h14v1h-14zM274 32h16v1h-16zM273 33h18v3h-18zM272 36h20v5h-20zM273 41h18v3h-18zM274 44h16v1h-16zM275 45h14v1h-14zM276 46h12v1h-12zM278 47h8v1h-8z"
+            />
+            <path
+              fill="#e89a3c"
+              d="M309 29h8v1h-8zM307 30h12v1h-12zM306 31h14v1h-14zM305 32h16v1h-16zM304 33h18v3h-18zM303 36h20v5h-20zM304 41h18v3h-18zM305 44h16v1h-16zM306 45h14v1h-14zM307 46h12v1h-12zM309 47h8v1h-8zM292 6h8v1h-8zM290 7h12v1h-12zM289 8h14v2h-14zM288 10h16v2h-16zM287 12h18v5h-18zM288 17h16v2h-16zM289 19h14v2h-14zM290 21h12v1h-12zM292 22h8v1h-8z"
+            />
+            <path
+              fill="#f0b04a"
+              d="M303 18h6v1h-6zM301 19h10v1h-10zM300 20h12v2h-12zM299 22h14v5h-14zM300 27h12v2h-12zM301 29h10v1h-10zM303 30h6v1h-6z"
+            />
+          </g>
+          <path fill="#d9692b" d="M276 72h14v2h-14zM270 73h24v2h-24z" />
+          <rect x="278" y="71" width="8" height="1" fill="#e89a3c" />
+          <rect x="266" y="74" width="4" height="1" fill="#c2491f" />
+          <rect x="292" y="73" width="6" height="1" fill="#b83b2e" />
+          <rect x="322" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="322" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="328" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="328" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="334" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="334" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="340" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="340" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="346" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="346" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="352" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="352" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="358" y="62" width="2" height="12" fill="#fff6e0" />
+          <rect x="358" y="61" width="2" height="1" fill="#e3c592" />
+          <rect x="320" y="66" width="40" height="2" fill="#fff6e0" />
+          <rect x="254" y="71" width="4" height="2" fill="#b83b2e" />
+          <rect x="255" y="73" width="2" height="1" fill="#fff6e0" />
+          <rect x="259" y="72" width="3" height="1" fill="#b83b2e" />
+          <rect x="260" y="73" width="1" height="1" fill="#fff6e0" />
+          <rect x="160" y="68" width="12" height="6" fill="#a8703a" />
+          <rect x="160" y="68" width="12" height="1" fill="#c98f52" />
+          <rect x="162" y="66" width="3" height="3" fill="#b83b2e" />
+          <rect x="166" y="65" width="3" height="3" fill="#c2491f" />
+          <rect x="169" y="67" width="2" height="2" fill="#b83b2e" />
+          <g
+            id="cosy-cat"
+            class="cosy-cat"
+            data-character
+            data-state="resting"
+            transform="translate(172 14)"
+          >
+            <path fill="#8f3f2c" d="M8 56h64v4H8z" />
+            <path fill="#c9662f" d="M12 57h56v1H12z" />
+            <path fill="#f0c98a" d="M8 56h2v4H8zm62 0h2v4h-2z" />
+            <g class="cat-sleep">
+              <path
+                fill="#bd8060"
+                d="M19 37h8v-5h27v5h8v6h4v10h-5v4H18v-4h-5V42h6z"
+              />
+              <path fill="#e7af7e" d="M20 39h7v-4h24v4h8v14H20z" />
+              <path fill="#f5c99c" d="M17 34h5v5h12v-5h5v19H17z" />
+              <path
+                fill="#815c50"
+                d="M20 45h5v2h-5zm10 0h5v2h-5zm-4 4h3v2h-3z"
+              />
+              <path fill="#bd8060" d="M43 45h15v4H47v4h-5v-5h1z" />
+            </g>
+            <g class="cat-awake">
+              <path fill="#bd8060" d="M51 42h8v-8h5v16h-5v5H48z" />
+              <path fill="#e7af7e" d="M27 30h22v7h4v18H23V37h4z" />
+              <path fill="#f7d6b0" d="M32 36h12v18H32z" />
+              <path fill="#bd8060" d="M20 9h8v5h20V9h8v25h-5v5H25v-5h-5z" />
+              <path fill="#f5c99c" d="M24 13h3v7h22v-7h3v18h-5v5H29v-5h-5z" />
+              <path fill="#d99189" d="M24 13h3v5h-3zm25 0h3v5h-3z" />
+              <path
+                fill="#594f49"
+                d="M28 24h4v5h-4zm16 0h4v5h-4zm-8 6h4v3h-4z"
+              />
+              <path fill="#fcf4df" d="M28 24h2v2h-2zm16 0h2v2h-2z" />
+              <path fill="#bd8060" d="M25 52h10v5H25zm16 0h10v5H41z" />
+            </g>
+            <g class="cat-zzz" fill="#867f8b">
+              <path
+                d="M56 20h8v2h-3v2h-3v2h6v2h-8v-4h3v-2h-3zm10-12h9v2h-3v3h-3v2h6v2h-9v-4h3v-3h-3z"
+              />
+            </g>
+            <g class="cat-scarf">
+              <rect x="26" y="34" width="24" height="4" fill="#b83b2e" />
+              <rect x="26" y="34" width="24" height="1" fill="#d9692b" />
+              <rect x="44" y="38" width="5" height="7" fill="#b83b2e" />
+              <rect x="44" y="44" width="5" height="1" fill="#f0c98a" />
+            </g>
+          </g>
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 12.7s; animation-delay: -5s"
+            x="169"
+            y="-4"
+            width="2"
+            height="1"
+            fill="#d9692b"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 7.4s; animation-delay: -4s"
+            x="28"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#c2491f"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 10.5s; animation-delay: -9.5s"
+            x="191"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#e89a3c"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 7.2s; animation-delay: -3.1s"
+            x="113"
+            y="-4"
+            width="2"
+            height="1"
+            fill="#b83b2e"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 8.4s; animation-delay: -4.7s"
+            x="39"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#e0a030"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 12s; animation-delay: -1.5s"
+            x="34"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#d9692b"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 10.8s; animation-delay: -6.3s"
+            x="118"
+            y="-4"
+            width="2"
+            height="1"
+            fill="#c2491f"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 10.5s; animation-delay: -4.2s"
+            x="35"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#e89a3c"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 7.3s; animation-delay: -6.2s"
+            x="117"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#b83b2e"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 9.5s; animation-delay: -5.1s"
+            x="152"
+            y="-4"
+            width="2"
+            height="1"
+            fill="#e0a030"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 8.9s; animation-delay: -7.2s"
+            x="296"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#d9692b"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 7.6s; animation-delay: -4.4s"
+            x="96"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#c2491f"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 9.2s; animation-delay: -5.1s"
+            x="100"
+            y="-4"
+            width="2"
+            height="1"
+            fill="#e89a3c"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 10.4s; animation-delay: -6.4s"
+            x="36"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#b83b2e"
+          />
+          <rect
+            class="autumn-leaf"
+            style="animation-duration: 11.1s; animation-delay: -4.7s"
+            x="258"
+            y="-4"
+            width="2"
+            height="2"
+            fill="#e0a030"
+          />
+          <rect
+            class="autumn-leaf autumn-leaf-alt"
+            style="animation-duration: 9.8s; animation-delay: -9s"
+            x="164"
+            y="-4"
+            width="2"
+            height="1"
+            fill="#d9692b"
+          />
+        </svg>
+        <span>A LITTLE PLACE TO PLAY.</span>
       </div>
-      <div class="arcade-scene" aria-hidden="true">
+      <div class="scene scene-orbit" aria-hidden="true">
         <svg
-          viewBox="0 0 320 64"
-          width="640"
-          height="128"
+          viewBox="0 0 360 84"
+          width="720"
+          height="168"
+          preserveAspectRatio="xMidYMid slice"
           shape-rendering="crispEdges"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <defs>
+            <clipPath id="orbit-window-clip">
+              <rect x="98" y="10" width="164" height="46" />
+            </clipPath>
+          </defs>
+          <rect x="0" y="0" width="360" height="84" fill="#0c1128" />
+          <rect x="0" y="0" width="360" height="3" fill="#070a1a" />
           <path
-            fill="#7df9ff"
-            d="M16 12h2v2h-2zm35 21h3v3h-3zm29-24h2v2h-2zm133 4h3v3h-3zm37 18h2v2h-2zm46-21h3v3h-3zm-10 36h2v2h-2z"
+            fill="#10173a"
+            d="M0 3h1v71h-1zM24 3h1v71h-1zM48 3h1v71h-1zM72 3h1v71h-1zM96 3h1v71h-1zM120 3h1v71h-1zM144 3h1v71h-1zM168 3h1v71h-1zM192 3h1v71h-1zM216 3h1v71h-1zM240 3h1v71h-1zM264 3h1v71h-1zM288 3h1v71h-1zM312 3h1v71h-1zM336 3h1v71h-1z"
+          />
+          <rect x="0" y="74" width="360" height="10" fill="#161d42" />
+          <rect x="0" y="74" width="360" height="1" fill="#2d3a7a" />
+          <path
+            fill="#1d2654"
+            d="M-6 79h9v1h-9zM12 79h9v1h-9zM30 79h9v1h-9zM48 79h9v1h-9zM66 79h9v1h-9zM84 79h9v1h-9zM102 79h9v1h-9zM120 79h9v1h-9zM138 79h9v1h-9zM156 79h9v1h-9zM174 79h9v1h-9zM192 79h9v1h-9zM210 79h9v1h-9zM228 79h9v1h-9zM246 79h9v1h-9zM264 79h9v1h-9zM282 79h9v1h-9zM300 79h9v1h-9zM318 79h9v1h-9zM336 79h9v1h-9zM354 79h9v1h-9z"
+          />
+          <rect x="94" y="6" width="172" height="54" fill="#2b3768" />
+          <rect x="96" y="8" width="168" height="50" fill="#1a2247" />
+          <rect x="98" y="10" width="164" height="46" fill="#03050f" />
+          <g clip-path="url(#orbit-window-clip)">
+            <rect x="98" y="40" width="70" height="16" fill="#070b1f" />
+            <rect x="120" y="46" width="90" height="10" fill="#0a0f2a" />
+            <rect x="200" y="12" width="62" height="10" fill="#070b1f" />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="104"
+              y="14"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="112"
+              y="30"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-three"
+              x="119"
+              y="47"
+              width="1"
+              height="1"
+              fill="#ffd9a8"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="127"
+              y="22"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="135"
+              y="38"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-three"
+              x="143"
+              y="13"
+              width="1"
+              height="1"
+              fill="#ffd9a8"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="149"
+              y="51"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="156"
+              y="26"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-three"
+              x="165"
+              y="17"
+              width="1"
+              height="1"
+              fill="#ffd9a8"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="171"
+              y="44"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="186"
+              y="13"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-three"
+              x="192"
+              y="49"
+              width="1"
+              height="1"
+              fill="#ffd9a8"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="199"
+              y="24"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="206"
+              y="40"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-three"
+              x="213"
+              y="15"
+              width="1"
+              height="1"
+              fill="#ffd9a8"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="219"
+              y="52"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="252"
+              y="48"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-three"
+              x="257"
+              y="16"
+              width="1"
+              height="1"
+              fill="#ffd9a8"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="247"
+              y="24"
+              width="1"
+              height="1"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="210"
+              y="28"
+              width="1"
+              height="1"
+              fill="#9fd8ff"
+            />
+            <rect
+              class="orbit-star orbit-star-two"
+              x="130"
+              y="17"
+              width="2"
+              height="2"
+              fill="#e8ecff"
+            />
+            <rect
+              class="orbit-star orbit-star-one"
+              x="176"
+              y="30"
+              width="2"
+              height="2"
+              fill="#9fd8ff"
+            />
+            <path
+              fill="#b9c2e8"
+              d="M114 17h4v1h-4zM113 18h6v1h-6zM112 19h8v2h-8z"
+            />
+            <path
+              fill="#8f99c7"
+              d="M112 21h8v1h-8zM113 22h6v1h-6zM114 23h4v1h-4zM114 18h2v1h-2z"
+            />
+            <g class="orbit-planet">
+              <rect x="214" y="28" width="46" height="2" fill="#8a5a8f" />
+              <path
+                fill="#ffb38a"
+                d="M232 16h10v1h-10zM230 17h14v1h-14zM229 18h16v1h-16zM228 19h18v1h-18z"
+              />
+              <path
+                fill="#ff8f70"
+                d="M227 20h20v1h-20zM226 21h22v2h-22zM225 23h24v1h-24z"
+              />
+              <path fill="#e8674f" d="M225 24h24v2h-24zM224 26h26v1h-26z" />
+              <rect x="224" y="27" width="26" height="4" fill="#ff8f70" />
+              <rect x="225" y="31" width="24" height="3" fill="#d9567a" />
+              <path fill="#ff8f70" d="M226 34h22v2h-22zM227 36h20v1h-20z" />
+              <path
+                fill="#a83f7a"
+                d="M228 37h18v1h-18zM229 38h16v1h-16zM230 39h14v1h-14zM232 40h10v1h-10z"
+              />
+              <rect x="228" y="20" width="4" height="2" fill="#ffc9a3" />
+              <rect x="218" y="30" width="38" height="1" fill="#f3c6ff" />
+              <rect x="222" y="31" width="30" height="1" fill="#c79be0" />
+            </g>
+            <g class="orbit-ship">
+              <rect x="100" y="36" width="5" height="1" fill="#aab4e6" />
+              <rect x="101" y="35" width="3" height="1" fill="#e8ecff" />
+              <rect x="99" y="36" width="1" height="1" fill="#ff5c8a" />
+            </g>
+            <g class="orbit-shooting-star turnaround">
+              <rect x="150" y="24" width="3" height="1" fill="#ffffff" />
+              <rect x="147" y="22" width="3" height="1" fill="#e8ecff" />
+              <rect x="144" y="20" width="3" height="1" fill="#bcd0ff" />
+              <rect x="141" y="18" width="3" height="1" fill="#8fa6f0" />
+              <rect x="138" y="16" width="3" height="1" fill="#6379c9" />
+              <rect x="135" y="14" width="3" height="1" fill="#44539a" />
+              <rect x="132" y="12" width="3" height="1" fill="#2b3768" />
+            </g>
+          </g>
+          <path
+            fill="#2b3768"
+            d="M137 8h2v50h-2zM179 8h2v50h-2zM221 8h2v50h-2z"
+          />
+          <rect x="92" y="58" width="176" height="3" fill="#3a4a8f" />
+          <rect x="92" y="61" width="176" height="1" fill="#1a2247" />
+          <path fill="#2b3768" d="M140 3h80v1h-80zM149 4h3v2h-3z" />
+          <rect
+            class="orbit-lamp orbit-lamp-0"
+            x="148"
+            y="6"
+            width="5"
+            height="2"
+            fill="#4a568f"
+          />
+          <rect x="169" y="4" width="3" height="2" fill="#2b3768" />
+          <rect
+            class="orbit-lamp orbit-lamp-1"
+            x="168"
+            y="6"
+            width="5"
+            height="2"
+            fill="#4a568f"
+          />
+          <rect x="189" y="4" width="3" height="2" fill="#2b3768" />
+          <rect
+            class="orbit-lamp orbit-lamp-2"
+            x="188"
+            y="6"
+            width="5"
+            height="2"
+            fill="#4a568f"
+          />
+          <rect x="209" y="4" width="3" height="2" fill="#2b3768" />
+          <rect
+            class="orbit-lamp orbit-lamp-3"
+            x="208"
+            y="6"
+            width="5"
+            height="2"
+            fill="#4a568f"
+          />
+          <text class="orbit-neon" x="47" y="15" text-anchor="middle">
+            THE TURNAROUND
+          </text>
+          <rect x="10" y="34" width="40" height="2" fill="#3a4a8f" />
+          <path fill="#5ef2d0" d="M12 27h3v7h-3zM13 25h1v2h-1z" />
+          <rect x="12" y="27" width="1" height="7" fill="#ffffff55" />
+          <path fill="#ff5c8a" d="M16 25h3v9h-3zM17 23h1v2h-1z" />
+          <rect x="16" y="25" width="1" height="9" fill="#ffffff55" />
+          <path fill="#ffb454" d="M20 28h3v6h-3zM21 26h1v2h-1z" />
+          <rect x="20" y="28" width="1" height="6" fill="#ffffff55" />
+          <path fill="#9fb0e6" d="M25 24h3v10h-3zM26 22h1v2h-1z" />
+          <rect x="25" y="24" width="1" height="10" fill="#ffffff55" />
+          <path fill="#5ef2d0" d="M29 27h3v7h-3zM30 25h1v2h-1z" />
+          <rect x="29" y="27" width="1" height="7" fill="#ffffff55" />
+          <path fill="#b58cff" d="M33 26h3v8h-3zM34 24h1v2h-1z" />
+          <rect x="33" y="26" width="1" height="8" fill="#ffffff55" />
+          <path fill="#ff5c8a" d="M38 28h3v6h-3zM39 26h1v2h-1z" />
+          <rect x="38" y="28" width="1" height="6" fill="#ffffff55" />
+          <path fill="#ffb454" d="M42 25h3v9h-3zM43 23h1v2h-1z" />
+          <rect x="42" y="25" width="1" height="9" fill="#ffffff55" />
+          <path fill="#9fb0e6" d="M46 27h3v7h-3zM47 25h1v2h-1z" />
+          <rect x="46" y="27" width="1" height="7" fill="#ffffff55" />
+          <g class="orbit-robot">
+            <rect x="63" y="22" width="2" height="5" fill="#6f7db8" />
+            <rect
+              class="orbit-robot-bulb"
+              x="62"
+              y="20"
+              width="4"
+              height="3"
+              fill="#ffb454"
+            />
+            <rect x="57" y="27" width="14" height="11" fill="#8f9bd0" />
+            <rect x="57" y="27" width="3" height="11" fill="#6f7db8" />
+            <rect x="59" y="30" width="10" height="3" fill="#0c1128" />
+            <path
+              class="orbit-robot-eye"
+              fill="#5ef2d0"
+              d="M60 31h3v1h-3zM65 31h3v1h-3z"
+            />
+            <path fill="#4a568f" d="M61 35h6v1h-6zM62 38h4v2h-4z" />
+            <rect x="55" y="40" width="18" height="12" fill="#6f7db8" />
+            <rect x="55" y="40" width="4" height="12" fill="#56639c" />
+            <rect x="60" y="43" width="8" height="5" fill="#0c1128" />
+            <rect x="61" y="44" width="2" height="1" fill="#ff5c8a" />
+            <rect x="64" y="44" width="3" height="1" fill="#ffb454" />
+            <rect x="61" y="46" width="5" height="1" fill="#5ef2d0" />
+            <rect x="73" y="43" width="3" height="8" fill="#8f9bd0" />
+            <rect x="74" y="48" width="5" height="3" fill="#e8ecff" />
+          </g>
+          <rect x="6" y="52" width="82" height="3" fill="#7a5fc0" />
+          <rect x="6" y="52" width="82" height="1" fill="#a58cf0" />
+          <rect x="8" y="55" width="78" height="19" fill="#231b4d" />
+          <rect x="8" y="55" width="78" height="1" fill="#171136" />
+          <path
+            fill="#32287a"
+            d="M20 58h1v14h-1zM34 58h1v14h-1zM48 58h1v14h-1zM62 58h1v14h-1zM76 58h1v14h-1z"
+          />
+          <rect x="8" y="72" width="78" height="2" fill="#171136" />
+          <rect x="14" y="47" width="3" height="5" fill="#5ef2d0" />
+          <rect x="13" y="46" width="5" height="1" fill="#e8ecff" />
+          <rect x="34" y="48" width="6" height="4" fill="#ffb454" />
+          <rect x="35" y="47" width="4" height="1" fill="#ffd9a8" />
+          <rect x="24" y="60" width="10" height="2" fill="#ff5c8a" />
+          <rect x="24" y="60" width="10" height="1" fill="#ff8fae" />
+          <path
+            fill="#4a568f"
+            d="M28 62h2v11h-2zM25 73h8v1h-8zM26 68h6v1h-6z"
+          />
+          <rect x="46" y="60" width="10" height="2" fill="#ff5c8a" />
+          <rect x="46" y="60" width="10" height="1" fill="#ff8fae" />
+          <path
+            fill="#4a568f"
+            d="M50 62h2v11h-2zM47 73h8v1h-8zM48 68h6v1h-6z"
+          />
+          <rect x="332" y="18" width="20" height="26" fill="#2b3768" />
+          <rect x="334" y="20" width="16" height="22" fill="#151c42" />
+          <text class="orbit-poster" x="342" y="30" text-anchor="middle">
+            12
+          </text>
+          <text
+            class="orbit-poster orbit-poster-small"
+            x="342"
+            y="38"
+            text-anchor="middle"
+          >
+            BARS
+          </text>
+          <g class="orbit-jukebox">
+            <path
+              fill="#3a2a6b"
+              d="M296 40h28v34h-28zM299 37h22v3h-22zM302 35h16v2h-16z"
+            />
+            <path
+              class="orbit-juke-tube"
+              fill="#ff5c8a"
+              d="M298 42h2v30h-2zM320 42h2v30h-2z"
+            />
+            <path
+              class="orbit-juke-tube"
+              fill="#ffb454"
+              d="M300 39h20v1h-20zM303 37h14v1h-14z"
+            />
+            <rect
+              class="orbit-juke-glass"
+              x="303"
+              y="43"
+              width="14"
+              height="9"
+              fill="#ffcf8a"
+            />
+            <path
+              fill="#b3742a"
+              d="M305 45h10v1h-10zM305 47h10v1h-10zM305 49h10v1h-10z"
+            />
+            <rect x="303" y="55" width="14" height="13" fill="#1a1338" />
+            <path
+              fill="#5d4aa6"
+              d="M305 57h10v1h-10zM305 60h10v1h-10zM305 63h10v1h-10zM305 66h10v1h-10z"
+            />
+            <rect x="296" y="72" width="28" height="2" fill="#241a49" />
+          </g>
+          <rect x="334" y="60" width="22" height="2" fill="#7a5fc0" />
+          <rect x="334" y="60" width="22" height="1" fill="#a58cf0" />
+          <path fill="#4a568f" d="M344 62h2v11h-2zM340 73h10v1h-10z" />
+          <rect x="338" y="55" width="3" height="5" fill="#ff5c8a" />
+          <rect x="337" y="54" width="5" height="1" fill="#e8ecff" />
+          <rect x="348" y="56" width="3" height="4" fill="#5ef2d0" />
+          <rect x="276" y="66" width="9" height="8" fill="#7a5fc0" />
+          <rect x="276" y="66" width="9" height="1" fill="#a58cf0" />
+          <g class="orbit-plant">
+            <rect x="280" y="54" width="2" height="12" fill="#2f9c8a" />
+            <path fill="#5ef2d0" d="M275 56h5v3h-5zM282 52h5v3h-5z" />
+            <path fill="#3fd0b4" d="M277 49h4v3h-4zM282 59h4v2h-4z" />
+            <rect x="279" y="46" width="3" height="3" fill="#ff5c8a" />
+          </g>
+          <rect x="134" y="70" width="92" height="4" fill="#3d3180" />
+          <rect x="134" y="70" width="92" height="1" fill="#6f5fd0" />
+          <rect x="134" y="74" width="92" height="5" fill="#241c55" />
+          <rect x="134" y="78" width="92" height="1" fill="#171136" />
+          <path
+            class="orbit-footlight"
+            fill="#ffb454"
+            d="M142 75h2v2h-2zM162 75h2v2h-2zM182 75h2v2h-2zM202 75h2v2h-2zM216 75h2v2h-2z"
+          />
+          <rect x="208" y="58" width="14" height="12" fill="#1a1338" />
+          <rect x="209" y="59" width="12" height="10" fill="#2b2260" />
+          <rect x="211" y="61" width="8" height="6" fill="#151030" />
+          <rect x="213" y="63" width="4" height="2" fill="#3d3180" />
+          <rect
+            class="orbit-amp-led"
+            x="210"
+            y="60"
+            width="2"
+            height="1"
+            fill="#ff5c8a"
+          />
+          <g
+            id="orbit-alien"
+            class="orbit-alien"
+            data-character
+            data-state="resting"
+            transform="translate(158 22)"
+          >
+            <rect x="5" y="48" width="32" height="1" fill="#120d30" />
+            <g class="alien-body">
+              <path fill="#8f66e0" d="M12 40h6v6h-6zM22 40h6v6h-6z" />
+              <path fill="#2b1f66" d="M10 46h9v2h-9zM21 46h9v2h-9z" />
+              <rect x="10" y="26" width="20" height="14" fill="#b58cff" />
+              <rect x="10" y="26" width="3" height="14" fill="#8f66e0" />
+              <rect x="14" y="26" width="2" height="5" fill="#2b1f66" />
+              <g class="alien-head">
+                <path fill="#8f66e0" d="M12 1h2v6h-2zM26 1h2v6h-2z" />
+                <path
+                  class="alien-tip"
+                  fill="#ff5c8a"
+                  d="M11 -2h4v3h-4zM25 -2h4v3h-4z"
+                />
+                <path
+                  fill="#b58cff"
+                  d="M10 6h20v2h-20zM8 8h24v2h-24zM6 10h28v14h-28zM8 24h24v2h-24z"
+                />
+                <path fill="#8f66e0" d="M6 10h3v14h-3zM8 24h24v1h-24z" />
+                <rect x="12" y="8" width="8" height="1" fill="#d6c2ff" />
+                <g class="alien-eyes-open">
+                  <path fill="#e8fbff" d="M10 12h8v7h-8zM22 12h8v7h-8z" />
+                  <path fill="#120d30" d="M13 14h4v4h-4zM25 14h4v4h-4z" />
+                  <path fill="#ffffff" d="M13 14h1v1h-1zM25 14h1v1h-1z" />
+                  <path
+                    fill="#2b1f66"
+                    d="M17 21h6v1h-6zM16 20h1v1h-1zM23 20h1v1h-1z"
+                  />
+                </g>
+                <g class="alien-eyes-closed">
+                  <path
+                    fill="#2b1f66"
+                    d="M10 16h8v2h-8zM22 16h8v2h-8zM18 21h4v1h-4z"
+                  />
+                </g>
+              </g>
+              <g class="alien-keytar">
+                <rect x="3" y="30" width="28" height="8" fill="#ff5c8a" />
+                <rect x="3" y="30" width="28" height="1" fill="#ff9ab5" />
+                <path fill="#c93a68" d="M3 37h28v1h-28zM1 32h2v4h-2z" />
+                <rect x="6" y="32" width="21" height="4" fill="#f4f6ff" />
+                <path
+                  fill="#120d30"
+                  d="M9 32h1v4h-1zM12 32h1v4h-1zM15 32h1v4h-1zM18 32h1v4h-1zM21 32h1v4h-1zM24 32h1v4h-1zM8 32h2v2h-2zM11 32h2v2h-2zM17 32h2v2h-2zM20 32h2v2h-2zM23 32h2v2h-2z"
+                />
+                <path fill="#ffb454" d="M31 31h6v4h-6zM36 28h6v4h-6z" />
+                <rect x="41" y="25" width="5" height="5" fill="#ffd9a8" />
+                <path fill="#120d30" d="M42 26h1v1h-1zM44 28h1v1h-1z" />
+              </g>
+              <rect x="30" y="28" width="4" height="3" fill="#b58cff" />
+              <rect x="33" y="27" width="5" height="4" fill="#d6c2ff" />
+              <g class="alien-hand">
+                <rect x="6" y="27" width="4" height="4" fill="#b58cff" />
+                <rect x="9" y="30" width="5" height="4" fill="#d6c2ff" />
+              </g>
+            </g>
+            <g class="alien-zzz">
+              <path
+                fill="#9fb0e6"
+                d="M36 2h6v1h-2v1h-1v1h-1v1h4v1h-6v-1h1v-1h1v-1h1v-1h-3zM44 -6h5v1h-2v1h-1v1h3v1h-5v-1h1v-1h1v-1h-2z"
+              />
+            </g>
+            <g class="alien-notes">
+              <path
+                class="alien-note alien-note-one"
+                fill="#5ef2d0"
+                d="M40 8h1v6h-1zM41 8h3v2h-3zM37 13h4v3h-4z"
+              />
+              <path
+                class="alien-note alien-note-two"
+                fill="#ffb454"
+                d="M-4 14h1v6h-1zM-3 14h3v2h-3zM-7 19h4v3h-4z"
+              />
+            </g>
+          </g>
+        </svg>
+        <span>THE TURNAROUND · OPEN TILL THE LAST BAR.</span>
+      </div>
+      <div class="scene scene-christmas" aria-hidden="true">
+        <svg
+          viewBox="0 0 360 84"
+          width="720"
+          height="168"
+          preserveAspectRatio="xMidYMid slice"
+          shape-rendering="crispEdges"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect x="0" y="0" width="360" height="84" fill="#0a1730" />
+          <rect x="0" y="40" width="360" height="34" fill="#0e1e3d" />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="246"
+            y="20"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="340"
+            y="36"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="345"
+            y="25"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="77"
+            y="27"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="9"
+            y="26"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="251"
+            y="20"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="333"
+            y="32"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="311"
+            y="17"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="289"
+            y="3"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="342"
+            y="12"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="229"
+            y="26"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="87"
+            y="24"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="111"
+            y="6"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="299"
+            y="15"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="42"
+            y="35"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="355"
+            y="24"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="352"
+            y="28"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="48"
+            y="4"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="35"
+            y="35"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
+          />
+          <rect
+            class="xmas-star xmas-star-1"
+            x="118"
+            y="8"
+            width="1"
+            height="1"
+            fill="#9fd8ff"
+          />
+          <rect
+            class="xmas-star xmas-star-2"
+            x="220"
+            y="31"
+            width="1"
+            height="1"
+            fill="#ffd9a8"
+          />
+          <rect
+            class="xmas-star xmas-star-0"
+            x="61"
+            y="30"
+            width="1"
+            height="1"
+            fill="#f4f1dc"
           />
           <path
-            fill="#9b5cff"
-            d="M31 25h2v2h-2zm81-11h3v3h-3zm77 30h2v2h-2zm74-26h2v2h-2z"
+            fill="#f4f1dc"
+            d="M296 11h8v1h-8zM294 12h12v1h-12zM293 13h14v1h-14zM292 14h16v1h-16zM291 15h18v3h-18zM290 18h20v5h-20zM291 23h18v3h-18zM292 26h16v1h-16zM293 27h14v1h-14zM294 28h12v1h-12zM296 29h8v1h-8z"
           />
-          <g class="invader-squad">
+          <path
+            fill="#d9d5b8"
+            d="M295 16h3v2h-3zM303 23h3v2h-3zM299 26h2v1h-2z"
+          />
+          <g class="turnaround xmas-sleigh">
             <path
-              fill="#ff3cac"
-              d="M43 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+              fill="#b9c8e6"
+              d="M0 3h5v2h-5zM4 1h2v2h-2zM5 0h1v1h-1zM0 5h1v2h-1zM4 5h1v2h-1zM9 3h5v2h-5zM13 1h2v2h-2zM14 0h1v1h-1zM9 5h1v2h-1zM13 5h1v2h-1z"
             />
-            <path
-              fill="#7df9ff"
-              d="M111 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            <rect x="14" y="4" width="6" height="1" fill="#6f7fa6" />
+            <rect x="20" y="2" width="8" height="3" fill="#d8413a" />
+            <rect x="19" y="5" width="10" height="1" fill="#f2c14e" />
+            <rect x="27" y="1" width="2" height="2" fill="#d8413a" />
+            <rect x="23" y="0" width="3" height="2" fill="#f4f8ff" />
+          </g>
+          <path
+            fill="#1a2f55"
+            d="M59 59h22v1h-22zM55 60h30v1h-30zM51 61h38v1h-38zM49 62h42v1h-42zM46 63h48v1h-48zM44 64h52v1h-52zM42 65h56v1h-56zM40 66h60v1h-60zM39 67h62v1h-62zM37 68h66v1h-66zM36 69h68v1h-68zM34 70h72v1h-72zM33 71h74v1h-74zM32 72h76v1h-76zM30 73h80v1h-80zM29 74h82v1h-82zM28 75h84v1h-84zM27 76h86v1h-86zM26 77h88v1h-88zM25 78h90v2h-90zM24 80h92v1h-92zM23 81h94v1h-94zM22 82h96v1h-96zM21 83h98v1h-98z"
+          />
+          <path
+            fill="#162849"
+            d="M239 59h22v1h-22zM234 60h32v1h-32zM230 61h40v1h-40zM227 62h46v1h-46zM225 63h50v1h-50zM222 64h56v1h-56zM220 65h60v1h-60zM218 66h64v1h-64zM216 67h68v1h-68zM215 68h70v1h-70zM213 69h74v1h-74zM212 70h76v1h-76zM210 71h80v1h-80zM209 72h82v1h-82zM208 73h84v1h-84zM206 74h88v1h-88zM205 75h90v1h-90zM204 76h92v1h-92zM203 77h94v1h-94zM202 78h96v1h-96zM201 79h98v1h-98zM200 80h100v1h-100zM199 81h102v1h-102zM198 82h104v1h-104zM197 83h106v1h-106z"
+          />
+          <path
+            fill="#143a3a"
+            d="M9 67h3v5h-3zM9 38h2v3h-2zM8 41h4v3h-4zM7 44h6v3h-6zM6 47h8v2h-8zM5 49h10v2h-10z"
+          />
+          <path fill="#dfe9f5" d="M9 38h2v2h-2zM8 40h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M9 46h2v2h-2zM8 48h4v2h-4zM7 50h6v2h-6zM6 52h8v2h-8zM5 54h10v2h-10zM4 56h12v2h-12zM3 58h14v1h-14z"
+          />
+          <path fill="#dfe9f5" d="M9 46h2v2h-2zM8 48h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M9 54h2v2h-2zM8 56h4v1h-4zM7 57h6v2h-6zM6 59h8v1h-8zM5 60h10v1h-10zM4 61h12v2h-12zM3 63h14v1h-14zM2 64h16v2h-16zM1 66h18v1h-18z"
+          />
+          <path fill="#dfe9f5" d="M9 54h2v2h-2zM8 56h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M149 67h3v5h-3zM149 42h2v3h-2zM148 45h4v3h-4zM147 48h6v2h-6zM146 50h8v2h-8zM145 52h10v2h-10z"
+          />
+          <path fill="#dfe9f5" d="M149 42h2v2h-2zM148 44h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M149 48h2v2h-2zM148 50h4v2h-4zM147 52h6v1h-6zM146 53h8v2h-8zM145 55h10v2h-10zM144 57h12v2h-12zM143 59h14v1h-14z"
+          />
+          <path fill="#dfe9f5" d="M149 48h2v2h-2zM148 50h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M149 54h2v1h-2zM148 55h4v2h-4zM147 57h6v1h-6zM146 58h8v2h-8zM145 60h10v1h-10zM144 61h12v1h-12zM143 62h14v1h-14zM142 63h16v2h-16zM141 65h18v1h-18z"
+          />
+          <path fill="#dfe9f5" d="M149 54h2v2h-2zM148 56h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M169 67h3v5h-3zM169 32h2v4h-2zM168 36h4v3h-4zM167 39h6v3h-6zM166 42h8v3h-8zM165 45h10v2h-10z"
+          />
+          <path fill="#dfe9f5" d="M169 32h2v2h-2zM168 34h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M169 42h2v3h-2zM168 45h4v2h-4zM167 47h6v2h-6zM166 49h8v2h-8zM165 51h10v2h-10zM164 53h12v2h-12zM163 55h14v2h-14z"
+          />
+          <path fill="#dfe9f5" d="M169 42h2v2h-2zM168 44h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M169 52h2v2h-2zM168 54h4v2h-4zM167 56h6v1h-6zM166 57h8v2h-8zM165 59h10v2h-10zM164 61h12v1h-12zM163 62h14v2h-14zM162 64h16v2h-16zM161 66h18v1h-18z"
+          />
+          <path fill="#dfe9f5" d="M169 52h2v2h-2zM168 54h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M211 67h3v5h-3zM211 42h2v3h-2zM210 45h4v3h-4zM209 48h6v2h-6zM208 50h8v2h-8zM207 52h10v2h-10z"
+          />
+          <path fill="#dfe9f5" d="M211 42h2v2h-2zM210 44h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M211 48h2v2h-2zM210 50h4v2h-4zM209 52h6v1h-6zM208 53h8v2h-8zM207 55h10v2h-10zM206 57h12v2h-12zM205 59h14v1h-14z"
+          />
+          <path fill="#dfe9f5" d="M211 48h2v2h-2zM210 50h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M211 54h2v1h-2zM210 55h4v2h-4zM209 57h6v1h-6zM208 58h8v2h-8zM207 60h10v1h-10zM206 61h12v1h-12zM205 62h14v1h-14zM204 63h16v2h-16zM203 65h18v1h-18z"
+          />
+          <path fill="#dfe9f5" d="M211 54h2v2h-2zM210 56h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M321 67h3v5h-3zM321 36h2v4h-2zM320 40h4v3h-4zM319 43h6v2h-6zM318 45h8v3h-8zM317 48h10v2h-10z"
+          />
+          <path fill="#dfe9f5" d="M321 36h2v2h-2zM320 38h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M321 44h2v2h-2zM320 46h4v3h-4zM319 49h6v1h-6zM318 50h8v3h-8zM317 53h10v1h-10zM316 54h12v3h-12zM315 57h14v1h-14z"
+          />
+          <path fill="#dfe9f5" d="M321 44h2v2h-2zM320 46h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M321 52h2v2h-2zM320 54h4v1h-4zM319 55h6v2h-6zM318 57h8v2h-8zM317 59h10v1h-10zM316 60h12v2h-12zM315 62h14v1h-14zM314 63h16v2h-16zM313 65h18v1h-18z"
+          />
+          <path fill="#dfe9f5" d="M321 52h2v2h-2zM320 54h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M345 67h3v5h-3zM345 26h2v4h-2zM344 30h4v3h-4zM343 33h6v2h-6zM342 35h8v3h-8zM341 38h10v2h-10z"
+          />
+          <path fill="#dfe9f5" d="M345 26h2v2h-2zM344 28h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M345 35h2v2h-2zM344 37h4v2h-4zM343 39h6v2h-6zM342 41h8v1h-8zM341 42h10v2h-10zM340 44h12v2h-12zM339 46h14v2h-14zM338 48h16v1h-16z"
+          />
+          <path fill="#dfe9f5" d="M345 35h2v2h-2zM344 37h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M345 44h2v1h-2zM344 45h4v2h-4zM343 47h6v1h-6zM342 48h8v1h-8zM341 49h10v1h-10zM340 50h12v2h-12zM339 52h14v1h-14zM338 53h16v1h-16zM337 54h18v2h-18zM336 56h20v1h-20zM335 57h22v1h-22z"
+          />
+          <path fill="#dfe9f5" d="M345 44h2v2h-2zM344 46h4v1h-4z" />
+          <path
+            fill="#143a3a"
+            d="M345 53h2v1h-2zM344 54h4v1h-4zM343 55h6v1h-6zM342 56h8v1h-8zM341 57h10v1h-10zM340 58h12v1h-12zM339 59h14v1h-14zM338 60h16v1h-16zM337 61h18v1h-18zM336 62h20v1h-20zM335 63h22v1h-22zM334 64h24v1h-24zM333 65h26v1h-26zM332 66h28v1h-28z"
+          />
+          <path
+            fill="#dfe9f5"
+            d="M345 53h2v1h-2zM344 54h4v1h-4zM343 55h6v1h-6z"
+          />
+          <rect x="0" y="72" width="360" height="12" fill="#e6eef8" />
+          <rect x="0" y="72" width="360" height="1" fill="#ffffff" />
+          <path
+            fill="#c5d3e8"
+            d="M-2 78h9v1h-9zM18 77h9v1h-9zM38 78h9v1h-9zM58 77h9v1h-9zM78 78h9v1h-9zM98 77h9v1h-9zM118 78h9v1h-9zM138 77h9v1h-9zM158 78h9v1h-9zM178 77h9v1h-9zM198 78h9v1h-9zM218 77h9v1h-9zM238 78h9v1h-9zM258 77h9v1h-9zM278 78h9v1h-9zM298 77h9v1h-9zM318 78h9v1h-9zM338 77h9v1h-9zM358 78h9v1h-9z"
+          />
+          <path
+            fill="#f4f8ff"
+            d="M128 71h26v1h-26zM124 72h34v1h-34zM206 71h20v1h-20zM202 72h28v1h-28z"
+          />
+          <rect x="98" y="14" width="8" height="16" fill="#6b3a2a" />
+          <rect x="97" y="12" width="10" height="3" fill="#f4f8ff" />
+          <g class="chimney-smoke">
+            <rect
+              class="smoke-puff smoke-puff-one"
+              x="99"
+              y="5"
+              width="7"
+              height="4"
+              fill="#c5d3e8"
             />
-            <path
-              fill="#9b5cff"
-              d="M179 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            <rect
+              class="smoke-puff smoke-puff-two"
+              x="101"
+              y="2"
+              width="7"
+              height="4"
+              fill="#c5d3e8"
             />
-            <path
-              fill="#ff3cac"
-              d="M247 14h5v-4h5v4h5v4h4v5h-4v4h-5v-4h-5v4h-5v-4h-4v-5h4z"
+            <rect
+              class="smoke-puff smoke-puff-three"
+              x="98"
+              y="6"
+              width="7"
+              height="4"
+              fill="#c5d3e8"
             />
           </g>
-          <path fill="#7df9ff" d="M151 54h18v3h5v3h-28v-3h5z" />
-          <path fill="#9b5cff" d="M155 50h10v4h-10z" />
-          <path fill="#ff3cac" d="M159 45h2v5h-2z" />
-          <path fill="#2a1546" d="M0 61h320v3H0z" /></svg
-        ><span>INSERT COIN. FIND YOUR GROOVE.</span>
+          <path
+            fill="#f4f8ff"
+            d="M44 22h60v1h-60zM43 23h62v1h-62zM42 24h64v1h-64zM41 25h66v1h-66zM40 26h68v1h-68zM39 27h70v1h-70zM38 28h72v1h-72zM37 29h74v1h-74zM36 30h76v1h-76zM35 31h78v2h-78zM34 33h80v1h-80zM33 34h82v1h-82zM32 35h84v1h-84zM31 36h86v1h-86zM30 37h88v1h-88z"
+          />
+          <path
+            fill="#dfe9f5"
+            d="M29 38h90v1h-90zM28 39h92v1h-92zM27 40h94v1h-94zM26 41h96v1h-96z"
+          />
+          <rect x="26" y="42" width="96" height="3" fill="#3a2014" />
+          <rect x="34" y="45" width="80" height="28" fill="#5a3524" />
+          <path
+            fill="#472818"
+            d="M34 48h80v1h-80zM34 52h80v1h-80zM34 56h80v1h-80zM34 60h80v1h-80zM34 64h80v1h-80zM34 68h80v1h-80zM34 72h80v1h-80z"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="30"
+            y="45"
+            width="2"
+            height="3"
+            fill="#d8413a"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-a"
+            x="37"
+            y="45"
+            width="2"
+            height="3"
+            fill="#f2c14e"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="44"
+            y="45"
+            width="2"
+            height="3"
+            fill="#3fbf74"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-a"
+            x="51"
+            y="45"
+            width="2"
+            height="3"
+            fill="#5aa9ff"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="58"
+            y="45"
+            width="2"
+            height="3"
+            fill="#d8413a"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-a"
+            x="65"
+            y="45"
+            width="2"
+            height="3"
+            fill="#f2c14e"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="72"
+            y="45"
+            width="2"
+            height="3"
+            fill="#3fbf74"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-a"
+            x="79"
+            y="45"
+            width="2"
+            height="3"
+            fill="#5aa9ff"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="86"
+            y="45"
+            width="2"
+            height="3"
+            fill="#d8413a"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-a"
+            x="93"
+            y="45"
+            width="2"
+            height="3"
+            fill="#f2c14e"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="100"
+            y="45"
+            width="2"
+            height="3"
+            fill="#3fbf74"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-a"
+            x="107"
+            y="45"
+            width="2"
+            height="3"
+            fill="#5aa9ff"
+          />
+          <rect
+            class="xmas-bulb xmas-bulb-b"
+            x="114"
+            y="45"
+            width="2"
+            height="3"
+            fill="#d8413a"
+          />
+          <rect x="41" y="51" width="16" height="14" fill="#3a2014" />
+          <rect
+            class="xmas-window"
+            x="42"
+            y="52"
+            width="14"
+            height="12"
+            fill="#ffd98a"
+          />
+          <path fill="#3a2014" d="M48 52h2v12h-2zM42 57h14v2h-14z" />
+          <rect x="40" y="65" width="18" height="2" fill="#f4f8ff" />
+          <rect x="89" y="51" width="16" height="14" fill="#3a2014" />
+          <rect
+            class="xmas-window"
+            x="90"
+            y="52"
+            width="14"
+            height="12"
+            fill="#ffd98a"
+          />
+          <path fill="#3a2014" d="M96 52h2v12h-2zM90 57h14v2h-14z" />
+          <rect x="88" y="65" width="18" height="2" fill="#f4f8ff" />
+          <rect x="67" y="53" width="14" height="20" fill="#3a2014" />
+          <rect x="68" y="54" width="12" height="19" fill="#8f2622" />
+          <rect x="77" y="64" width="2" height="2" fill="#f2c14e" />
+          <path
+            fill="#2a8a57"
+            d="M72 57h4v1h-4zM71 58h6v1h-6zM70 59h8v3h-8zM71 62h6v1h-6zM72 63h4v1h-4z"
+          />
+          <rect x="73" y="59" width="2" height="2" fill="#8f2622" />
+          <rect x="73" y="63" width="2" height="2" fill="#d8413a" />
+          <rect x="62" y="72" width="24" height="2" fill="#c5d3e8" />
+          <rect x="259" y="67" width="6" height="6" fill="#5a3524" />
+          <path
+            fill="#22774c"
+            d="M261 20h2v2h-2zM260 22h4v2h-4zM259 24h6v1h-6zM258 25h8v2h-8zM257 27h10v1h-10zM256 28h12v2h-12zM255 30h14v2h-14zM254 32h16v1h-16zM253 33h18v2h-18zM252 35h20v2h-20zM251 37h22v1h-22z"
+          />
+          <path
+            fill="#1f6b45"
+            d="M261 30h2v1h-2zM260 31h4v2h-4zM259 33h6v1h-6zM258 34h8v1h-8zM257 35h10v2h-10zM256 37h12v1h-12zM255 38h14v1h-14zM254 39h16v2h-16zM253 41h18v1h-18zM252 42h20v1h-20zM251 43h22v1h-22zM250 44h24v2h-24zM249 46h26v1h-26zM248 47h28v1h-28zM247 48h30v2h-30zM246 50h32v1h-32zM245 51h34v1h-34z"
+          />
+          <path
+            fill="#22774c"
+            d="M261 42h2v1h-2zM260 43h4v1h-4zM259 44h6v1h-6zM258 45h8v1h-8zM257 46h10v1h-10zM256 47h12v2h-12zM255 49h14v1h-14zM254 50h16v1h-16zM253 51h18v1h-18zM252 52h20v1h-20zM251 53h22v1h-22zM250 54h24v1h-24zM249 55h26v1h-26zM248 56h28v1h-28zM247 57h30v1h-30zM246 58h32v1h-32zM245 59h34v1h-34zM244 60h36v2h-36zM243 62h38v1h-38zM242 63h40v1h-40zM241 64h42v1h-42zM240 65h44v1h-44zM239 66h46v1h-46zM238 67h48v1h-48z"
+          />
+          <path
+            fill="#f4f8ff"
+            d="M256 36h5v1h-5zM266 37h4v1h-4zM249 50h6v1h-6zM268 51h6v1h-6zM242 66h7v1h-7zM262 67h8v1h-8zM276 66h6v1h-6z"
+          />
+          <rect x="258" y="33" width="2" height="2" fill="#d8413a" />
+          <path fill="#f2c14e" d="M266 44h2v2h-2zM254 47h2v2h-2z" />
+          <path fill="#d8413a" d="M270 58h2v2h-2zM250 60h2v2h-2z" />
+          <rect x="262" y="55" width="2" height="2" fill="#5aa9ff" />
+          <rect
+            class="xmas-light xmas-light-0"
+            x="262"
+            y="27"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-1"
+            x="257"
+            y="41"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-2"
+            x="268"
+            y="40"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-3"
+            x="252"
+            y="54"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-0"
+            x="262"
+            y="48"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-1"
+            x="273"
+            y="52"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-2"
+            x="246"
+            y="63"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-3"
+            x="258"
+            y="62"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-0"
+            x="268"
+            y="63"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-1"
+            x="279"
+            y="62"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-2"
+            x="264"
+            y="34"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <rect
+            class="xmas-light xmas-light-3"
+            x="275"
+            y="46"
+            width="2"
+            height="2"
+            fill="#57806a"
+          />
+          <g class="xmas-star-top">
+            <path fill="#f2c14e" d="M261 13h2v8h-2zM258 16h8v2h-8z" />
+            <rect x="260" y="15" width="4" height="4" fill="#ffe9a0" />
+          </g>
+          <rect x="236" y="65" width="10" height="8" fill="#d8413a" />
+          <path
+            fill="#f2c14e"
+            d="M240 65h2v8h-2zM236 68h10v1h-10zM282 67h9v6h-9z"
+          />
+          <rect x="286" y="67" width="1" height="6" fill="#d8413a" />
+          <rect x="292" y="62" width="10" height="11" fill="#2a8a57" />
+          <path
+            fill="#f4f8ff"
+            d="M296 62h2v11h-2zM292 66h10v1h-10zM295 60h4v2h-4z"
+          />
+          <path fill="#1a2540" d="M330 40h2v33h-2zM327 34h8v7h-8z" />
+          <rect
+            class="xmas-window"
+            x="328"
+            y="35"
+            width="6"
+            height="5"
+            fill="#ffd98a"
+          />
+          <rect x="326" y="33" width="10" height="2" fill="#f4f8ff" />
+          <g
+            id="seasonal-character"
+            class="snowman"
+            data-character
+            data-state="resting"
+            transform="translate(158 15)"
+          >
+            <rect x="6" y="57" width="32" height="2" fill="#c5d3e8" />
+            <path
+              fill="#f4f8ff"
+              d="M17 35h10v1h-10zM16 36h12v1h-12zM14 37h16v1h-16zM13 38h18v1h-18zM12 39h20v2h-20zM11 41h22v3h-22zM10 44h24v5h-24zM11 49h22v3h-22zM12 52h20v1h-20z"
+            />
+            <path
+              fill="#dfe9f5"
+              d="M12 53h20v1h-20zM13 54h18v1h-18zM14 55h16v1h-16zM16 56h12v1h-12zM17 57h10v1h-10z"
+            />
+            <path
+              fill="#f4f8ff"
+              d="M18 21h8v1h-8zM16 22h12v1h-12zM15 23h14v2h-14zM14 25h16v2h-16zM13 27h18v5h-18zM14 32h16v2h-16zM15 34h14v1h-14z"
+            />
+            <path
+              fill="#dfe9f5"
+              d="M15 35h14v1h-14zM16 36h12v1h-12zM18 37h8v1h-8z"
+            />
+            <path fill="#1a1a2a" d="M21 40h2v2h-2zM21 45h2v2h-2z" />
+            <rect x="10" y="31" width="11" height="8" fill="#b9722e" />
+            <rect x="10" y="31" width="11" height="1" fill="#d99a4e" />
+            <path fill="#8a4f1c" d="M10 38h11v1h-11zM9 33h1v4h-1z" />
+            <rect x="13" y="33" width="3" height="3" fill="#3a2014" />
+            <rect x="21" y="33" width="15" height="2" fill="#7a4a2e" />
+            <rect x="35" y="31" width="5" height="6" fill="#5a3524" />
+            <path fill="#f2c14e" d="M36 32h1v1h-1zM38 35h1v1h-1z" />
+            <rect x="11" y="34" width="24" height="1" fill="#f4e6c2" />
+            <path
+              fill="#5a3524"
+              d="M30 27h2v2h-2zM31 28h4v2h-4zM33 29h3v4h-3z"
+            />
+            <g class="snow-arm">
+              <path
+                fill="#5a3524"
+                d="M12 25h2v2h-2zM10 26h3v2h-3zM9 27h2v5h-2zM7 31h5v2h-5z"
+              />
+            </g>
+            <g class="snow-head">
+              <path
+                fill="#f4f8ff"
+                d="M19 8h6v1h-6zM17 9h10v1h-10zM16 10h12v2h-12zM15 12h14v5h-14zM16 17h12v2h-12zM17 19h10v1h-10zM19 20h6v1h-6z"
+              />
+              <rect x="14" y="19" width="16" height="3" fill="#d8413a" />
+              <rect x="14" y="19" width="16" height="1" fill="#f0635c" />
+              <rect x="26" y="22" width="4" height="8" fill="#d8413a" />
+              <rect x="26" y="29" width="4" height="1" fill="#f2c14e" />
+              <path fill="#1a1a2a" d="M13 6h18v2h-18zM16 -3h12v9h-12z" />
+              <rect x="16" y="3" width="12" height="2" fill="#d8413a" />
+              <rect x="25" y="1" width="2" height="2" fill="#2a8a57" />
+              <rect x="27" y="2" width="1" height="1" fill="#d8413a" />
+              <g class="snow-eyes-open">
+                <path
+                  fill="#1a1a2a"
+                  d="M18 11h2v2h-2zM25 11h2v2h-2zM18 16h1v1h-1zM19 17h5v1h-5zM24 16h1v1h-1z"
+                />
+              </g>
+              <g class="snow-eyes-closed">
+                <path
+                  fill="#1a1a2a"
+                  d="M17 12h3v1h-3zM24 12h3v1h-3zM20 17h3v1h-3z"
+                />
+              </g>
+              <rect x="21" y="13" width="7" height="2" fill="#ff8a3c" />
+              <rect x="21" y="14" width="5" height="1" fill="#e0661c" />
+            </g>
+            <g class="character-zzz">
+              <path
+                fill="#b9c8e6"
+                d="M36 2h6v1h-2v1h-1v1h-1v1h4v1h-6v-1h1v-1h1v-1h1v-1h-3zM44 -6h5v1h-2v1h-1v1h3v1h-5v-1h1v-1h1v-1h-2z"
+              />
+            </g>
+            <g class="character-notes">
+              <path
+                class="character-note"
+                fill="#f2c14e"
+                d="M42 12h1v6h-1zM43 12h3v2h-3zM39 17h4v3h-4z"
+              />
+              <path
+                class="character-note character-note-two"
+                fill="#ff8a8a"
+                d="M-6 16h1v6h-1zM-5 16h3v2h-3zM-9 21h4v3h-4z"
+              />
+            </g>
+          </g>
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 8.2s; animation-delay: -7.3s"
+            x="71"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 6s; animation-delay: -4.2s"
+            x="287"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 8.3s; animation-delay: -4.2s"
+            x="28"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 7.4s; animation-delay: -3.1s"
+            x="44"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 7.8s; animation-delay: -4.8s"
+            x="307"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 5.2s; animation-delay: -3.8s"
+            x="279"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 10.9s; animation-delay: -7.2s"
+            x="100"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 10.6s; animation-delay: -9.2s"
+            x="184"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 9s; animation-delay: -1s"
+            x="199"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 7s; animation-delay: -2.6s"
+            x="122"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 9.9s; animation-delay: -4.9s"
+            x="295"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 7.3s; animation-delay: -6.3s"
+            x="16"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 8.1s; animation-delay: -1.8s"
+            x="18"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 5.3s; animation-delay: -1.1s"
+            x="220"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 5.6s; animation-delay: -3.1s"
+            x="312"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 5.5s; animation-delay: -1.5s"
+            x="93"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 6.7s; animation-delay: -2.3s"
+            x="223"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 9.4s; animation-delay: -4.8s"
+            x="328"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 6.3s; animation-delay: -1.8s"
+            x="190"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 9.2s; animation-delay: -7.9s"
+            x="245"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 10.7s; animation-delay: -1.8s"
+            x="124"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 7.2s; animation-delay: -1.4s"
+            x="283"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 10.5s; animation-delay: -0.1s"
+            x="114"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 10.5s; animation-delay: -8.4s"
+            x="139"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 6.4s; animation-delay: -0.1s"
+            x="93"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 6.5s; animation-delay: -0.8s"
+            x="22"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 11s; animation-delay: -5.5s"
+            x="186"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 10.6s; animation-delay: -9.3s"
+            x="14"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 10s; animation-delay: -6.4s"
+            x="344"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 9.7s; animation-delay: -4.9s"
+            x="119"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 8.8s; animation-delay: -2.3s"
+            x="252"
+            y="-3"
+            width="2"
+            height="2"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 10.4s; animation-delay: -1.7s"
+            x="229"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake"
+            style="animation-duration: 8.7s; animation-delay: -0.4s"
+            x="151"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+          <rect
+            class="xmas-flake xmas-flake-alt"
+            style="animation-duration: 10.7s; animation-delay: -5.5s"
+            x="170"
+            y="-3"
+            width="1"
+            height="1"
+            fill="#ffffff"
+          />
+        </svg>
+        <span>TWELVE BARS OF CHRISTMAS.</span>
       </div>
       <section class="player" aria-label="Blues player">
         <div class="settings">
@@ -318,168 +2656,18 @@
             <h2 id="chord">A</h2>
             <p id="tones">A · E</p>
           </div>
-          <div
-            id="guitarist"
-            class="guitarist"
-            data-state="resting"
-            aria-hidden="true"
-          >
-            <svg
-              width="128"
-              height="144"
-              viewBox="0 0 64 72"
-              xmlns="http://www.w3.org/2000/svg"
-              shape-rendering="crispEdges"
-            >
-              <path fill="#101c17" d="M8 67h48v3H8z" />
-              <g class="pixel-body">
-                <path
-                  fill="#74918a"
-                  d="M22 46h20v10h-3v10h-8V55h-3v11h-8V54h2z"
-                />
-                <path
-                  class="pixel-feet"
-                  fill="#d9ddc4"
-                  d="M18 64h10v4H16v-2h2zm13 0h10v2h3v2H31z"
-                />
-                <path fill="#b2c779" d="M22 26h17v3h5v21H19V30h3z" />
-                <path fill="#7e965b" d="M19 31h5v17h-5zm17-2h5v20h-5z" />
-                <path fill="#d5a47b" d="M39 30h5v7h8v5H40v-4h-1z" />
-                <g class="pixel-head">
-                  <path fill="#d5a47b" d="M23 13h17v12h-5v4h-9v-4h-3z" />
-                  <path fill="#a77456" d="M23 16h4v8h8v3h-9v-3h-3z" />
-                  <path fill="#263c34" d="M22 5h16v3h3v7H19v-4h3z" />
-                  <path fill="#d1e6a0" d="M22 11h19v3H22z" />
-                  <path
-                    fill="#101c17"
-                    d="M16 14h30v3H16zm12 5h4v3h-4zm7 0h5v3h-5z"
-                  />
-                  <path fill="#f0c79d" d="M33 23h4v2h-4z" />
-                </g>
-                <path fill="#523b2b" d="M24 28h3l12 18h-4z" />
-                <path
-                  fill="#986439"
-                  d="M18 38h9v-3h9v3h4v13h-4v5H20v-3h-5V42h3z"
-                />
-                <path
-                  fill="#e1ac5e"
-                  d="M19 40h8v-3h7v3h4v10h-4v4H21v-3h-4v-8h2z"
-                />
-                <path fill="#bc8649" d="M32 40h11v-3h9v-3h7v5h-7v3h-9v3H32z" />
-                <path fill="#edc486" d="M53 32h7v7h-7z" />
-                <path
-                  fill="#b9c8b2"
-                  d="M53 30h2v2h-2zm5 0h2v2h-2zm-3 9h2v2h-2z"
-                />
-                <path fill="#533c2d" d="M27 42h6v6h-6zM20 45h3v6h-3z" />
-                <path
-                  fill="#f4d7a0"
-                  d="M23 45h11v1H23zm11-3h9v1h-9zm9-3h10v1H43z"
-                />
-                <g class="pixel-arm">
-                  <path fill="#d5a47b" d="M18 30h6v8h3v4h4v5h-6v-4h-4v-4h-3z" />
-                  <path fill="#f0c79d" d="M26 41h4v5h-4z" />
-                </g>
-              </g>
-            </svg>
-          </div>
-          <div
-            id="cosy-cat"
-            class="cosy-cat"
-            data-state="asleep"
-            aria-hidden="true"
-          >
-            <svg
-              viewBox="0 0 80 64"
-              width="160"
-              height="128"
-              shape-rendering="crispEdges"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path fill="#e0bfa8" d="M10 55h60v5H10z" />
-              <g class="cat-sleep">
-                <path
-                  fill="#bd8060"
-                  d="M19 37h8v-5h27v5h8v6h4v10h-5v4H18v-4h-5V42h6z"
-                />
-                <path fill="#e7af7e" d="M20 39h7v-4h24v4h8v14H20z" />
-                <path fill="#f5c99c" d="M17 34h5v5h12v-5h5v19H17z" />
-                <path
-                  fill="#815c50"
-                  d="M20 45h5v2h-5zm10 0h5v2h-5zm-4 4h3v2h-3z"
-                />
-                <path fill="#bd8060" d="M43 45h15v4H47v4h-5v-5h1z" />
-              </g>
-              <g class="cat-awake">
-                <path fill="#bd8060" d="M51 42h8v-8h5v16h-5v5H48z" />
-                <path fill="#e7af7e" d="M27 30h22v7h4v18H23V37h4z" />
-                <path fill="#f7d6b0" d="M32 36h12v18H32z" />
-                <path fill="#bd8060" d="M20 9h8v5h20V9h8v25h-5v5H25v-5h-5z" />
-                <path fill="#f5c99c" d="M24 13h3v7h22v-7h3v18h-5v5H29v-5h-5z" />
-                <path fill="#d99189" d="M24 13h3v5h-3zm25 0h3v5h-3z" />
-                <path
-                  fill="#594f49"
-                  d="M28 24h4v5h-4zm16 0h4v5h-4zm-8 6h4v3h-4z"
-                />
-                <path fill="#fcf4df" d="M28 24h2v2h-2zm16 0h2v2h-2z" />
-                <path fill="#bd8060" d="M25 52h10v5H25zm16 0h10v5H41z" />
-              </g>
-              <g class="cat-zzz" fill="#867f8b">
-                <path
-                  d="M56 20h8v2h-3v2h-3v2h6v2h-8v-4h3v-2h-3zm10-12h9v2h-3v3h-3v2h6v2h-9v-4h3v-3h-3z"
-                />
-              </g>
-            </svg>
-          </div>
-          <div
-            id="arcade-alien"
-            class="arcade-alien"
-            data-state="resting"
-            aria-hidden="true"
-          >
-            <svg
-              width="160"
-              height="128"
-              viewBox="0 0 80 64"
-              shape-rendering="crispEdges"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g class="alien-rest">
-                <path fill="#211132" d="M14 56h52v4H14z" />
-                <path fill="#9b5cff" d="M22 37h36v6h5v10h-6v4H23v-4h-6V43h5z" />
-                <path
-                  fill="#ff3cac"
-                  d="M18 23h7v-6h6v5h18v-5h6v6h7v19h-5v5H23v-5h-5z"
-                />
-                <path fill="#7df9ff" d="M24 29h12v4H24zm20 0h12v4H44z" />
-                <path fill="#211132" d="M27 30h7v2h-7zm19 0h7v2h-7z" />
-                <path fill="#ffb1df" d="M35 37h10v3H35z" />
-                <path fill="#7df9ff" d="M26 48h6v4h-6zm22 0h6v4h-6z" />
-                <path fill="#ff3cac" d="M21 54h12v4H21zm26 0h12v4H47z" />
-                <g class="alien-zzz" fill="#9b5cff">
-                  <path d="M58 13h9v2h-4v3h-3v2h7v2h-9v-4h4v-3h-4z" />
-                </g>
-              </g>
-              <g class="alien-play">
-                <path fill="#211132" d="M14 56h52v4H14z" />
-                <path fill="#9b5cff" d="M22 37h36v6h5v10h-6v4H23v-4h-6V43h5z" />
-                <path
-                  fill="#ff3cac"
-                  d="M18 18h7v-6h6v5h18v-5h6v6h7v22h-5v5H23v-5h-5z"
-                />
-                <path fill="#7df9ff" d="M24 25h12v5H24zm20 0h12v5H44z" />
-                <path fill="#211132" d="M27 26h7v2h-7zm19 0h7v2h-7z" />
-                <path fill="#ffb1df" d="M35 34h10v3H35z" />
-                <path fill="#7df9ff" d="M16 40h7v5h-7zm41 0h7v5h-7z" />
-                <path fill="#ff3cac" d="M21 54h12v4H21zm26 0h12v4H47z" />
-              </g>
-            </svg>
+          <div class="strum-block" aria-hidden="true">
+            <span class="label">SHUFFLE STRUM</span>
+            <div id="strum" class="strum">
+              <i>D</i><i>U</i><i>D</i><i>U</i><i>D</i><i>U</i><i>D</i><i>U</i>
+            </div>
           </div>
           <div class="position">
             <span id="position">Ready to play</span>
             <div id="beats" aria-hidden="true">
               <i></i><i></i><i></i><i></i>
             </div>
+            <span id="next" class="next"></span>
           </div>
         </div>
         <div id="bars" class="bars" aria-label="12-bar blues progression"></div>
@@ -490,7 +2678,7 @@
           <div class="volume-control">
             <label for="volume-slider"
               >VOLUME
-              <output id="volume" for="volume-slider">55%</output></label
+              <output id="volume" for="volume-slider">35%</output></label
             ><input
               id="volume-slider"
               type="range"
@@ -508,6 +2696,6 @@
         <span>12 BARS / ∞ REPEATS</span>
       </footer>
     </main>
-    <script type="module" src="src/app.js?v=wake-lock-1"></script>
+    <script type="module" src="src/app.js?v=stage-1"></script>
   </body>
 </html>

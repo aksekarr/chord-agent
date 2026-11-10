@@ -1,4 +1,13 @@
+/* Silkscreen ships in one weight; bold requests reuse it so pixels stay crisp. */
+@font-face {
+  font-family: 'Silkscreen';
+  src: url('fonts/silkscreen.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
+  --pixel-font: 'Silkscreen', 'Courier New', monospace;
   font-family:
     system-ui,
     -apple-system,
@@ -328,21 +337,7 @@ footer p {
 }
 
 /* Integer-pixel poses keep the little guitarist crisp. Audio clock drives the steps. */
-.guitarist {
-  width: 128px;
-  flex: 0 0 128px;
-  align-self: center;
-}
-.guitarist svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-.guitarist[data-pose='down'] .pixel-body {
-  transform: translateY(1px);
-}
-.guitarist[data-pose='down'] .pixel-head {
+.guitarist[data-pose='down'] :is(.pixel-body, .pixel-head) {
   transform: translateY(1px);
 }
 .guitarist[data-pose='down'] .pixel-arm {
@@ -351,29 +346,90 @@ footer p {
 .guitarist[data-pose='up'] .pixel-arm {
   transform: translate(-1px, -2px);
 }
+/* Strum lane: eight strokes per bar, tall for downstrokes, short for upstrokes. */
+.strum {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 44px;
+}
+.strum i {
+  display: grid;
+  width: 28px;
+  height: 40px;
+  place-items: center;
+  border: 2px solid var(--line, #435143);
+  background: var(--panel-2, #223129);
+  color: var(--muted, #a4b3a5);
+  font-size: 16px;
+  font-style: normal;
+}
+.strum i:nth-child(even) {
+  height: 26px;
+  margin-right: 10px;
+}
+.strum i:last-child {
+  margin-right: 0;
+}
+.strum i.active {
+  border-color: var(--accent-edge, #d1e6a0);
+  background: var(--accent, #d1e6a0);
+  color: var(--accent-ink, #19281b);
+  box-shadow: 2px 2px var(--accent-shadow, #0003);
+}
+.strum i:nth-child(odd).active {
+  transform: translateY(3px);
+}
+.strum i:nth-child(even).active {
+  transform: translateY(-3px);
+}
+.strum.inactive {
+  opacity: 0.35;
+}
+.next {
+  display: block;
+  min-height: 1em;
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
 @media (max-width: 600px) {
   .now {
     flex-wrap: wrap;
     gap: 16px;
   }
-  .guitarist {
-    width: 96px;
-    flex-basis: 96px;
+  .strum-block {
+    order: 3;
+    width: 100%;
+  }
+  .strum {
+    justify-content: space-between;
+  }
+  .strum i {
+    flex: 1;
+    margin-right: 0;
+  }
+  .strum i:nth-child(even) {
+    margin-right: 6px;
   }
   .position {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
   }
   #beats {
     margin-top: 0;
   }
+  .next {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .guitarist .pixel-body,
-  .guitarist .pixel-head,
-  .guitarist .pixel-arm {
+  .strum i {
     transform: none !important;
   }
 }

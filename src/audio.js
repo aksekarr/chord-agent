@@ -5,7 +5,7 @@ import {
   LOOP_BEATS,
   STRUCTURE,
   eventsFor,
-} from './music.js?v=volume-1';
+} from './music.js?v=stage-1';
 export const STRUM_SPREAD_SECONDS = 0.025; // Full roll, independent of chord size.
 export const DEFAULT_OUTPUT_LEVEL = 0.35;
 export class BluesPlayer {

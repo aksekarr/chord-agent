@@ -6,4 +6,5 @@ await mkdir('dist', { recursive: true });
 for (const file of ['index.html', 'style.css', 'themes.css', 'preview.png'])
   await copyFile(file, `dist/${file}`);
 await cp('src', 'dist/src', { recursive: true });
+await cp('fonts', 'dist/fonts', { recursive: true });
 console.log('Static website built in dist/');

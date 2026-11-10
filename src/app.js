@@ -1,4 +1,4 @@
-import { initThemes, updateThemeCharacters } from './theme.js?v=volume-1';
+import { initThemes, updateThemeCharacters } from './theme.js?v=stage-1';
 import {
   chordsFor,
   STRUCTURE,
@@ -11,8 +11,8 @@ import {
   BPM,
   TIME_SIGNATURE,
   BEATS_PER_BAR,
-} from './music.js?v=volume-1';
-import { BluesPlayer, DEFAULT_OUTPUT_LEVEL } from './audio.js?v=volume-1';
+} from './music.js?v=stage-1';
+import { BluesPlayer, DEFAULT_OUTPUT_LEVEL } from './audio.js?v=stage-1';
 const $ = (id) => document.getElementById(id);
 const player = new BluesPlayer();
 initThemes();
@@ -92,9 +92,22 @@ function syncModeControls() {
   $('metronome-toggle').textContent =
     metronomeOnly || metronomeEnabled ? 'On' : 'Off';
   $('bars').classList.toggle('inactive', metronomeOnly);
+  $('strum').classList.toggle('inactive', metronomeOnly);
+}
+// Which of the bar's eight strokes is sounding: down on the beat, up on the offbeat.
+function strokeFor(position) {
+  if (!position || position.phase == null || metronomeMode()) return -1;
+  return (
+    position.beat * 2 + (position.phase >= offbeatFor(playingTempo) ? 1 : 0)
+  );
 }
 function display(position) {
+  const stroke = strokeFor(position);
+  [...$('strum').children].forEach((mark, index) =>
+    mark.classList.toggle('active', index === stroke),
+  );
   if (metronomeMode()) {
+    $('next').textContent = '';
     $('chord').textContent = 'CLICK';
     $('tones').textContent = 'Downbeat high · beats 2–4 low';
     $('position').textContent = position
@@ -116,6 +129,9 @@ function display(position) {
   $('position').textContent = position
     ? `Bar ${position.bar + 1} of ${STRUCTURE.length} · Loop ${position.loop}`
     : 'Ready to play';
+  $('next').textContent = position
+    ? `Next · ${chordsFor($('key').value)[STRUCTURE[(position.bar + 1) % STRUCTURE.length]].name}`
+    : '';
   [...$('bars').children].forEach((bar, index) =>
     bar.classList.toggle('active', index === position?.bar),
   );
@@ -127,7 +143,10 @@ function tick() {
   const timing = player.timing();
   display(timing);
   animateGuitarist(timing);
-  updateThemeCharacters(timing);
+  updateThemeCharacters(
+    timing,
+    timing && !metronomeMode() ? DEGREES[STRUCTURE[timing.bar]] : null,
+  );
   frame = requestAnimationFrame(tick);
 }
 async function play() {

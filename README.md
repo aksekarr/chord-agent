@@ -1,6 +1,6 @@
 # Chord Agent
 
-A browser-based 12-bar blues player with synthesized electric piano. No dependencies or external audio assets.
+A browser-based 12-bar blues player with synthesized electric piano. No runtime dependencies or external audio assets.
 
 Try the live app: [https://aksekarr.github.io/chord-agent/](https://aksekarr.github.io/chord-agent/)
 
@@ -32,12 +32,13 @@ Every beat has a downstroke on its first triplet partial and an upstroke on its 
 ## Files
 
 - `index.html`: accessible controls and page structure.
-- `style.css`: responsive layout, colours, chord grid and beat indicators.
+- `style.css`: responsive layout, base colours, chord grid, strum lane and beat indicators.
 - `src/music.js`: pure musical rules, chord notes and 12-bar event timeline.
 - `src/audio.js`: Web Audio chord instrument, metronome click, master output gain, and lookahead scheduler. Uses the audio clock for note timing; Stop disconnects the output immediately.
-- `src/app.js`: connects controls, modes, playback state, master volume, and visual indicators.
-- `src/theme.js`: stores theme selection and updates character states from playback timing.
-- `themes.css`: theme palettes, theme-scoped controls, scenes, and animations.
+- `src/app.js`: connects controls, modes, playback state, master volume, and visual indicators (bar grid, beat dots, strum lane, next chord).
+- `src/theme.js`: stores theme selection, updates character states from playback timing, and mirrors the beat, bar, chord degree and a per-beat pulse onto the page as `data-` attributes for the stylesheet.
+- `themes.css`: theme palettes, theme-scoped controls, scenes, animations, and music-reactive scene rules.
+- `fonts/`: the bundled Silkscreen pixel typeface (SIL Open Font License, see `fonts/OFL.txt`).
 - `tests/music.test.js`: musical and scheduler checks using Node's built-in test runner and a simulated audio context.
 - `package.json`: local server and test commands.
 
@@ -49,11 +50,11 @@ Use Node.js with npm and Python 3. Run `npm ci` to install the pinned developmen
 
 Keep musical settings, supported keys, tempo bounds and validation, note selection and shuffle rules in `src/music.js`. Keep synthesis, metronome scheduling, and the shared output gain in `src/audio.js`. The player's `timing()` method returns bar, beat, loop and fractional beat phase from the audio clock; interface code consumes that snapshot without accessing the audio context directly. Controls, modes, volume, and character states belong in `src/app.js`; presentation belongs in HTML and CSS. Add future key and tempo controls through these boundaries rather than duplicating settings.
 
-The theme characters use inline SVG with explicit dimensions. The Campfire busker rests with a slow dip and foot tap, then follows playback poses; the Cosy cat breathes while asleep and bobs when playing; the Sci-fi alien rests when stopped and bobs when playing. Reduced-motion preferences disable motion. The stylesheet, entry script, and module imports have versioned URLs to help refresh browser caches; update these when shipping asset changes.
+The theme characters live inside their scene's inline SVG. The Campfire busker rests with a slow dip and foot tap, then follows playback poses; the others sleep when stopped and bob when playing. Reduced-motion preferences disable motion. The stylesheet, entry script, and module imports have versioned URLs to help refresh browser caches; update these when shipping asset changes.
 
 ## Building and publishing
 
-`npm run build` clears generated `dist/` output and copies only the browser assets into it. Never put source files in `dist/`. Build scripts, tests, and hosting metadata are excluded from the served assets. Local edits and builds do not publish automatically; verify the live URL after deployment.
+`npm run build` clears generated `dist/` output and copies only the browser assets, including `fonts/`, into it. Never put source files in `dist/`. Build scripts and tests are excluded from the built assets. The live site is GitHub Pages, which serves this repository; pushing to `main` publishes it. Verify the live URL after pushing.
 
 ## Selected-bar shuffle variation
 
@@ -61,10 +62,25 @@ In all six keys, bars 3, 4, 6, 8, 9 and 10 use upper intervals fifth, sixth, fla
 
 ## Visual themes
 
-Use the Campfire/Cosy/Sci-fi buttons at the top to switch skins without changing playback settings. The selection is remembered locally when browser storage is available; Campfire is the fallback for first-time visitors.
+Use the Campfire/Cosy/Orbit/Christmas buttons at the top to switch skins without changing playback settings. The selection is remembered locally when browser storage is available; Campfire is the fallback for first-time visitors and for a saved theme that no longer exists.
 
-- **Campfire** uses a night scene with a crescent moon, sparse twinkling stars, tent, log, trees, and flickering fire. Its busker has a calm resting idle and playback poses.
-- **Cosy** uses a cottage scene with drifting clouds, staggered chimney smoke, gently swaying foliage, and a cat that rests when stopped and bobs to playback.
-- **Sci-fi** uses a neon arcade palette with a transparent pixel-invader scene whose invaders shuffle side to side, plus a resting and beat-bobbing alien.
+Every theme is a stage: one wide pixel-art scene with its character performing inside it. Characters sleep when stopped and wake, bob and play in time when music starts.
 
-The decorative SVG artwork lives in `index.html`; `themes.css` contains theme presentation and animation rules. Theme code consumes playback timing and never changes musical settings. The static build includes the theme stylesheet and module.
+- **Campfire** is a night camp: tent, fire, pines, a crescent moon and the busker standing by the fire. The flames and firelight jump on each beat, higher on beat 1.
+- **Cosy** is an autumn afternoon: a cottage, turning trees, pumpkins, falling leaves and the cat (who puts on a scarf to play). The cottage lights come on while music plays.
+- **Orbit** (formerly Sci-fi; a saved Sci-fi choice carries over) is a bar on a space station called The Turnaround, with an alien keytar player, a robot bartender and a jukebox. One stage lamp lights per beat, and the neon and footlights change colour with the chord (I coral, IV teal, V amber).
+- **Christmas** is the seasonal slot: a snowy cabin, a decorated tree and a snowman with a ukulele. The tree lights step round once per bar, one set per beat, and the cabin lights alternate.
+
+Bar 12, the turnaround, gets a flourish in every scene: a shooting star (Campfire, Orbit), a flight of birds (Cosy) or a sleigh crossing the moon (Christmas).
+
+Under the scene, the panel shows the current root, a strum lane (eight marks per bar, tall for downstrokes and short for upstrokes, lit as each stroke sounds), the next bar's chord, and the bar grid. The big chord letter is tinted on IV and V.
+
+All text uses the bundled Silkscreen pixel typeface, with sizes kept on its 8px grid.
+
+### How themes are built
+
+Each theme is three things: a palette (a block of custom properties at the top of `themes.css`), a scene (an inline SVG in `index.html` inside `<div class="scene scene-NAME">`), and a button with `data-theme-choice="NAME"`. The shared rules in `themes.css` style every control from the palette, so a theme needs no control styling of its own. Scene characters marked `data-character` are driven automatically. `src/theme.js` mirrors playback onto the page as `data-beat` (1-4), `data-bar` (1-12), `data-degree` (I, IV, V) and `data-pulse` (on for the first part of each beat); scene rules in `themes.css` react to those. Theme code never changes musical settings.
+
+### Changing the seasonal theme
+
+The fourth button is a seasonal slot. To swap Christmas for another holiday, replace its palette block, its scene `div` and its button with the new theme's, using a new name. Visitors who had the old one saved fall back to Campfire.
